@@ -27,48 +27,53 @@ export type SurfaceVariant =
   | 'sunken'
   | 'interactive'
 
+// Mapeamento de variante → shadow token do DS PUCPR
+// shadow-level-1 = elevação sutil  (raised, interactive hover)
+// shadow-level-2 = elevação média  (overlay)
+// shadow-level-3 = elevação alta   (reservado para tooltip/popover)
+// ⚠️ Valores CSS provisórios — confirmar X/Y/Blur/Spread/Cor no painel Efeitos do Figma
+
 const variantClasses: Record<SurfaceVariant, string> = {
-  // border-radius-small (12px) | border-width-small (1px)
+  // Sem sombra | border-radius-small (12px) | border-width-small (1px)
   default: [
     'bg-white',
     'border-small border-[#B5A8AD]/50',
     'rounded-small',
   ].join(' '),
 
-  // border-radius-small (12px) | border-width-small (1px) | sombra leve
-  // ⚠️ shadow: aguardando token oficial do Figma > Estilos de efeito > Shadow
+  // shadow-level-1 | border-radius-small (12px) | border-width-small (1px)
   raised: [
     'bg-white',
     'border-small border-[#B5A8AD]/30',
     'rounded-small',
-    'shadow-md',
+    'shadow-level-1',
   ].join(' '),
 
-  // border-radius-medium (16px) | border-width-small (1px) | sombra forte
+  // shadow-level-2 | border-radius-medium (16px) | border-width-small (1px)
   overlay: [
     'bg-white',
     'border-small border-[#B5A8AD]/20',
     'rounded-medium',
-    'shadow-2xl',
+    'shadow-level-2',
   ].join(' '),
 
-  // border-radius-small (12px) | fundo rebaixado
+  // Sem sombra | fundo rebaixado | border-radius-small (12px)
   sunken: [
     'bg-gray-50',
     'border-small border-[#B5A8AD]/60',
     'rounded-small',
   ].join(' '),
 
-  // border-radius-small (12px) | hover: border-width-medium (2px) | focus: border-width-large (3px)
+  // hover: shadow-level-1 + border-width-medium | focus: border-width-large
   interactive: [
     'bg-white',
     'border-small border-[#B5A8AD]/50',
     'rounded-small',
     'cursor-pointer',
     'transition-all duration-150',
-    'hover:border-medium hover:border-[#B5A8AD] hover:shadow-md',
+    'hover:border-medium hover:border-[#B5A8AD] hover:shadow-level-1',
     'focus-visible:outline-none focus-visible:ring-large focus-visible:ring-[#7B1234]/50',
-    'active:shadow-sm active:scale-[0.99]',
+    'active:scale-[0.99]',
   ].join(' '),
 }
 

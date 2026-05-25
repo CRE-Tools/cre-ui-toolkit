@@ -50,8 +50,19 @@ const config: Config = {
         'pill':    '9999px',
       },
 
+      // ─── Shadows ───────────────────────────────────────────────────
+      // Nomes confirmados: shadow-level-1, shadow-level-2, shadow-level-3
+      // Intensidade visual confirmada pelos popups do Figma.
+      // ⚠️ Valores CSS provisórios — substituir quando pegar X/Y/Blur/Spread/Cor
+      //    do painel Efeitos do Figma (clicar no ⊙ ao lado do efeito num componente)
+      boxShadow: {
+        'level-1': '0px 1px 4px 0px rgba(0, 0, 0, 0.08), 0px 1px 2px 0px rgba(0, 0, 0, 0.06)',
+        'level-2': '0px 4px 12px 0px rgba(0, 0, 0, 0.10), 0px 2px 6px 0px rgba(0, 0, 0, 0.06)',
+        'level-3': '0px 12px 32px 0px rgba(0, 0, 0, 0.12), 0px 4px 12px 0px rgba(0, 0, 0, 0.08)',
+      },
+
       colors: {
-        // ⚠️ Placeholders — aguardando zoom na tabela Brand do Figma
+        // ⚠️ Placeholders — aguardando zoom na tabela Brand/Neutral do Figma
         brand: {
           DEFAULT: '#7B1234',
         },
