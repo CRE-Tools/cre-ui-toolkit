@@ -1,0 +1,342 @@
+[14:21:59.107] [INFO] This command is running via an AI agent: claude-code_2-1-138_agent. Proceeding with agentic installation flow.
+[14:21:59.262] [INFO] Initializing Storybook
+[14:21:59.371] [DEBUG] Getting package.json info for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:21:59.371] [INFO] Package manager: pnpm
+[14:21:59.371] [DEBUG] Getting CLI versions from NPM for storybook...
+[14:21:59.371] [DEBUG] Executing command: pnpm info storybook version
+[14:21:59.902] [INFO] Adding Storybook version 10.4.1 to your project
+[14:21:59.902] [DEBUG] Executing command: pnpm config get minimumReleaseAge
+[14:22:00.011] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:00.011] [DEBUG] Project type detected: react
+[14:22:00.011] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:00.012] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:00.012] [INFO] Framework detected: react-vite
+[14:22:00.012] [DEBUG] Getting installed version for vitest...
+[14:22:00.012] [DEBUG] Executing command: pnpm list "vitest" --json --depth=99
+[14:22:00.150] [DEBUG] No installations found for vitest
+[14:22:00.150] [DEBUG] Getting installed version for msw...
+[14:22:00.150] [DEBUG] Executing command: pnpm list "msw" --json --depth=99
+[14:22:00.282] [DEBUG] No installations found for msw
+[14:22:00.283] [INFO] Storybook collects completely anonymous usage telemetry. We use it to shape Storybook's roadmap and prioritize features. You can learn more, including how to opt out, at https://storybook.js.org/telemetry
+[14:22:00.724] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:00.724] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:00.724] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:00.724] [INFO] - Configuring ESLint plugin
+[14:22:00.724] [DEBUG] Detected flat config at /Users/lauraneris/cre-ui-toolkit/eslint.config.js
+[14:22:00.750] [DEBUG] Using cached version for storybook...
+[14:22:00.750] [DEBUG] Getting CLI versions from NPM for @storybook/react-vite...
+[14:22:00.750] [DEBUG] Executing command: pnpm info @storybook/react-vite version
+[14:22:00.751] [DEBUG] Getting CLI versions from NPM for @chromatic-com/storybook...
+[14:22:00.751] [DEBUG] Executing command: pnpm info @chromatic-com/storybook version
+[14:22:00.752] [DEBUG] Getting CLI versions from NPM for @storybook/addon-vitest...
+[14:22:00.752] [DEBUG] Executing command: pnpm info @storybook/addon-vitest version
+[14:22:00.753] [DEBUG] Getting CLI versions from NPM for @storybook/addon-a11y...
+[14:22:00.753] [DEBUG] Executing command: pnpm info @storybook/addon-a11y version
+[14:22:00.754] [DEBUG] Getting CLI versions from NPM for @storybook/addon-docs...
+[14:22:00.754] [DEBUG] Executing command: pnpm info @storybook/addon-docs version
+[14:22:00.755] [DEBUG] Getting CLI versions from NPM for @storybook/addon-mcp...
+[14:22:00.755] [DEBUG] Executing command: pnpm info @storybook/addon-mcp version
+[14:22:00.757] [DEBUG] Getting CLI versions from NPM for eslint-plugin-storybook...
+[14:22:00.757] [DEBUG] Executing command: pnpm info eslint-plugin-storybook version
+[14:22:02.400] [INFO] - Configuring main.ts
+[14:22:02.401] [INFO] - Configuring preview.ts
+[14:22:02.401] [INFO] - Adding Storybook command to package.json
+[14:22:02.401] [DEBUG] Getting package.json info for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:02.401] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:02.401] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:02.401] [INFO] - Copying framework templates
+[14:22:02.416] [DEBUG] Executing command: npm config get registry -ws=false -iwr
+[14:22:02.602] [INFO] Storybook configuration generated
+[14:22:02.602] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:02.602] [DEBUG] Using cached installed version for vitest...
+[14:22:02.602] [DEBUG] Getting installed version for @vitest/coverage-v8...
+[14:22:02.602] [DEBUG] Executing command: pnpm list "@vitest/coverage-v8" --json --depth=99
+[14:22:02.738] [DEBUG] No installations found for @vitest/coverage-v8
+[14:22:02.738] [DEBUG] Getting installed version for @vitest/coverage-istanbul...
+[14:22:02.738] [DEBUG] Executing command: pnpm list "@vitest/coverage-istanbul" --json --depth=99
+[14:22:02.867] [DEBUG] No installations found for @vitest/coverage-istanbul
+[14:22:02.868] [INFO] Adding devDependencies:
+- storybook@^10.4.1
+- @storybook/react-vite@^10.4.1
+- @chromatic-com/storybook@^5.2.1
+- @storybook/addon-vitest@^10.4.1
+- @storybook/addon-a11y@^10.4.1
+- @storybook/addon-docs@^10.4.1
+- @storybook/addon-mcp@^0.6.0
+- eslint-plugin-storybook@^10.4.1
+- vitest
+- playwright
+- @vitest/browser-playwright
+- @vitest/coverage-v8
+[14:22:02.868] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:02.868] [DEBUG] Using cached version for storybook...
+[14:22:02.868] [DEBUG] Using cached version for @storybook/react-vite...
+[14:22:02.868] [DEBUG] Using cached version for @chromatic-com/storybook...
+[14:22:02.868] [DEBUG] Using cached version for @storybook/addon-vitest...
+[14:22:02.868] [DEBUG] Using cached version for @storybook/addon-a11y...
+[14:22:02.868] [DEBUG] Using cached version for @storybook/addon-docs...
+[14:22:02.868] [DEBUG] Using cached version for @storybook/addon-mcp...
+[14:22:02.868] [DEBUG] Using cached version for eslint-plugin-storybook...
+[14:22:02.868] [DEBUG] Getting CLI versions from NPM for vitest...
+[14:22:02.868] [DEBUG] Executing command: pnpm info vitest version
+[14:22:03.270] [DEBUG] Getting CLI versions from NPM for playwright...
+[14:22:03.270] [DEBUG] Executing command: pnpm info playwright version
+[14:22:04.442] [DEBUG] Getting CLI versions from NPM for @vitest/browser-playwright...
+[14:22:04.442] [DEBUG] Executing command: pnpm info @vitest/browser-playwright version
+[14:22:04.739] [DEBUG] Getting CLI versions from NPM for @vitest/coverage-v8...
+[14:22:04.739] [DEBUG] Executing command: pnpm info @vitest/coverage-v8 version
+[14:22:05.039] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:05.039] [INFO] Dependencies added to package.json
+[14:22:05.039] [INFO] Installing dependencies...
+[14:22:05.040] [INFO] Installing dependencies...
+[14:22:05.040] [DEBUG] Executing command: pnpm install
+[14:22:05.229] [INFO] Installing dependencies...: Progress: resolved 0, reused 1, downloaded 0, added 0
+
+[14:22:05.229] [INFO] Installing dependencies...: Progress: resolved 0, reu
+[14:22:06.230] [INFO] Installing dependencies...: Progress: resolved 28, reused 20, downloaded 8, added 0
+
+[14:22:06.230] [INFO] Installing dependencies...: Progress: resolved 28, re
+[14:22:07.230] [INFO] Installing dependencies...: Progress: resolved 230, reused 219, downloaded 10, added 0
+
+[14:22:07.230] [INFO] Installing dependencies...: Progress: resolved 230, r
+[14:22:08.230] [INFO] Installing dependencies...: Progress: resolved 268, reused 230, downloaded 27, added 0
+
+[14:22:08.230] [INFO] Installing dependencies...: Progress: resolved 268, r
+[14:22:09.231] [INFO] Installing dependencies...: Progress: resolved 329, reused 246, downloaded 56, added 0
+
+[14:22:09.231] [INFO] Installing dependencies...: Progress: resolved 329, r
+[14:22:10.231] [INFO] Installing dependencies...: Progress: resolved 442, reused 288, downloaded 65, added 0
+
+[14:22:10.231] [INFO] Installing dependencies...: Progress: resolved 442, r
+[14:22:11.231] [INFO] Installing dependencies...: Progress: resolved 465, reused 295, downloaded 80, added 0
+
+[14:22:11.231] [INFO] Installing dependencies...: Progress: resolved 465, r
+[14:22:12.232] [INFO] Installing dependencies...: Progress: resolved 475, reused 305, downloaded 83, added 0
+
+[14:22:12.232] [INFO] Installing dependencies...: Progress: resolved 475, r
+[14:22:13.002] [INFO] Installing dependencies...: Packages: +169 -2
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+
+[14:22:13.002] [INFO] Installing dependencies...: Packages: +169 -2
++++++++
+[14:22:13.173] [INFO] Installing dependencies...: Progress: resolved 476, reused 306, downloaded 83, added 169, done
+
+[14:22:13.173] [INFO] Installing dependencies...: Progress: resolved 476, r
+[14:22:13.263] [INFO] Installing dependencies...:  WARN  Issues with peer dependencies found
+.
+└─┬ @storybook/addon-mcp 0.6.0
+  └─┬ @tmcp/adapter-valibot 0.1.6
+    └─┬ @valibot/to-json-schema 1.7.0
+      └── ✕ unmet peer valibot@^1.4.0: found 1.2.0
+
+[14:22:13.263] [INFO] Installing dependencies...: WARN  Issues with peer de
+[14:22:13.264] [INFO] Installing dependencies...: 
+devDependencies:
++ @chromatic-com/storybook 5.2.1
++ @storybook/addon-a11y 10.4.1
++ @storybook/addon-docs 10.4.1
++ @storybook/addon-mcp 0.6.0
++ @storybook/addon-vitest 10.4.1
++ @storybook/react-vite 10.4.1
++ @vitest/browser-playwright 4.1.7
++ @vitest/coverage-v8 4.1.7
++ eslint-plugin-storybook 10.4.1
++ playwright 1.60.0
++ storybook 10.4.1
++ vitest 4.1.7
+
+
+[14:22:13.264] [INFO] Installing dependencies...: devDependencies:
++ @chrom
+[14:22:13.265] [INFO] Installing dependencies...: ╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild@0.27.7.                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+[14:22:13.265] [INFO] Installing dependencies...: ╭ Warning ───────────────
+[14:22:13.272] [INFO] Installing dependencies...: Done in 8.2s using pnpm v10.28.2
+
+[14:22:13.272] [INFO] Installing dependencies...: Done in 8.2s using pnpm v
+[14:22:13.286] [INFO] Dependencies installed
+[14:22:13.287] [INFO] Dependencies installed
+[14:22:13.288] [INFO] Configuring @chromatic-com/storybook...
+[14:22:13.288] [INFO] @chromatic-com/storybook configured
+
+[14:22:13.288] [INFO] Configuring @storybook/addon-vitest...
+[14:22:13.289] [DEBUG] Getting package.json info for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:13.289] [DEBUG] Using cached package.json for /Users/lauraneris/cre-ui-toolkit/package.json...
+[14:22:13.289] [DEBUG] Getting installed version for vitest...
+[14:22:13.289] [DEBUG] Executing command: pnpm list "vitest" --json --depth=99
+[14:22:13.442] [DEBUG] Installed version for vitest: 4.1.7
+[14:22:13.442] [DEBUG] Vitest version specifier: 4.1.7
+[14:22:13.502] [DEBUG] Using cached installed version for vitest...
+[14:22:13.502] [DEBUG] Getting installed version for msw...
+[14:22:13.502] [DEBUG] Executing command: pnpm list "msw" --json --depth=99
+[14:22:13.653] [DEBUG] No installations found for msw
+[14:22:13.660] [INFO] Updating your Vite config file:
+[14:22:13.660] [INFO]   /Users/lauraneris/cre-ui-toolkit/vite.config.ts
+[14:22:13.664] [INFO] Setting up a11y addon for @storybook/addon-vitest
+[14:22:13.664] [INFO] Setting up a11y addon for @storybook/addon-vitest
+[14:22:13.664] [DEBUG] Executing command: pnpm dlx storybook@10.4.1 automigrate addon-a11y-addon-test --loglevel silent --yes --skip-doctor --package-manager pnpm --skip-install
+[14:22:23.456] [INFO] a11y addon setup successfully
+[14:22:23.457] [INFO] a11y addon setup successfully
+[14:22:23.457] [INFO] @storybook/addon-vitest setup completed successfully
+[14:22:23.457] [INFO] @storybook/addon-vitest is now configured and you're ready to run your tests!
+Here are a couple of tips to get you started:
+
+• You can run tests with "npx vitest --project=storybook"
+• Vitest IDE extension shows all stories as tests in your editor!
+
+Check the documentation for more information about its features and options at:
+https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
+[14:22:23.459] [INFO] @storybook/addon-vitest configured
+
+[14:22:23.459] [INFO] Configuring @storybook/addon-a11y...
+[14:22:23.459] [DEBUG] Executing command: pnpm dlx storybook@10.4.1 automigrate addon-a11y-addon-test --loglevel silent --skip-doctor --yes --package-manager pnpm --config-dir .storybook
+[14:22:25.479] [INFO] @storybook/addon-a11y configured
+
+[14:22:25.479] [INFO] Configuring @storybook/addon-docs...
+[14:22:25.480] [INFO] @storybook/addon-docs configured
+
+[14:22:25.480] [INFO] Configuring @storybook/addon-mcp...
+[14:22:25.481] [INFO] @storybook/addon-mcp configured
+
+[14:22:25.481] [INFO] Addons configured successfully
+[14:22:25.481] [INFO] ✅ @chromatic-com/storybook
+[14:22:25.481] [INFO] ✅ @storybook/addon-vitest
+[14:22:25.481] [INFO] ✅ @storybook/addon-a11y
+[14:22:25.481] [INFO] ✅ @storybook/addon-docs
+[14:22:25.481] [INFO] ✅ @storybook/addon-mcp
+[14:22:25.481] [INFO] Installing Playwright browser binaries (press "c" to abort)
+[14:22:25.481] [INFO] Installing Playwright browser binaries (press "c" to abort)
+[14:22:25.481] [DEBUG] Executing command: pnpm exec playwright install chromium --with-deps
+[14:22:26.085] [INFO] Installing Playwright browser binaries (press "c" to abort): Downloading Chrome for Testing 148.0.7778.96 (playwright chromium v1223) from https://cdn.playwright.dev/builds/cft/148.0.7778.96/mac-arm64/chrome-mac-arm64.zip
+
+[14:22:26.085] [INFO] Installing Playwright browser binaries (press "c" to abort): Downloading Chrome for Te
+[14:22:26.859] [INFO] Installing Playwright browser binaries (press "c" to abort): |                                                                                |   0% of 169.2 MiB
+
+[14:22:26.859] [INFO] Installing Playwright browser binaries (press "c" to abort): |                        
+[14:22:30.282] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■                                                                        |  10% of 169.2 MiB
+
+[14:22:30.282] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■                
+[14:22:33.110] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■                                                                |  20% of 169.2 MiB
+
+[14:22:33.110] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■        
+[14:22:36.029] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 169.2 MiB
+
+[14:22:36.029] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:22:39.153] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 169.2 MiB
+
+[14:22:39.153] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:22:42.358] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 169.2 MiB
+
+[14:22:42.358] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:22:46.213] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 169.2 MiB
+
+[14:22:46.213] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:22:49.964] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 169.2 MiB
+
+[14:22:49.964] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:22:52.945] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 169.2 MiB
+
+[14:22:52.945] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:22:56.909] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 169.2 MiB
+
+[14:22:56.909] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:01.311] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 169.2 MiB
+
+[14:23:01.311] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:02.552] [INFO] Installing Playwright browser binaries (press "c" to abort): Chrome for Testing 148.0.7778.96 (playwright chromium v1223) downloaded to /Users/lauraneris/Library/Caches/ms-playwright/chromium-1223
+
+[14:23:02.552] [INFO] Installing Playwright browser binaries (press "c" to abort): Chrome for Testing 148.0.
+[14:23:02.552] [INFO] Installing Playwright browser binaries (press "c" to abort): Downloading FFmpeg (playwright ffmpeg v1011) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-mac-arm64.zip
+
+[14:23:02.552] [INFO] Installing Playwright browser binaries (press "c" to abort): Downloading FFmpeg (playw
+[14:23:02.999] [INFO] Installing Playwright browser binaries (press "c" to abort): |                                                                                |   1% of 1 MiB
+
+[14:23:02.999] [INFO] Installing Playwright browser binaries (press "c" to abort): |                        
+[14:23:03.040] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■                                                                        |  10% of 1 MiB
+
+[14:23:03.040] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■                
+[14:23:03.071] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■                                                                |  20% of 1 MiB
+
+[14:23:03.071] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■        
+[14:23:03.100] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 1 MiB
+
+[14:23:03.100] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:03.132] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  41% of 1 MiB
+
+[14:23:03.132] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:03.176] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 1 MiB
+
+[14:23:03.176] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:03.229] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 1 MiB
+
+[14:23:03.229] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:03.261] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  71% of 1 MiB
+
+[14:23:03.261] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:03.288] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  81% of 1 MiB
+
+[14:23:03.288] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:03.348] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 1 MiB
+
+[14:23:03.348] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:03.379] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 1 MiB
+
+[14:23:03.379] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:03.421] [INFO] Installing Playwright browser binaries (press "c" to abort): FFmpeg (playwright ffmpeg v1011) downloaded to /Users/lauraneris/Library/Caches/ms-playwright/ffmpeg-1011
+
+[14:23:03.421] [INFO] Installing Playwright browser binaries (press "c" to abort): FFmpeg (playwright ffmpeg
+[14:23:03.421] [INFO] Installing Playwright browser binaries (press "c" to abort): Downloading Chrome Headless Shell 148.0.7778.96 (playwright chromium-headless-shell v1223) from https://cdn.playwright.dev/builds/cft/148.0.7778.96/mac-arm64/chrome-headless-shell-mac-arm64.zip
+
+[14:23:03.421] [INFO] Installing Playwright browser binaries (press "c" to abort): Downloading Chrome Headle
+[14:23:03.978] [INFO] Installing Playwright browser binaries (press "c" to abort): |                                                                                |   0% of 92.4 MiB
+
+[14:23:03.978] [INFO] Installing Playwright browser binaries (press "c" to abort): |                        
+[14:23:07.200] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■                                                                        |  10% of 92.4 MiB
+
+[14:23:07.200] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■                
+[14:23:09.455] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■                                                                |  20% of 92.4 MiB
+
+[14:23:09.455] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■        
+[14:23:12.154] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 92.4 MiB
+
+[14:23:12.154] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:14.874] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 92.4 MiB
+
+[14:23:14.874] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:17.604] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 92.4 MiB
+
+[14:23:17.604] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:20.165] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 92.4 MiB
+
+[14:23:20.165] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:22.926] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 92.4 MiB
+
+[14:23:22.926] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:25.446] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 92.4 MiB
+
+[14:23:25.446] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:27.491] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 92.4 MiB
+
+[14:23:27.491] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:29.415] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 92.4 MiB
+
+[14:23:29.415] [INFO] Installing Playwright browser binaries (press "c" to abort): |■■■■■■■■■■■■■■■■■■■■■■■■
+[14:23:30.111] [INFO] Installing Playwright browser binaries (press "c" to abort): Chrome Headless Shell 148.0.7778.96 (playwright chromium-headless-shell v1223) downloaded to /Users/lauraneris/Library/Caches/ms-playwright/chromium_headless_shell-1223
+
+[14:23:30.111] [INFO] Installing Playwright browser binaries (press "c" to abort): Chrome Headless Shell 148
+[14:23:30.121] [INFO] Playwright browser binaries installed successfully
+[14:23:30.121] [INFO] Playwright browser binaries installed successfully
+[14:23:31.136] [INFO] [38;2;255;71;133mStorybook is installed but is not entirely set up yet.
+To finish setting up, now run `npx storybook ai setup` and follow its instructions precisely.[39m
+[14:23:31.137] [INFO] To run Storybook, run pnpm run storybook. CTRL+C to stop.
+[14:23:31.139] [INFO] Official documentation reference: https://storybook.js.org/llms.txt
+[14:23:31.139] [INFO] To finalize setting up with AI, paste this prompt to your AI agent:
+
+[38;2;255;71;133mRun `npx storybook ai setup` and follow its instructions precisely.[39m
+[14:23:31.505] [INFO] 
