@@ -10,8 +10,15 @@ import { cn } from '../../utils/cn'
  * sunken      → área rebaixada, fundo levemente acinzentado. Para áreas de input.
  * interactive → clicável, com hover e focus visíveis. Para itens de lista e tiles.
  *
- * ⚠️  Tokens de cor, sombra e radius precisam ser validados com o Figma > Tokens.
- *     Os valores atuais são provisórios, baseados no neutral/400 = #B5A8AD confirmado.
+ * Tokens aplicados (fonte: Figma DS PUCPR Core Web — Foundation > Tokens, 22/08/2025):
+ *   border-width-small  = 1px  (separar elementos de background)
+ *   border-width-medium = 2px  (hover e pressed)
+ *   border-width-large  = 3px  (foco)
+ *   border-radius-small  = 12px
+ *   border-radius-medium = 16px
+ *   border-radius-xlarge = 24px
+ *
+ * ⚠️  Tokens pendentes de confirmação: cor de borda (neutral palette), sombras.
  */
 export type SurfaceVariant =
   | 'default'
@@ -21,45 +28,46 @@ export type SurfaceVariant =
   | 'interactive'
 
 const variantClasses: Record<SurfaceVariant, string> = {
-  // Área base: borda sutil, sem sombra, fundo branco
+  // border-radius-small (12px) | border-width-small (1px)
   default: [
     'bg-white',
-    'border border-[#B5A8AD]/50', // neutral/400 com 50% opacidade
-    'rounded-lg',                  // ⚠️ radius provisório — validar Figma > Tokens
+    'border-small border-[#B5A8AD]/50',
+    'rounded-small',
   ].join(' '),
 
-  // Card elevado: sombra leve
+  // border-radius-small (12px) | border-width-small (1px) | sombra leve
+  // ⚠️ shadow: aguardando token oficial do Figma > Estilos de efeito > Shadow
   raised: [
     'bg-white',
-    'border border-[#B5A8AD]/30',
-    'rounded-lg',
-    'shadow-md',                   // ⚠️ shadow provisório — validar Figma > Tokens
+    'border-small border-[#B5A8AD]/30',
+    'rounded-small',
+    'shadow-md',
   ].join(' '),
 
-  // Overlay (Modal, Drawer): sombra forte
+  // border-radius-medium (16px) | border-width-small (1px) | sombra forte
   overlay: [
     'bg-white',
-    'border border-[#B5A8AD]/20',
-    'rounded-xl',
+    'border-small border-[#B5A8AD]/20',
+    'rounded-medium',
     'shadow-2xl',
   ].join(' '),
 
-  // Rebaixada (inputs, áreas de destaque interno): fundo acinzentado
+  // border-radius-small (12px) | fundo rebaixado
   sunken: [
     'bg-gray-50',
-    'border border-[#B5A8AD]/60',
-    'rounded-lg',
+    'border-small border-[#B5A8AD]/60',
+    'rounded-small',
   ].join(' '),
 
-  // Interativa (lista, tile clicável): reage ao hover e focus
+  // border-radius-small (12px) | hover: border-width-medium (2px) | focus: border-width-large (3px)
   interactive: [
     'bg-white',
-    'border border-[#B5A8AD]/50',
-    'rounded-lg',
+    'border-small border-[#B5A8AD]/50',
+    'rounded-small',
     'cursor-pointer',
     'transition-all duration-150',
-    'hover:shadow-md hover:border-[#B5A8AD]',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B1234]/50',
+    'hover:border-medium hover:border-[#B5A8AD] hover:shadow-md',
+    'focus-visible:outline-none focus-visible:ring-large focus-visible:ring-[#7B1234]/50',
     'active:shadow-sm active:scale-[0.99]',
   ].join(' '),
 }

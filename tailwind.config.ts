@@ -26,8 +26,32 @@ const config: Config = {
         'container-xl':   '1440px',
         'container-wide': '1920px',
       },
+
+      // ─── Border Width ──────────────────────────────────────────────
+      // Fonte: Figma DS PUCPR Core Web — Foundation > Tokens > Width (22/08/2025)
+      borderWidth: {
+        'small':  '1px',  // separar elementos de background
+        'medium': '2px',  // hover e pressed
+        'large':  '3px',  // foco
+        'xlarge': '4px',
+      },
+
+      // ─── Border Radius ─────────────────────────────────────────────
+      // Fonte: Figma DS PUCPR Core Web — Foundation > Tokens > Radius (22/08/2025)
+      borderRadius: {
+        'null':    '0px',
+        'xxsmall': '4px',
+        'xsmall':  '8px',
+        'small':   '12px',
+        'medium':  '16px',
+        'large':   '20px',
+        'xlarge':  '24px',
+        'full':    '50%',
+        'pill':    '9999px',
+      },
+
       colors: {
-        // ⚠️ Placeholder — confirmar hex exato na página Tokens do Figma
+        // ⚠️ Placeholders — aguardando zoom na tabela Brand do Figma
         brand: {
           DEFAULT: '#7B1234',
         },
