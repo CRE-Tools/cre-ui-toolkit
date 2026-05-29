@@ -8,7 +8,7 @@ import { Badge } from '../Badge/Badge'
 import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Navigation/Sidebar',
+  title: 'Blocks/Sidebar',
   component: Sidebar,
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },

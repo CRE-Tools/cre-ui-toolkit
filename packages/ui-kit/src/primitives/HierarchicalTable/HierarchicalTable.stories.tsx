@@ -3,7 +3,7 @@ import { HierarchicalTable } from './HierarchicalTable'
 import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Data/HierarchicalTable',
+  title: 'Blocks/HierarchicalTable',
   component: HierarchicalTable,
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },

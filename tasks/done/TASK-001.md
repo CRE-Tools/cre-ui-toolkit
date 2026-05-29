@@ -1,7 +1,7 @@
 ---
 id: TASK-001
 title: Fix Storybook story categories — replace Admin/ with Blocks/
-status: pending
+status: done
 model: cheap
 model-name: SWE-1.6
 context:

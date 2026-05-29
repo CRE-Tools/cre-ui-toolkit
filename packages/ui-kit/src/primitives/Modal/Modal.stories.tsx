@@ -7,7 +7,7 @@ import { Alert } from '../Alert/Alert'
 import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Feedback/Modal',
+  title: 'Blocks/Modal',
   component: Modal,
   tags: ['autodocs'],
   parameters: {

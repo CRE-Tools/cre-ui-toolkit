@@ -9,7 +9,7 @@ import { Button } from '../Button/Button'
 import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Data/Table',
+  title: 'Blocks/Table',
   component: DataTable,
   tags: ['autodocs'],
 } satisfies Meta<typeof DataTable>
