@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Badge } from './Badge'
-import { PendingReview } from '../../storybook/PendingReview'
+import { Badge } from '@cre/ui-kit'
+import { PendingReview } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Components/Badge',
@@ -118,7 +118,7 @@ export const InContext: Story = {
 
 // ─── Pending Review ──────────────────────────────────────────────────────────
 
-export const PendingReviewStory: Story = {
+export const PendingReviewStory: Omit<Story, 'args'> = {
   name: 'Pending Review',
   tags: ['pending-review'],
   parameters: { layout: 'padded' },

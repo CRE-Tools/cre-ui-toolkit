@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Container } from '../Container'
-import { Grid } from './Grid'
-import { GridItem } from './GridItem'
-import { PendingReview } from '../../storybook/PendingReview'
+import { Container, Grid, GridItem } from '@cre/ui-kit'
+import { PendingReview } from '@cre/storybook-utils'
 
 const meta: Meta<typeof Grid> = {
   title: 'Layout/Grid',
@@ -25,7 +23,7 @@ function Card({ label }: { label: string }) {
 }
 
 // Grid padrão PUCPR: 4 cols (xs) → 8 cols (sm) → 12 cols (md+)
-export const GridPUCPR: Story = {
+export const GridPUCPR: Omit<Story, 'args'> = {
   name: 'Grid PUCPR — 4 / 8 / 12 colunas',
   render: () => (
     <Container>
@@ -39,7 +37,7 @@ export const GridPUCPR: Story = {
 }
 
 // Três cards por linha em md+
-export const TresCards: Story = {
+export const TresCards: Omit<Story, 'args'> = {
   name: '3 Cards por linha (md+)',
   render: () => (
     <Container>
@@ -55,7 +53,7 @@ export const TresCards: Story = {
 }
 
 // Dois cards por linha em md+
-export const DoisCards: Story = {
+export const DoisCards: Omit<Story, 'args'> = {
   name: '2 Cards por linha (md+)',
   render: () => (
     <Container>
@@ -71,7 +69,7 @@ export const DoisCards: Story = {
 }
 
 // Layout de página: sidebar + conteúdo principal
-export const SidebarLayout: Story = {
+export const SidebarLayout: Omit<Story, 'args'> = {
   name: 'Layout Sidebar + Conteúdo',
   render: () => (
     <Container>
@@ -92,7 +90,7 @@ export const SidebarLayout: Story = {
 }
 
 // Item que ocupa a largura total
-export const ItemFull: Story = {
+export const ItemFull: Omit<Story, 'args'> = {
   name: 'Item full width + colunas',
   render: () => (
     <Container>

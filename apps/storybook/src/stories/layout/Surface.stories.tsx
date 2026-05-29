@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Surface } from './Surface'
-import { PendingReview } from '../../storybook/PendingReview'
+import { Surface } from '@cre/ui-kit'
+import { PendingReview } from '@cre/storybook-utils'
 
 const meta: Meta<typeof Surface> = {
   title: 'Surfaces/Surface',
@@ -156,7 +156,7 @@ const descriptions: Record<string, string> = {
 
 // ─── Pending Review ──────────────────────────────────────────────────────────
 
-export const PendingReviewStory: Story = {
+export const PendingReviewStory: Omit<Story, 'args'> = {
   name: 'Pending Review',
   tags: ['pending-review'],
   parameters: { layout: 'padded' },

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Stack } from './Stack'
-import { PendingReview } from '../../storybook/PendingReview'
+import { Stack } from '@cre/ui-kit'
+import { PendingReview } from '@cre/storybook-utils'
 
 const meta: Meta<typeof Stack> = {
   title: 'Layout/Stack',
@@ -143,7 +143,7 @@ export const ComQuebra: Story = {
 
 // ─── Pending Review ──────────────────────────────────────────────────────────
 
-export const PendingReviewStory: Story = {
+export const PendingReviewStory: Omit<Story, 'args'> = {
   name: 'Pending Review',
   tags: ['pending-review'],
   parameters: { layout: 'padded' },

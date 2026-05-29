@@ -2,10 +2,9 @@ import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import {
   Sidebar, SidebarHeader, SidebarNav, SidebarGroup,
-  SidebarItem, SidebarDivider, SidebarFooter,
-} from './Sidebar'
-import { Badge } from '../Badge/Badge'
-import { PendingReview } from '../../storybook/PendingReview'
+  SidebarItem, SidebarDivider, SidebarFooter, Badge,
+} from '@cre/ui-kit'
+import { PendingReview } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Blocks/Sidebar',
@@ -67,7 +66,7 @@ const icons = {
 
 // ─── Stories ─────────────────────────────────────────────────────────────────
 
-export const Default: Story = {
+export const Default: Omit<Story, 'args'> = {
   render: () => (
     <div className="h-screen flex">
       <Sidebar>
@@ -119,7 +118,7 @@ export const Default: Story = {
   ),
 }
 
-export const Colapsada: Story = {
+export const Colapsada: Omit<Story, 'args'> = {
   name: 'Colapsável',
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -158,7 +157,7 @@ export const Colapsada: Story = {
   },
 }
 
-export const ComBadges: Story = {
+export const ComBadges: Omit<Story, 'args'> = {
   name: 'Com badges de notificação',
   render: () => (
     <div className="h-64 flex">
@@ -176,7 +175,7 @@ export const ComBadges: Story = {
 
 // ─── Pending Review ──────────────────────────────────────────────────────────
 
-export const PendingReviewStory: Story = {
+export const PendingReviewStory: Omit<Story, 'args'> = {
   name: 'Pending Review',
   tags: ['pending-review'],
   parameters: { layout: 'padded' },

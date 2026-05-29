@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { HierarchicalTable } from './HierarchicalTable'
-import { PendingReview } from '../../storybook/PendingReview'
+import { HierarchicalTable } from '@cre/ui-kit'
+import { PendingReview } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Blocks/HierarchicalTable',
@@ -107,7 +107,7 @@ export const ColunasPlanas: Story = {
 
 // ─── Pending Review ──────────────────────────────────────────────────────────
 
-export const PendingReviewStory: Story = {
+export const PendingReviewStory: Omit<Story, 'args'> = {
   name: 'Pending Review',
   tags: ['pending-review'],
   parameters: { layout: 'padded' },

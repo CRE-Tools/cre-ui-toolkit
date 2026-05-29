@@ -1,7 +1,7 @@
 ---
 id: TASK-002
 title: Extract storybook dev utilities out of packages/ui-kit
-status: pending
+status: done
 model: medium
 model-name: GPT-5.2
 context:
@@ -26,16 +26,16 @@ This task addresses both issues:
 
 ## Acceptance Criteria
 
-- [ ] `packages/storybook-utils/` exists with a valid `package.json` (`name: "@cre/storybook-utils"`, `private: true`) and `src/index.ts` that exports `PendingReview`
-- [ ] `PendingReview.tsx` is moved to `packages/storybook-utils/src/PendingReview.tsx` with no changes to its interface or behavior
-- [ ] `packages/ui-kit/src/storybook/` folder is deleted
-- [ ] All `*.stories.tsx` files in `packages/ui-kit/` import `PendingReview` from `@cre/storybook-utils`
-- [ ] `@cre/storybook-utils` is listed as a devDependency in `packages/ui-kit/package.json`
-- [ ] `@cre/storybook-utils` is listed as a devDependency in `apps/storybook/package.json`
-- [ ] `apps/storybook/.storybook/preview.tsx` imports `globals.css` from `@cre/ui-kit/src/styles/globals.css` (workspace path) instead of `../src/styles/globals.css`
-- [ ] `apps/storybook/src/styles/globals.css` is deleted
-- [ ] Storybook builds and runs without errors
-- [ ] TypeScript compiles without errors in all packages
+- [x] `packages/storybook-utils/` exists with a valid `package.json` (`name: "@cre/storybook-utils"`, `private: true`) and `src/index.ts` that exports `PendingReview`
+- [x] `PendingReview.tsx` is moved to `packages/storybook-utils/src/PendingReview.tsx` with no changes to its interface or behavior
+- [x] `packages/ui-kit/src/storybook/` folder is deleted
+- [x] All `*.stories.tsx` files in `packages/ui-kit/` import `PendingReview` from `@cre/storybook-utils`
+- [x] `@cre/storybook-utils` is listed as a devDependency in `packages/ui-kit/package.json`
+- [x] `@cre/storybook-utils` is listed as a devDependency in `apps/storybook/package.json`
+- [x] `apps/storybook/.storybook/preview.tsx` imports `globals.css` from `@cre/ui-kit/src/styles/globals.css` (workspace path) instead of `../src/styles/globals.css`
+- [x] `apps/storybook/src/styles/globals.css` is deleted
+- [x] Storybook builds and runs without errors
+- [x] TypeScript compiles without errors in all packages
 
 ## Relevant Data
 

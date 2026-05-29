@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Alert } from './Alert'
-import { Button } from '../Button/Button'
-import { PendingReview } from '../../storybook/PendingReview'
+import { Alert, Button } from '@cre/ui-kit'
+import { PendingReview } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Feedback/Alert',
@@ -109,7 +108,7 @@ export const SemIcone: Story = {
 
 // ─── Pending Review ──────────────────────────────────────────────────────────
 
-export const PendingReviewStory: Story = {
+export const PendingReviewStory: Omit<Story, 'args'> = {
   name: 'Pending Review',
   tags: ['pending-review'],
   parameters: { layout: 'padded' },

@@ -1,10 +1,8 @@
 import { useState } from 'react'
+import type React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Modal, ConfirmModal } from './Modal'
-import { Button } from '../Button/Button'
-import { Input } from '../Input/Input'
-import { Alert } from '../Alert/Alert'
-import { PendingReview } from '../../storybook/PendingReview'
+import { Modal, ConfirmModal, Button, Input, Alert } from '@cre/ui-kit'
+import { PendingReview } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Blocks/Modal',
@@ -34,7 +32,7 @@ function ModalDemo({ children, label = 'Abrir modal', ...props }: Omit<React.Com
 
 // ─── Stories ─────────────────────────────────────────────────────────────────
 
-export const Default: Story = {
+export const Default: Omit<Story, 'args'> = {
   render: () => (
     <ModalDemo
       label="Ver detalhes"
@@ -54,7 +52,7 @@ export const Default: Story = {
   ),
 }
 
-export const ComFormulario: Story = {
+export const ComFormulario: Omit<Story, 'args'> = {
   name: 'Com formulário',
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -85,7 +83,7 @@ export const ComFormulario: Story = {
   },
 }
 
-export const Confirmacao: Story = {
+export const Confirmacao: Omit<Story, 'args'> = {
   name: 'Confirmação simples',
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -107,7 +105,7 @@ export const Confirmacao: Story = {
   },
 }
 
-export const ConfirmacaoDestructiva: Story = {
+export const ConfirmacaoDestructiva: Omit<Story, 'args'> = {
   name: 'Confirmação destrutiva',
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -139,7 +137,7 @@ export const ConfirmacaoDestructiva: Story = {
   },
 }
 
-export const ComAlerta: Story = {
+export const ComAlerta: Omit<Story, 'args'> = {
   name: 'Com alerta interno',
   render: () => (
     <ModalDemo
@@ -165,7 +163,7 @@ export const ComAlerta: Story = {
   ),
 }
 
-export const Tamanhos: Story = {
+export const Tamanhos: Omit<Story, 'args'> = {
   render: () => (
     <div className="flex gap-3 flex-wrap">
       {(['sm', 'md', 'lg'] as const).map((size) => (
@@ -187,7 +185,7 @@ export const Tamanhos: Story = {
 
 // ─── Pending Review ──────────────────────────────────────────────────────────
 
-export const PendingReviewStory: Story = {
+export const PendingReviewStory: Omit<Story, 'args'> = {
   name: 'Pending Review',
   tags: ['pending-review'],
   parameters: { layout: 'padded' },

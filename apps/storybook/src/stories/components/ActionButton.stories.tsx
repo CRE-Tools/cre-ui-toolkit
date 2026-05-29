@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ActionButton, ActionGroup } from './ActionButton'
-import { DataTable, type ColumnDef } from '../Table/Table'
-import { PendingReview } from '../../storybook/PendingReview'
+import { ActionButton, ActionGroup, DataTable, type ColumnDef } from '@cre/ui-kit'
+import { PendingReview } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Components/ActionButton',
@@ -94,7 +93,7 @@ export const InContext: Story = {
 
 // ─── Pending Review ──────────────────────────────────────────────────────────
 
-export const PendingReviewStory: Story = {
+export const PendingReviewStory: Omit<Story, 'args'> = {
   name: 'Pending Review',
   tags: ['pending-review'],
   parameters: { layout: 'padded' },

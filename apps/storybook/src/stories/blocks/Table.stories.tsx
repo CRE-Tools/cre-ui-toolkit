@@ -3,10 +3,9 @@ import type { Meta, StoryObj } from '@storybook/react'
 import {
   Table, TableHead, TableBody, TableRow, TableTh, TableTd,
   TableEmpty, TableSkeleton, DataTable, type ColumnDef,
-} from './Table'
-import { Badge } from '../Badge/Badge'
-import { Button } from '../Button/Button'
-import { PendingReview } from '../../storybook/PendingReview'
+  Badge, Button,
+} from '@cre/ui-kit'
+import { PendingReview } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Blocks/Table',
@@ -58,15 +57,15 @@ const columns: ColumnDef<User>[] = [
 
 // ─── Stories ─────────────────────────────────────────────────────────────────
 
-export const Default: Story = {
+export const Default: Omit<Story, 'args'> = {
   render: () => <DataTable columns={columns} data={users} />,
 }
 
-export const Loading: Story = {
+export const Loading: Omit<Story, 'args'> = {
   render: () => <DataTable columns={columns} data={[]} loading />,
 }
 
-export const Empty: Story = {
+export const Empty: Omit<Story, 'args'> = {
   render: () => (
     <DataTable
       columns={columns}
@@ -76,7 +75,7 @@ export const Empty: Story = {
   ),
 }
 
-export const Clickable: Story = {
+export const Clickable: Omit<Story, 'args'> = {
   name: 'Linhas clicáveis',
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -98,7 +97,7 @@ export const Clickable: Story = {
   },
 }
 
-export const WithSort: Story = {
+export const WithSort: Omit<Story, 'args'> = {
   name: 'Com ordenação',
   render: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -134,7 +133,7 @@ export const WithSort: Story = {
 }
 
 // Story com os primitivos composicionais (uso avançado)
-export const Composicional: Story = {
+export const Composicional: Omit<Story, 'args'> = {
   name: 'Uso composicional (primitivos)',
   render: () => (
     <Table>
@@ -173,7 +172,7 @@ export const Composicional: Story = {
 
 // ─── Pending Review ──────────────────────────────────────────────────────────
 
-export const PendingReviewStory: Story = {
+export const PendingReviewStory: Omit<Story, 'args'> = {
   name: 'Pending Review',
   tags: ['pending-review'],
   parameters: { layout: 'padded' },

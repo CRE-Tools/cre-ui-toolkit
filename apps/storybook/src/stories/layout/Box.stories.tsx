@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Box } from './Box'
-import { Stack } from '../Stack'
-import { Surface } from '../Surface'
-import { PendingReview } from '../../storybook/PendingReview'
+import { Box, Stack, Surface } from '@cre/ui-kit'
+import { PendingReview } from '@cre/storybook-utils'
 
 const meta: Meta<typeof Box> = {
   title: 'Layout/Box',
@@ -154,7 +152,7 @@ export const ComposicaoCompleta: Story = {
 
 // ─── Pending Review ──────────────────────────────────────────────────────────
 
-export const PendingReviewStory: Story = {
+export const PendingReviewStory: Omit<Story, 'args'> = {
   name: 'Pending Review',
   tags: ['pending-review'],
   parameters: { layout: 'padded' },
