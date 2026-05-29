@@ -23,16 +23,20 @@ The stories file is always named `<ComponentName>.stories.tsx` and lives in the 
 
 ## Category (title) conventions
 
-The `title` in the meta object determines the sidebar category in Storybook. Use exactly these categories:
+The `title` in the meta object determines the sidebar category in Storybook. Use exactly these categories, which map 1:1 to the design system glossary (see `docs/context/design-system-decisions.md`):
 
 | Category | What goes here |
 |---|---|
-| `Layout/<Name>` | Spatial/layout primitives: Grid, Container, Box, Stack, Surface |
-| `Components/<Name>` | Interactive or display components: Button, Badge, Alert, Input |
-| `Admin/<Name>` | Components built for internal admin panel use: Table, Modal, Sidebar, HierarchicalTable |
-| `Foundation/<Name>` | Pure design token demonstrations (no interactive component) |
+| `Layout/<Name>` | Spatial/structural primitives: Grid, Container, Box, Stack, Surface |
+| `Components/<Name>` | Interactive and display components: Button, Badge, Alert, Input, ActionButton |
+| `Blocks/<Name>` | Complex multi-component blocks: Modal, Sidebar, Table, HierarchicalTable |
+| `Foundation/<Name>` | Token demonstrations only — no interactive component |
 
-When in doubt, prefer `Components`. Reserve `Admin` for anything explicitly scoped to the admin panel use case. Never nest deeper than one level (no `Components/Forms/Input`).
+**`Admin/` is not a valid category.** It names things by use context (admin panel) rather than by structural role, which conflicts with the design team's semantic naming decision. Modal, Sidebar, and Table are `Blocks` regardless of which app they appear in.
+
+When in doubt between `Components` and `Blocks`: if the thing is made of multiple sub-components and wraps a complete interaction, it's a `Block`. If it's a single interactive or display unit, it's a `Component`.
+
+Never nest deeper than one level (`Components/Button`, not `Components/Forms/Button`).
 
 ---
 
