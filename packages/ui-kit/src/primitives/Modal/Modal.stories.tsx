@@ -4,9 +4,10 @@ import { Modal, ConfirmModal } from './Modal'
 import { Button } from '../Button/Button'
 import { Input } from '../Input/Input'
 import { Alert } from '../Alert/Alert'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Primitives/Modal',
+  title: 'Feedback/Modal',
   component: Modal,
   tags: ['autodocs'],
   parameters: {
@@ -181,5 +182,26 @@ export const Tamanhos: Story = {
         </ModalDemo>
       ))}
     </div>
+  ),
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Modal"
+      items={[
+          'Confirm border-radius-medium (16px) for modal panel',
+          'Validate backdrop blur and opacity with design team',
+          'Review close button placement and sizing',
+          'Confirm shadow-level-3 is appropriate for overlay elevation',
+          'Check danger variant header color against destructive palette',
+          'Validate footer button layout (right-aligned, gap-3)',
+      ]}
+    />
   ),
 }

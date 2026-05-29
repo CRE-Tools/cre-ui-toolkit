@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Alert } from './Alert'
 import { Button } from '../Button/Button'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Primitives/Alert',
+  title: 'Feedback/Alert',
   component: Alert,
   tags: ['autodocs'],
   args: {
@@ -104,4 +105,24 @@ export const SemIcone: Story = {
     children: 'Alerta sem ícone lateral.',
     hideIcon: true,
   },
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Alert"
+        notes="Colors are approximated from PUCPR Storybook visual. Confirm exact hex values with design."
+      items={[
+          'Confirm semantic colors (success/warning/danger/info) match DS PUCPR palette',
+          'Validate icon set — may need to switch to Font Awesome once token is available',
+          'Review with-action layout for different screen sizes',
+          'Check color contrast ratios (WCAG AA)',
+      ]}
+    />
+  ),
 }

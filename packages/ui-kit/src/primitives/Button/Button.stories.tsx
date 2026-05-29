@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Primitives/Button',
+  title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
   args: {
@@ -141,4 +142,26 @@ export const AllVariants: Story = {
 
 export const FullWidth: Story = {
   args: { fullWidth: true, children: 'Entrar' },
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Button"
+        notes="Destructive variant was added for admin panel needs — not in PUCPR DS. Needs explicit approval."
+      items={[
+          'Confirm all 6 variants (primary/secondary/tertiary/on-brand x3) match DS PUCPR Storybook',
+          'Validate hover, focus, active, and disabled states with design team',
+          'Review loading spinner animation and sizing',
+          'Confirm border-radius token for each size (sm/md/lg)',
+          'Check on-brand variants on dark background — need real brand background to test',
+          'Validate font-size and weight per size',
+      ]}
+    />
+  ),
 }

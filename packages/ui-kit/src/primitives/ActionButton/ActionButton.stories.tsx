@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ActionButton, ActionGroup } from './ActionButton'
 import { DataTable, type ColumnDef } from '../Table/Table'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Primitives/ActionButton',
+  title: 'Components/ActionButton',
   component: ActionButton,
   tags: ['autodocs'],
   args: { children: 'Copy', variant: 'default' },
@@ -88,5 +89,26 @@ export const InContext: Story = {
       </div>
       <DataTable columns={columns} data={projects} />
     </div>
+  ),
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="ActionButton"
+        notes="ActionButton was derived from the PUCPR analytics UI screenshot, not from official DS tokens."
+      items={[
+          'Confirm button sizing matches DS PUCPR spec (height, padding, font-size)',
+          'Validate destructive variant color against brand palette',
+          'Check disabled state opacity and cursor',
+          'Review ActionGroup spacing with design team',
+          'Confirm border-radius token (xxsmall = 4px) is correct for this context',
+      ]}
+    />
   ),
 }

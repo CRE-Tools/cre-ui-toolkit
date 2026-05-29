@@ -6,9 +6,10 @@ import {
 } from './Table'
 import { Badge } from '../Badge/Badge'
 import { Button } from '../Button/Button'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Primitives/Table',
+  title: 'Data/Table',
   component: DataTable,
   tags: ['autodocs'],
 } satisfies Meta<typeof DataTable>
@@ -167,5 +168,26 @@ export const Composicional: Story = {
         })}
       </TableBody>
     </Table>
+  ),
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Table"
+      items={[
+          'Confirm header background (gray-50) and text color (gray-500) with design',
+          'Validate sort indicator icon and active color (brand)',
+          'Review selected row highlight (brand/5)',
+          'Confirm border color and weight for table cells',
+          'Check empty state illustration style',
+          'Validate skeleton animation against DS loading patterns',
+      ]}
+    />
   ),
 }

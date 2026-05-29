@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Container } from './Container'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta: Meta<typeof Container> = {
-  title: 'Primitives/Container',
+  title: 'Layout/Container',
   component: Container,
   parameters: {
     layout: 'fullscreen',
@@ -63,5 +64,23 @@ export const ComConteudo: Story = {
         Poppins para o título, Source Sans 3 para o corpo do texto.
       </p>
     </Container>
+  ),
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Container"
+      items={[
+          'Confirm max-width values for xl (1440px) and wide (1920px) breakpoints',
+          'Validate responsive padding scale (px-6/8/10) against DS grid margins',
+          'Review fixed vs fluid behavior at each breakpoint with design team',
+      ]}
+    />
   ),
 }

@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { HierarchicalTable } from './HierarchicalTable'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Primitives/HierarchicalTable',
+  title: 'Data/HierarchicalTable',
   component: HierarchicalTable,
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
@@ -102,4 +103,26 @@ export const ColunasPlanas: Story = {
       },
     ],
   },
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="HierarchicalTable"
+        notes="Component built specifically for the analytics dashboard. No direct PUCPR DS reference — full design review needed."
+      items={[
+          'Review header color for grouped cells (currently brand/maroon) — confirm with design',
+          'Validate sticky column shadow/border separator style',
+          'Confirm alternating row colors match DS neutral palette',
+          'Review CSV export button placement and styling',
+          'Check table behavior on mobile (horizontal scroll UX)',
+          'Confirm font-size (xs) is readable at high data density',
+      ]}
+    />
+  ),
 }

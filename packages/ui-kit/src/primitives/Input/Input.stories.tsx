@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Input, Textarea } from './Input'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Primitives/Input',
+  title: 'Forms/Input',
   component: Input,
   tags: ['autodocs'],
   args: {
@@ -135,5 +136,26 @@ export const TextareaDefault: Story = {
         errorMessage="Informe o motivo."
       />
     </div>
+  ),
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Input"
+      items={[
+          'Confirm focus ring color and width (currently brand/3px) match DS spec',
+          'Validate error/success border colors against DS semantic palette',
+          'Review label font-weight (semibold) and size (sm)',
+          'Check textarea resize behavior and min-height',
+          'Confirm character counter styling and positioning',
+          'Validate icon sizing and spacing inside field',
+      ]}
+    />
   ),
 }

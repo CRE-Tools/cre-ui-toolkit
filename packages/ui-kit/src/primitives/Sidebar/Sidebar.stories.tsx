@@ -5,9 +5,10 @@ import {
   SidebarItem, SidebarDivider, SidebarFooter,
 } from './Sidebar'
 import { Badge } from '../Badge/Badge'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Primitives/Sidebar',
+  title: 'Navigation/Sidebar',
   component: Sidebar,
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
@@ -170,5 +171,27 @@ export const ComBadges: Story = {
         </SidebarNav>
       </Sidebar>
     </div>
+  ),
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Sidebar"
+        notes="Sidebar is a new pattern — PUCPR DS does not have a sidebar component. Full design sign-off required."
+      items={[
+          'Confirm active item background (brand/10) and text color (brand) with design',
+          'Review collapsed state — icon-only view needs visual validation',
+          'Validate badge (notification count) size and positioning',
+          'Confirm sidebar width (w-64 expanded / w-16 collapsed)',
+          'Review group label styling (uppercase, tracking-widest, text-[10px])',
+          'Check border and divider colors against DS neutral palette',
+      ]}
+    />
   ),
 }

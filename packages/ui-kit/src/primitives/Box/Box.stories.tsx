@@ -2,9 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Box } from './Box'
 import { Stack } from '../Stack'
 import { Surface } from '../Surface'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta: Meta<typeof Box> = {
-  title: 'Primitives/Box',
+  title: 'Layout/Box',
   component: Box,
   parameters: { layout: 'padded' },
   tags: ['autodocs'],
@@ -148,5 +149,23 @@ export const ComposicaoCompleta: Story = {
         </Box>
       </Stack>
     </Box>
+  ),
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Box"
+      items={[
+          'Validate padding scale tokens against DS PUCPR spacing system',
+          'Confirm 'as' prop polymorphism covers all expected HTML elements',
+          'Review if display/overflow props cover all use cases needed',
+      ]}
+    />
   ),
 }

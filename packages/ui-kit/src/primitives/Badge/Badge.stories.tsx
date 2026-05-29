@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Badge } from './Badge'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta = {
-  title: 'Primitives/Badge',
+  title: 'Components/Badge',
   component: Badge,
   tags: ['autodocs'],
   args: {
@@ -112,5 +113,24 @@ export const InContext: Story = {
         </div>
       ))}
     </div>
+  ),
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Badge"
+      items={[
+          'Confirm all variant colors against DS PUCPR official palette',
+          'Validate border-radius-pill usage (9999px) — check if DS uses a smaller radius',
+          'Review icon sizing and alignment within badge',
+          'Check font-size and weight (currently xs/semibold)',
+      ]}
+    />
   ),
 }

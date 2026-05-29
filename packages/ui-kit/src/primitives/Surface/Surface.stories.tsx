@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Surface } from './Surface'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta: Meta<typeof Surface> = {
-  title: 'Primitives/Surface',
+  title: 'Surfaces/Surface',
   component: Surface,
   parameters: {
     layout: 'padded',
@@ -151,4 +152,25 @@ const descriptions: Record<string, string> = {
   overlay:     'Camada flutuante com sombra forte. Para Modal e Drawer.',
   sunken:      'Área rebaixada com fundo acinzentado. Para áreas de input.',
   interactive: 'Clicável com hover e focus visíveis. Para itens de lista e tiles.',
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Surface"
+        notes="Shadow CSS values are provisional — actual X/Y/Blur/Spread/Color values must be confirmed from Figma Effects panel."
+      items={[
+          'Confirm border-radius per variant (small=12px, medium=16px) against DS tokens',
+          'Validate shadow values (level-1/2/3) — currently provisional CSS values',
+          'Review sunken background color (gray-50) against DS neutral palette',
+          'Confirm interactive variant hover/focus border widths (medium=2px/large=3px)',
+          'Check border color (#B5A8AD = neutral/400) usage across variants',
+      ]}
+    />
+  ),
 }

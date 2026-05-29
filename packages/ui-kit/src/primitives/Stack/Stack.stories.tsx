@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Stack } from './Stack'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta: Meta<typeof Stack> = {
-  title: 'Primitives/Stack',
+  title: 'Layout/Stack',
   component: Stack,
   parameters: { layout: 'padded' },
   tags: ['autodocs'],
@@ -137,5 +138,23 @@ export const ComQuebra: Story = {
         <Item key={i} label={`Tag ${i + 1}`} wide />
       ))}
     </Stack>
+  ),
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Stack"
+      items={[
+          'Validate gap scale tokens against DS spacing system',
+          'Confirm wrap behavior in horizontal Stack',
+          'Review align and justify prop coverage',
+      ]}
+    />
   ),
 }

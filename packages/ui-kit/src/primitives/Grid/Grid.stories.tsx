@@ -2,9 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Container } from '../Container'
 import { Grid } from './Grid'
 import { GridItem } from './GridItem'
+import { PendingReview } from '../../storybook/PendingReview'
 
 const meta: Meta<typeof Grid> = {
-  title: 'Primitives/Grid',
+  title: 'Layout/Grid',
   component: Grid,
   parameters: {
     layout: 'fullscreen',
@@ -109,5 +110,23 @@ export const ItemFull: Story = {
         </GridItem>
       </Grid>
     </Container>
+  ),
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Story = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Grid"
+      items={[
+          'Confirm gutter values (gap-2/4/6) match DS grid spec for each breakpoint',
+          'Validate 4→8→12 column progression',
+          'Check GridItem default span behavior (full) is correct',
+      ]}
+    />
   ),
 }
