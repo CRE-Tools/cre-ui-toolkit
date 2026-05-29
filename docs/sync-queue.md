@@ -9,3 +9,5 @@ Claude reads this file at the start of every session. If there are pending entri
 ## Pending Updates
 
 <!-- Format: - `path/to/file.md` — what changed and why (from TASK-XXX) -->
+
+- `docs/context/ui-kit-package.md` — folder structure changed from src/primitives/ to src/layout/, src/components/, src/blocks/ (from TASK-003)

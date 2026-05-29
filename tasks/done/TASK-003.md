@@ -1,7 +1,7 @@
 ---
 id: TASK-003
 title: Rename src/primitives/ — restructure into layout/, components/, blocks/
-status: pending
+status: done
 model: medium
 model-name: GPT-5.2
 context:

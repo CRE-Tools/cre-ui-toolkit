@@ -8,7 +8,7 @@ import {
 } from 'react'
 import { createPortal } from 'react-dom'
 import { cn } from '../../utils/cn'
-import { Button } from '../Button/Button'
+import { Button } from '../../components/Button/Button'
 
 /**
  * Modal — diálogo flutuante para confirmações e formulários inline.
