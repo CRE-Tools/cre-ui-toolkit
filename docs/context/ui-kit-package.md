@@ -8,28 +8,17 @@ This file describes what is currently built, exported, and in what state. Update
 
 ## Source folder structure
 
-**Current (to be changed — see TASK-003):**
 ```
 src/
-├── primitives/     ← all components, folder name is wrong per design glossary
-├── storybook/      ← PendingReview helper, to be moved out — see TASK-002
-├── styles/
-├── utils/
-└── index.ts
-```
-
-**Target (after TASK-002 and TASK-003):**
-```
-src/
-├── layout/         ← Box, Container, Grid, GridItem, Stack, Surface
+├── layout/         ← Box, Container, Grid+GridItem, Stack, Surface
 ├── components/     ← Button, ActionButton+ActionGroup, Badge, Alert, Input+Textarea
 ├── blocks/         ← Modal+ConfirmModal, Sidebar, Table, HierarchicalTable
-├── styles/
-├── utils/
+├── styles/         ← globals.css
+├── utils/          ← cn.ts
 └── index.ts
 ```
 
-`PendingReview` and future storybook dev utilities move to `packages/storybook-utils/` (private workspace package).
+Storybook dev utilities (`PendingReview`) live in `packages/storybook-utils/` (private workspace package, not published). Story files live in `apps/storybook/src/stories/`, not in this package.
 
 ## Public exports
 

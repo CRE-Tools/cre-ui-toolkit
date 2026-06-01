@@ -70,18 +70,21 @@ Direct numeric values in CSS/engine. No semantic names.
 All are multiples of 4 and 8.
 
 ### Border Radius
-Numeric system — value in the name.
+Numeric system — value in the name. Tailwind class prefix: `rounded-`.
 
-| Token | Value |
-|---|---|
-| `radius-0` | 0px |
-| `radius-4` | 4px |
-| `radius-8` | 8px |
-| `radius-16` | 16px |
-| `radius-32` | 32px |
-| `radius-full` | 9999px (pill) |
+| Token | Value | Tailwind class | Status |
+|---|---|---|---|
+| `radius-0` | 0px | `rounded-radius-0` | DS confirmed |
+| `radius-4` | 4px | `rounded-radius-4` | DS confirmed |
+| `radius-8` | 8px | `rounded-radius-8` | DS confirmed |
+| `radius-12` | 12px | `rounded-radius-12` | Dev addition — design sign-off pending |
+| `radius-16` | 16px | `rounded-radius-16` | DS confirmed |
+| `radius-32` | 32px | `rounded-radius-32` | DS confirmed |
+| `radius-full` | 9999px | `rounded-radius-full` | DS confirmed (pill shape) |
 
-**Dev note:** The current codebase has additional radius values (12px, 20px, 24px, 50%) that have no equivalent in this list. These need to be resolved with the design team before renaming — see TASK-005.
+`radius-12` was added by the dev team because Surface uses 12px for card/panel variants. It is a multiple of 4 and fits the numeric convention. Needs design team confirmation in the glossary.
+
+Old semantic names (`xsmall`, `small`, `medium`, `pill`, etc.) are removed — do not use them in new code.
 
 ### Typography
 Weights: `weight-regular400` (400), `weight-medium500` (500), `weight-bold700` (700)
@@ -125,9 +128,54 @@ These are the V1 color token names. The web-specific needs still need to be vali
 
 ---
 
+---
+
+## Enforced Code Patterns
+
+These rules apply to every component in `packages/ui-kit/src/`. They are derived from the token decisions above and must be followed in all new code and task implementations.
+
+### Token usage — always use the token, never the raw value
+
+**Colors:** Use the Tailwind token name, not the hex.
+- `neutral-400` → `border-neutral-400`, `text-neutral-400`, `bg-neutral-400`, `placeholder:text-neutral-400`
+- `brand` → `text-brand`, `bg-brand`, `ring-brand`, `border-brand`
+- Never: `border-[#B5A8AD]`, `text-[#B5A8AD]`, `ring-[#7B1234]`
+- Exception: SVG `fill` attributes that require a literal hex — use a named JS constant (`const BRAND_COLOR = '#7B1234'`), never an inline string
+
+**Border radius:** Use `rounded-radius-*` classes. Never use old semantic names.
+- Correct: `rounded-radius-8`, `rounded-radius-16`, `rounded-radius-full`
+- Never: `rounded-xsmall`, `rounded-small`, `rounded-pill`
+
+**Focus rings:** Use `ring` (resolves to 3px via `ringWidth.DEFAULT`). Never use `ring-[3px]` arbitrary values.
+- Standard interactive: `focus-visible:outline-none focus-visible:ring focus-visible:ring-brand/40 focus-visible:ring-offset-2`
+- On-brand (dark bg): `focus-visible:outline-none focus-visible:ring focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand`
+- Compact (2px ring): `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/30`
+- Never: `ring-[3px]`, `ring-[2px]`, `ring-large`
+
+**Shadows:** Use `shadow-level-1`, `shadow-level-2`, `shadow-level-3`. Do not use Tailwind default shadows.
+
+**Typography:** Always use `font-heading` or `font-body` — never `font-sans`, `font-serif`, or raw font-family values.
+
+### Naming new variants
+
+Always use semantic/use-based naming, not appearance-based:
+- Wrong: `raised`, `flat`, `outlined`, `sunken`, `dark`
+- Right: `card`, `overlay`, `filled`, `recessed`, `on-brand`
+
+### When a token doesn't exist yet
+
+Do not use arbitrary Tailwind values (`w-[37px]`, `text-[13px]`) for anything that should be a token. If the token is missing:
+1. Add it to `tailwind.config.ts` following the numeric naming convention
+2. Note it as provisional if the value hasn't been confirmed from Figma
+3. Do not inline the raw value
+
+---
+
 ## What Is Explicitly Deferred
 
 - `Overlay` component — not needed now, revisit later
-- Complete color token migration — pending design+dev alignment session
-- Spacing token rename — current Tailwind numeric system is compatible; migration timing TBD
+- Complete color token migration — pending design+dev alignment session (`brand`/`neutral-400` are confirmed; the full `surface/text/action/border/feedback` tier system is not yet implemented)
+- Spacing token rename — Tailwind's default numeric scale is compatible with the DS direction; explicit `spacing-*` token names not yet added to config
+- Border-width token naming — `small/medium/large/xlarge` in the config but not yet in DS glossary; keep current names until design team addresses them
+- Surface variant renaming — current `raised/sunken/overlay/interactive` names are appearance-based (violates the semantic naming rule); rename deferred until design team proposes semantic equivalents
 - VR-specific tokens — out of scope for web package

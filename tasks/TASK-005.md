@@ -1,6 +1,6 @@
 ---
 id: TASK-005
-title: Rename border-radius tokens to numeric system (design glossary alignment)
+title: Rename border-radius tokens to numeric system + fix broken Surface focus ring
 status: pending
 model: medium
 model-name: GPT-5.2
@@ -8,110 +8,107 @@ context:
   - docs/context/design-system-decisions.md
   - docs/context/ui-kit-package.md
 doc-impact:
-  - docs/context/ui-kit-package.md
-  - docs/architecture.md
+  - docs/context/design-system-decisions.md
 export-impact: []
 ---
 
 ## Description
 
-The design team V1 glossary defines a numeric naming system for border-radius tokens (see `docs/context/design-system-decisions.md`). The current Tailwind config uses semantic names (`null`, `xxsmall`, `xsmall`, `small`, `medium`, `large`, `xlarge`, `full`, `pill`) which do not match.
+Two changes in one task — both touch `tailwind.config.ts` and the same component files, so combining avoids double-touching them.
 
-This task renames the tokens in `packages/ui-kit/tailwind.config.ts` and updates every component file that uses the old Tailwind class names.
+### 1. Rename border-radius tokens to numeric system
 
-**Before starting:** The current token set has values that do not exist in the design team's list (12px, 20px, 24px, 50%). These must be resolved — see the blocker section below.
+The design team V1 glossary defines a numeric naming system for border-radius tokens (see `docs/context/design-system-decisions.md`). The current Tailwind config uses semantic names (`null`, `xxsmall`, `xsmall`, `small`, `medium`, `large`, `xlarge`, `full`, `pill`).
 
-## Blockers — resolve before implementing
+**Resolved mapping** (blocker from previous version of this task is now resolved):
 
-The mapping is not 1:1. The following current values have no equivalent in the design glossary:
+| Old token | Old value | New token | Action |
+|---|---|---|---|
+| `null` | 0px | `radius-0` | rename |
+| `xxsmall` | 4px | `radius-4` | rename |
+| `xsmall` | 8px | `radius-8` | rename |
+| `small` | 12px | `radius-12` | rename — dev addition, flag for design sign-off |
+| `medium` | 16px | `radius-16` | rename |
+| `large` | 20px | — | **drop** — nothing uses it |
+| `xlarge` | 24px | — | **drop** — nothing uses it |
+| `full` | 50% | — | **drop** — nothing uses it (semantically different from radius-full) |
+| `pill` | 9999px | `radius-full` | rename |
 
-| Current name | px value | Design system equivalent |
-|---|---|---|
-| `small` | 12px | **None defined** |
-| `large` | 20px | **None defined** |
-| `xlarge` | 24px | **None defined** |
-| `full` | 50% | Different from `radius-full` (9999px) |
+`radius-12` is proposed as a dev addition because Surface uses 12px for all card-like variants. It is a multiple of 4 and fits the numeric naming convention. The design team needs to confirm it in the glossary, but the rename can proceed — if design rejects 12px later, Surface switches to `radius-8` or `radius-16`.
 
-Raise these with the architect/design team and get one of:
-- A confirmed mapping (e.g., `small = 8px` and 12px is dropped)
-- New tokens added to the glossary for the missing values
-- Confirmation that affected components should switch to the nearest existing token
+### 2. Fix broken focus ring on Surface `interactive` variant
 
-**Do not guess.** Do not implement until the architect provides the resolution.
+`Surface.tsx` line 75 uses `focus-visible:ring-large`. This is invalid — `borderWidth` extensions generate `border-*` classes, not `ring-*` classes. The `interactive` variant of Surface currently has NO focus ring, which is an accessibility bug.
+
+Fix: also add a `ringWidth` extension to `tailwind.config.ts` with a `DEFAULT` of `3px` (matches the design intent of `border-large = 3px` for focus). This gives components a clean `ring` token for 3px rings instead of relying on `ring-[3px]` arbitrary values. The Surface fix uses `ring` (defaults to 3px via the new token).
+
+**Note:** Do NOT update other components' `ring-[3px]` usages in this task — that is TASK-007. Just fix the Surface bug and add the `ringWidth` config.
 
 ## Acceptance Criteria
 
-- [ ] Architect has resolved the gap in the token mapping (see Blockers) — resolution is documented inline or in `docs/context/design-system-decisions.md`
-- [ ] `packages/ui-kit/tailwind.config.ts` `borderRadius` section is updated to:
-  ```ts
-  borderRadius: {
-    'radius-0':    '0px',
-    'radius-4':    '4px',
-    'radius-8':    '8px',
-    'radius-16':   '16px',
-    'radius-32':   '32px',
-    'radius-full': '9999px',
-    // any additional values confirmed by design team
-  }
-  ```
-- [ ] All component source files updated — old Tailwind radius classes replaced with new names:
-
-  | Old class | New class |
-  |---|---|
-  | `rounded-null` | `rounded-radius-0` |
-  | `rounded-xxsmall` | `rounded-radius-4` |
-  | `rounded-xsmall` | `rounded-radius-8` |
-  | `rounded-small` | TBD (see Blockers) |
-  | `rounded-medium` | `rounded-radius-16` |
-  | `rounded-large` | TBD (see Blockers) |
-  | `rounded-xlarge` | TBD (see Blockers) |
-  | `rounded-full` | TBD (50% vs 9999px, see Blockers) |
-  | `rounded-pill` | `rounded-radius-full` |
-
-- [ ] `pnpm build` succeeds
-- [ ] Storybook builds and components render correctly (spot-check Border Radius story if it exists, otherwise spot-check Button and Surface which use radius tokens heavily)
-- [ ] TypeScript compiles without errors
+- [ ] `tailwind.config.ts` `borderRadius` section updated to the new token names (see Relevant Data)
+- [ ] `tailwind.config.ts` `ringWidth` section added with `DEFAULT: '3px'`
+- [ ] All 5 component files updated — old radius class names replaced with new ones (see per-file table below)
+- [ ] `Surface.tsx` `interactive` variant: `ring-large` replaced with `ring` (uses new 3px default)
+- [ ] `Surface.tsx` comment updated to remove reference to `border-radius-small/medium/xlarge` old names
+- [ ] `docs/context/design-system-decisions.md` radius table updated to include `radius-12`
+- [ ] `pnpm build` in `packages/ui-kit/` succeeds
+- [ ] Storybook builds — visually spot-check Button, Surface, Badge, and Modal to confirm border-radius renders correctly
+- [ ] Interactive Surface has a visible focus ring (accessibility fix)
 
 ## Relevant Data
 
-### Files that use radius tokens (grep: `rounded-` with a named token)
-
-`packages/ui-kit/src/primitives/Button/Button.tsx`:
-- `rounded-xsmall` (all sizes)
-
-`packages/ui-kit/src/primitives/Surface/Surface.tsx`:
-- `rounded-small` (default, raised, sunken, interactive)
-- `rounded-medium` (overlay)
-
-`packages/ui-kit/src/primitives/Modal/Modal.tsx`:
-- `rounded-medium` (panel)
-- `rounded-xsmall` (close button, focus ring)
-
-`packages/ui-kit/src/primitives/ActionButton/ActionButton.tsx`:
-- `rounded-xxsmall`
-
-`packages/ui-kit/src/primitives/Input/Input.tsx`:
-- `rounded-xsmall` (input field)
-
-`packages/ui-kit/src/primitives/Badge/Badge.tsx`:
-- `rounded-pill`
-
-`packages/ui-kit/src/primitives/Alert/Alert.tsx`:
-- `rounded-xsmall`
-
-### Current tailwind.config.ts borderRadius section
+### New tailwind.config.ts borderRadius section
 ```ts
 borderRadius: {
-  'null':    '0px',
-  'xxsmall': '4px',
-  'xsmall':  '8px',
-  'small':   '12px',
-  'medium':  '16px',
-  'large':   '20px',
-  'xlarge':  '24px',
-  'full':    '50%',
-  'pill':    '9999px',
+  'radius-0':    '0px',
+  'radius-4':    '4px',
+  'radius-8':    '8px',
+  'radius-12':   '12px',  // dev addition — pending design sign-off
+  'radius-16':   '16px',
+  'radius-full': '9999px',
 },
 ```
 
-**Note:** If completing TASK-003 before this task, the file paths above will have changed. Grep for `rounded-` in `src/` to find all usages.
+### New tailwind.config.ts ringWidth section (add to extend)
+```ts
+ringWidth: {
+  DEFAULT: '3px',
+},
+```
+
+### Per-file class replacements
+
+**`src/components/Button/Button.tsx`**
+- `rounded-xsmall` → `rounded-radius-8` (3 occurrences — sm, md, lg sizes)
+
+**`src/components/ActionButton/ActionButton.tsx`**
+- `rounded-xxsmall` → `rounded-radius-4`
+
+**`src/components/Badge/Badge.tsx`**
+- `rounded-pill` → `rounded-radius-full`
+
+**`src/components/Alert/Alert.tsx`**
+- `rounded-xsmall` → `rounded-radius-8`
+
+**`src/components/Input/Input.tsx`**
+- `rounded-xsmall` → `rounded-radius-8`
+
+**`src/blocks/Modal/Modal.tsx`**
+- `rounded-medium` → `rounded-radius-16` (panel container)
+- `rounded-xsmall` → `rounded-radius-8` (close button)
+
+**`src/blocks/Table/Table.tsx`**
+- `rounded-xsmall` → `rounded-radius-8`
+
+**`src/blocks/HierarchicalTable/HierarchicalTable.tsx`**
+- `rounded-xsmall` → `rounded-radius-8` (2 occurrences)
+
+**`src/blocks/Sidebar/Sidebar.tsx`**
+- `rounded-xsmall` → `rounded-radius-8` (nav item)
+- `rounded-pill` → `rounded-radius-full` (badge counter)
+
+**`src/layout/Surface/Surface.tsx`**
+- `rounded-small` → `rounded-radius-12` (5 occurrences — default, raised, sunken, interactive variants)
+- `rounded-medium` → `rounded-radius-16` (overlay variant)
+- `ring-large` → `ring` (interactive variant focus — BUG FIX)
