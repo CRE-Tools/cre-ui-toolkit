@@ -163,13 +163,13 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Surface"
       tokens={[
-        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (all variants)', status: 'confirmed' },
-        { name: 'radius-12', category: 'radius', value: '12px', role: 'border-radius (default, raised, sunken, interactive)', status: 'pending-design' },
-        { name: 'radius-16', category: 'radius', value: '16px', role: 'border-radius (overlay variant)', status: 'confirmed' },
-        { name: 'shadow-level-1', category: 'shadow', value: 'elevation sutil', role: 'shadow (raised, interactive hover)', status: 'pending-design' },
-        { name: 'shadow-level-2', category: 'shadow', value: 'elevation média', role: 'shadow (overlay variant)', status: 'pending-design' },
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'focus ring (interactive variant)', status: 'confirmed' },
-        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'padding (when padded=true)', status: 'confirmed' },
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'cor da borda (todas as variantes)', status: 'confirmed' },
+        { name: 'radius-12', category: 'radius', value: '12px', role: 'raio de borda (default, raised, sunken, interactive)', status: 'pending-design' },
+        { name: 'radius-16', category: 'radius', value: '16px', role: 'raio de borda (variante overlay)', status: 'confirmed' },
+        { name: 'shadow-level-1', category: 'shadow', value: 'elevation sutil', role: 'sombra (raised, hover interactive)', status: 'pending-design' },
+        { name: 'shadow-level-2', category: 'shadow', value: 'elevation média', role: 'sombra (variante overlay)', status: 'pending-design' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'anel de foco (variante interactive)', status: 'confirmed' },
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'padding (quando padded=true)', status: 'confirmed' },
       ]}
     />
   ),
@@ -184,13 +184,13 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
   render: () => (
     <PendingReview
       component="Surface"
-        notes="Shadow CSS values are provisional — actual X/Y/Blur/Spread/Color values must be confirmed from Figma Effects panel."
+        notes="Os valores CSS de sombra são provisórios — os valores reais de X/Y/Blur/Spread/Color devem ser confirmados no painel de Efeitos do Figma."
       items={[
-          'Confirm border-radius per variant (small=12px, medium=16px) against DS tokens',
-          'Validate shadow values (level-1/2/3) — currently provisional CSS values',
-          'Review sunken background color (gray-50) against DS neutral palette',
-          'Confirm interactive variant hover/focus border widths (medium=2px/large=3px)',
-          'Check border color (#B5A8AD = neutral/400) usage across variants',
+          'Confirmar border-radius por variante (small=12px, medium=16px) em relação aos tokens DS',
+          'Validar valores de sombra (level-1/2/3) — atualmente são valores CSS provisórios',
+          'Revisar cor de fundo da variante sunken (gray-50) em relação à paleta neutra DS',
+          'Confirmar larguras de borda de hover/focus da variante interactive (medium=2px/large=3px)',
+          'Verificar uso da cor de borda (#B5A8AD = neutral/400) em todas as variantes',
       ]}
     />
   ),

@@ -120,9 +120,9 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Grid"
       tokens={[
-        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'gutter (xs breakpoint)', status: 'confirmed' },
-        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'gutter (sm breakpoint)', status: 'confirmed' },
-        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'gutter (md+ breakpoint)', status: 'confirmed' },
+        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'gutter (breakpoint xs)', status: 'confirmed' },
+        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'gutter (breakpoint sm)', status: 'confirmed' },
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'gutter (breakpoint md+)', status: 'confirmed' },
       ]}
     />
   ),
@@ -138,9 +138,9 @@ export const PendingReviewStory: Story = {
     <PendingReview
       component="Grid"
       items={[
-          'Confirm gutter values (gap-2/4/6) match DS grid spec for each breakpoint',
-          'Validate 4→8→12 column progression',
-          'Check GridItem default span behavior (full) is correct',
+          'Confirmar se os valores de gutter (gap-2/4/6) correspondem à especificação do grid DS em cada breakpoint',
+          'Validar a progressão de 4→8→12 colunas',
+          'Verificar se o comportamento padrão de span do GridItem (full) está correto',
       ]}
     />
   ),

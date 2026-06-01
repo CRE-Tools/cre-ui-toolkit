@@ -159,7 +159,7 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Box"
       tokens={[]}
-      notes="Box is a structural utility — it applies no visual tokens. Token usage is determined entirely by the consumer."
+      notes="Box é um utilitário estrutural — não aplica tokens visuais. O uso de tokens é determinado inteiramente pelo consumidor."
     />
   ),
 }
@@ -174,9 +174,9 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
     <PendingReview
       component="Box"
       items={[
-          'Validate padding scale tokens against DS PUCPR spacing system',
-          'Confirm 'as' prop polymorphism covers all expected HTML elements',
-          'Review if display/overflow props cover all use cases needed',
+          'Validar tokens da escala de padding em relação ao sistema de espaçamento DS PUCPR',
+          'Confirmar se o polimorfismo da prop \'as\' cobre todos os elementos HTML esperados',
+          'Verificar se as props display/overflow cobrem todos os casos de uso necessários',
       ]}
     />
   ),

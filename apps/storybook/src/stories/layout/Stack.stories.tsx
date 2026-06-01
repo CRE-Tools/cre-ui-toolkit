@@ -174,9 +174,9 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
     <PendingReview
       component="Stack"
       items={[
-          'Validate gap scale tokens against DS spacing system',
-          'Confirm wrap behavior in horizontal Stack',
-          'Review align and justify prop coverage',
+          'Validar tokens da escala de gap em relação ao sistema de espaçamento DS',
+          'Confirmar comportamento de wrap no Stack horizontal',
+          'Revisar a cobertura das props align e justify',
       ]}
     />
   ),

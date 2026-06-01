@@ -76,11 +76,11 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Container"
       tokens={[
-        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'horizontal padding (xs breakpoint)', status: 'confirmed' },
-        { name: 'spacing-32', category: 'spacing', value: '32px', role: 'horizontal padding (sm breakpoint)', status: 'confirmed' },
-        { name: 'spacing-40', category: 'spacing', value: '40px', role: 'horizontal padding (md+ breakpoint)', status: 'confirmed' },
-        { name: 'max-w-container-xl', category: 'spacing', value: '1440px', role: 'max-width at xl breakpoint (fixed variant)', status: 'pending-design' },
-        { name: 'max-w-container-wide', category: 'spacing', value: '1920px', role: 'max-width at wide breakpoint (fixed variant)', status: 'pending-design' },
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'padding horizontal (breakpoint xs)', status: 'confirmed' },
+        { name: 'spacing-32', category: 'spacing', value: '32px', role: 'padding horizontal (breakpoint sm)', status: 'confirmed' },
+        { name: 'spacing-40', category: 'spacing', value: '40px', role: 'padding horizontal (breakpoint md+)', status: 'confirmed' },
+        { name: 'max-w-container-xl', category: 'spacing', value: '1440px', role: 'largura máxima no breakpoint xl (variante fixed)', status: 'pending-design' },
+        { name: 'max-w-container-wide', category: 'spacing', value: '1920px', role: 'largura máxima no breakpoint wide (variante fixed)', status: 'pending-design' },
       ]}
     />
   ),
@@ -96,9 +96,9 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
     <PendingReview
       component="Container"
       items={[
-          'Confirm max-width values for xl (1440px) and wide (1920px) breakpoints',
-          'Validate responsive padding scale (px-6/8/10) against DS grid margins',
-          'Review fixed vs fluid behavior at each breakpoint with design team',
+          'Confirmar valores de largura máxima para os breakpoints xl (1440px) e wide (1920px)',
+          'Validar escala de padding responsivo (px-6/8/10) em relação às margens do grid DS',
+          'Revisar o comportamento fixed vs fluid em cada breakpoint com a equipe de design',
       ]}
     />
   ),
