@@ -1,7 +1,7 @@
 ---
 id: TASK-007
 title: Standardize focus ring pattern across all components
-status: pending
+status: done
 model: cheap
 model-name: SWE-1.6
 context:

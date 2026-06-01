@@ -226,7 +226,7 @@ export function HierarchicalTable({
                 'font-body text-xs font-semibold',
                 'bg-white border border-neutral-400 text-gray-700',
                 'hover:bg-gray-50 hover:border-gray-400 transition-colors',
-                'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-brand/30',
+                'focus-visible:outline-none focus-visible:ring focus-visible:ring-brand/30',
               )}
             >
               <DownloadIcon />

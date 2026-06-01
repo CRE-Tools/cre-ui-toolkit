@@ -134,7 +134,7 @@ export function SidebarItem({
   const sharedClass = cn(
     'group w-full flex items-center gap-3 px-3 py-2 rounded-radius-8',
     'font-body text-sm font-medium transition-colors duration-100',
-    'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-brand/30',
+    'focus-visible:outline-none focus-visible:ring focus-visible:ring-brand/30',
     active
       ? 'bg-brand/10 text-brand'
       : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900',

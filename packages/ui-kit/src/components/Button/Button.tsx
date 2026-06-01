@@ -30,49 +30,49 @@ const variantClasses = {
   primary: [
     'bg-brand text-white border border-transparent',
     'hover:bg-brand/90',
-    'focus-visible:ring-[3px] focus-visible:ring-brand/40 focus-visible:ring-offset-2',
+    'focus-visible:ring focus-visible:ring-brand/40 focus-visible:ring-offset-2',
     'active:scale-[0.98]',
   ].join(' '),
 
   secondary: [
     'bg-transparent text-brand border border-brand',
     'hover:bg-brand/5',
-    'focus-visible:ring-[3px] focus-visible:ring-brand/40 focus-visible:ring-offset-2',
+    'focus-visible:ring focus-visible:ring-brand/40 focus-visible:ring-offset-2',
     'active:scale-[0.98]',
   ].join(' '),
 
   tertiary: [
     'bg-transparent text-brand border border-transparent',
     'hover:bg-brand/5',
-    'focus-visible:ring-[3px] focus-visible:ring-brand/40 focus-visible:ring-offset-2',
+    'focus-visible:ring focus-visible:ring-brand/40 focus-visible:ring-offset-2',
     'active:scale-[0.98]',
   ].join(' '),
 
   'on-brand-primary': [
     'bg-white text-brand border border-transparent',
     'hover:bg-white/90',
-    'focus-visible:ring-[3px] focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand',
+    'focus-visible:ring focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand',
     'active:scale-[0.98]',
   ].join(' '),
 
   'on-brand-secondary': [
     'bg-transparent text-white border border-white',
     'hover:bg-white/10',
-    'focus-visible:ring-[3px] focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand',
+    'focus-visible:ring focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand',
     'active:scale-[0.98]',
   ].join(' '),
 
   'on-brand-tertiary': [
     'bg-transparent text-white border border-transparent',
     'hover:bg-white/10',
-    'focus-visible:ring-[3px] focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand',
+    'focus-visible:ring focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-brand',
     'active:scale-[0.98]',
   ].join(' '),
 
   destructive: [
     'bg-red-600 text-white border border-transparent',
     'hover:bg-red-700',
-    'focus-visible:ring-[3px] focus-visible:ring-red-500/40 focus-visible:ring-offset-2',
+    'focus-visible:ring focus-visible:ring-red-500/40 focus-visible:ring-offset-2',
     'active:scale-[0.98]',
   ].join(' '),
 } as const

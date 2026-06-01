@@ -62,7 +62,7 @@ const baseField = [
   'transition-colors duration-150',
   'placeholder:text-neutral-400',
   'hover:border-gray-400',
-  'focus:outline-none focus:border-brand focus:ring-[3px] focus:ring-brand/20',
+  'focus:outline-none focus:border-brand focus:ring focus:ring-brand/20',
   'disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed disabled:border-gray-200',
 ].join(' ')
 

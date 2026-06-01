@@ -154,7 +154,7 @@ export function Modal({
               type="button"
               onClick={onClose}
               aria-label="Fechar modal"
-              className="shrink-0 p-1 rounded-radius-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-brand/30"
+              className="shrink-0 p-1 rounded-radius-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring focus-visible:ring-brand/30"
             >
               <CloseIcon />
             </button>
