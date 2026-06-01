@@ -149,12 +149,12 @@ export function TokenUsage({ component, tokens, notes }: TokenUsageProps) {
       {/* Header */}
       <div style={{ marginBottom: 20 }}>
         <h3 style={{ margin: '0 0 4px', fontSize: 16, fontWeight: 700, color: '#374151' }}>
-          {component ? `Token Usage — ${component}` : 'Token Reference'}
+          {component ? `Tokens — ${component}` : 'Referência de Tokens'}
         </h3>
         <p style={{ margin: 0, fontSize: 13, color: '#6B7280' }}>
           {component
-            ? 'These are the design tokens this component consumes.'
-            : 'Design tokens in this category.'}
+            ? 'Estes são os design tokens utilizados por este componente.'
+            : 'Design tokens desta categoria.'}
         </p>
       </div>
 
@@ -199,7 +199,7 @@ export function TokenUsage({ component, tokens, notes }: TokenUsageProps) {
                       color: '#B45309',
                     }}
                   >
-                    ⚠ pending design
+                    ⚠ aguardando aprovação
                   </span>
                 )}
               </div>
@@ -224,7 +224,7 @@ export function TokenUsage({ component, tokens, notes }: TokenUsageProps) {
             color: '#1E40AF',
           }}
         >
-          <strong>Note:</strong> {notes}
+          <strong>Nota:</strong> {notes}
         </div>
       )}
     </div>

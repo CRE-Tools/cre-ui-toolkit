@@ -50,10 +50,10 @@ export function PendingReview({ component, items, notes, children }: PendingRevi
         <span style={{ fontSize: 20 }}>⏳</span>
         <div>
           <p style={{ margin: 0, fontWeight: 700, fontSize: 14, color: '#92400E' }}>
-            Pending Design Review — <code style={{ fontWeight: 400 }}>{component}</code>
+            Aguardando Revisão do Design — <code style={{ fontWeight: 400 }}>{component}</code>
           </p>
           <p style={{ margin: 0, fontSize: 12, color: '#B45309', marginTop: 2 }}>
-            This component has not been approved by the design team yet.
+            Este componente ainda não foi aprovado pela equipe de design.
           </p>
         </div>
       </div>
@@ -61,7 +61,7 @@ export function PendingReview({ component, items, notes, children }: PendingRevi
       {/* Checklist */}
       <div style={{ marginBottom: children ? 24 : 0 }}>
         <p style={{ margin: '0 0 10px', fontWeight: 700, fontSize: 13, color: '#374151' }}>
-          Review checklist
+          Checklist de revisão
         </p>
         <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
           {items.map((item, i) => (
@@ -89,7 +89,7 @@ export function PendingReview({ component, items, notes, children }: PendingRevi
           background: '#EFF6FF', border: '1px solid #BFDBFE',
           borderRadius: 6, fontSize: 13, color: '#1E40AF',
         }}>
-          <strong>Note:</strong> {notes}
+          <strong>Nota:</strong> {notes}
         </div>
       )}
 
@@ -97,7 +97,7 @@ export function PendingReview({ component, items, notes, children }: PendingRevi
       {children && (
         <div style={{ marginTop: 24 }}>
           <p style={{ margin: '0 0 10px', fontWeight: 700, fontSize: 13, color: '#374151' }}>
-            Current implementation
+            Implementação atual
           </p>
           <div style={{
             padding: 20,
