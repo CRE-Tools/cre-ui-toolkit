@@ -1,0 +1,105 @@
+import type { Meta, StoryObj } from '@storybook/react'
+import { Container } from '@cre/ui-kit'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
+
+const meta: Meta<typeof Container> = {
+  title: 'Layout/Container',
+  component: Container,
+  parameters: {
+    layout: 'fullscreen',
+  },
+  tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: 'radio',
+      options: ['fluid', 'fixed'],
+      description:
+        '**fluid** — largura total com margens responsivas (uso geral).\n\n**fixed** — limita max-width em xl (1440px) e wide (1920px).',
+      table: {
+        defaultValue: { summary: 'fluid' },
+      },
+    },
+  },
+}
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+function Placeholder({ label }: { label: string }) {
+  return (
+    <div className="bg-blue-50 border-2 border-dashed border-blue-300 rounded p-6 text-sm text-blue-700 text-center">
+      {label}
+    </div>
+  )
+}
+
+export const Fluid: Story = {
+  name: 'Fluid — margens responsivas',
+  args: { variant: 'fluid' },
+  render: (args) => (
+    <Container {...args}>
+      <Placeholder label="Container Fluid — 100% da largura com px: 24px (xs) → 32px (sm) → 40px (md+)" />
+    </Container>
+  ),
+}
+
+export const Fixed: Story = {
+  name: 'Fixed — max-width 1440px / 1920px',
+  args: { variant: 'fixed' },
+  render: (args) => (
+    <Container {...args}>
+      <Placeholder label="Container Fixed — cresce até 1440px em xl e 1920px em wide, depois centraliza" />
+    </Container>
+  ),
+}
+
+export const ComConteudo: Story = {
+  name: 'Com conteúdo real',
+  args: { variant: 'fluid' },
+  render: (args) => (
+    <Container {...args}>
+      <h1 className="font-heading text-2xl font-semibold mb-4">Título da página</h1>
+      <p className="font-body text-base text-gray-700">
+        Este é um exemplo de Container com conteúdo real usando as fontes PUCPR.
+        Poppins para o título, Source Sans 3 para o corpo do texto.
+      </p>
+    </Container>
+  ),
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Container"
+      tokens={[
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'padding horizontal (breakpoint xs)', status: 'confirmed' },
+        { name: 'spacing-32', category: 'spacing', value: '32px', role: 'padding horizontal (breakpoint sm)', status: 'confirmed' },
+        { name: 'spacing-40', category: 'spacing', value: '40px', role: 'padding horizontal (breakpoint md+)', status: 'confirmed' },
+        { name: 'max-w-container-xl', category: 'spacing', value: '1440px', role: 'largura máxima no breakpoint xl (variante fixed)', status: 'pending-design' },
+        { name: 'max-w-container-wide', category: 'spacing', value: '1920px', role: 'largura máxima no breakpoint wide (variante fixed)', status: 'pending-design' },
+      ]}
+    />
+  ),
+}
+
+// ─── Pending Review ──────────────────────────────────────────────────────────
+
+export const PendingReviewStory: Omit<Story, 'args'> = {
+  name: 'Pending Review',
+  tags: ['pending-review'],
+  parameters: { layout: 'padded' },
+  render: () => (
+    <PendingReview
+      component="Container"
+      items={[
+          'Confirmar valores de largura máxima para os breakpoints xl (1440px) e wide (1920px)',
+          'Validar escala de padding responsivo (px-6/8/10) em relação às margens do grid DS',
+          'Revisar o comportamento fixed vs fluid em cada breakpoint com a equipe de design',
+      ]}
+    />
+  ),
+}

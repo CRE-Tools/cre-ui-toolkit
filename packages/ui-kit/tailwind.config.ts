@@ -39,15 +39,17 @@ const config: Config = {
       // ─── Border Radius ─────────────────────────────────────────────
       // Fonte: Figma DS PUCPR Core Web — Foundation > Tokens > Radius (22/08/2025)
       borderRadius: {
-        'null':    '0px',
-        'xxsmall': '4px',
-        'xsmall':  '8px',
-        'small':   '12px',
-        'medium':  '16px',
-        'large':   '20px',
-        'xlarge':  '24px',
-        'full':    '50%',
-        'pill':    '9999px',
+        'radius-0':    '0px',
+        'radius-4':    '4px',
+        'radius-8':    '8px',
+        'radius-12':   '12px',  // dev addition — pending design sign-off
+        'radius-16':   '16px',
+        'radius-full': '9999px',
+      },
+
+      // ─── Ring Width ────────────────────────────────────────────────
+      ringWidth: {
+        DEFAULT: '3px',
       },
 
       // ─── Shadows ───────────────────────────────────────────────────

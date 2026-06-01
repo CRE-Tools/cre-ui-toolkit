@@ -9,3 +9,4 @@ Claude reads this file at the start of every session. If there are pending entri
 ## Pending Updates
 
 <!-- Format: - `path/to/file.md` — what changed and why (from TASK-XXX) -->
+

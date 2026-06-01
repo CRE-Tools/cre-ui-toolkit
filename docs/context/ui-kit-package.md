@@ -6,27 +6,40 @@ This file describes what is currently built, exported, and in what state. Update
 
 ---
 
+## Source folder structure
+
+```
+src/
+├── layout/         ← Box, Container, Grid+GridItem, Stack, Surface
+├── components/     ← Button, ActionButton+ActionGroup, Badge, Alert, Input+Textarea
+├── blocks/         ← Modal+ConfirmModal, Sidebar, Table, HierarchicalTable
+├── styles/         ← globals.css
+├── utils/          ← cn.ts
+└── index.ts
+```
+
+Storybook dev utilities (`PendingReview`) live in `packages/storybook-utils/` (private workspace package, not published). Story files live in `apps/storybook/src/stories/`, not in this package.
+
 ## Public exports
 
-Everything exported from `packages/ui-kit/src/index.ts` is public API. The entry point re-exports all primitives and the `cn` utility.
+Everything exported from `packages/ui-kit/src/index.ts` is public API. The entry point re-exports all three layers and the `cn` utility.
 
 ```
 @cre/ui-kit
-├── Layout primitives
+├── Layout
 │   ├── Box
 │   ├── Container
 │   ├── Grid + GridItem
-│   └── Stack
-├── Surface primitives
+│   ├── Stack
 │   └── Surface
-├── UI components
+├── Components
 │   ├── Button
 │   ├── ActionButton + ActionGroup
 │   ├── Badge
 │   ├── Alert
-│   └── Input
-└── Admin panel components (experimental)
-    ├── Modal
+│   └── Input + Textarea
+└── Blocks
+    ├── Modal + ConfirmModal
     ├── Sidebar
     ├── Table
     └── HierarchicalTable
@@ -145,22 +158,22 @@ Tree-structured table with expandable rows. Built for the admin panel.
 
 ## Status summary
 
-| Component | Category | Review status |
+| Component | DS Category | Review status |
 |---|---|---|
 | Box | Layout | Pending Review |
 | Container | Layout | Pending Review |
 | Grid / GridItem | Layout | Pending Review |
 | Stack | Layout | Pending Review |
 | Surface | Layout | Pending Review |
-| Button | UI | Pending Review — `destructive` needs explicit approval |
-| ActionButton / ActionGroup | UI | Pending Review |
-| Badge | UI | Pending Review |
-| Alert | UI | Pending Review |
-| Input | UI | Pending Review |
-| Modal | Admin (experimental) | Pending Review |
-| Sidebar | Admin (experimental) | Pending Review |
-| Table | Admin (experimental) | Pending Review |
-| HierarchicalTable | Admin (experimental) | Pending Review |
+| Button | Components | Pending Review — `destructive` needs explicit design approval |
+| ActionButton / ActionGroup | Components | Pending Review |
+| Badge | Components | Pending Review |
+| Alert | Components | Pending Review |
+| Input / Textarea | Components | Pending Review — `Textarea` exists in source but not yet exported |
+| Modal / ConfirmModal | Blocks | Pending Review |
+| Sidebar | Blocks | Pending Review |
+| Table | Blocks | Pending Review |
+| HierarchicalTable | Blocks | Pending Review |
 
 ---
 
