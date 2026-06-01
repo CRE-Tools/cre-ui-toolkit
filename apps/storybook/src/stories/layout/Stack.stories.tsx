@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Stack } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta: Meta<typeof Stack> = {
   title: 'Layout/Stack',
@@ -138,6 +138,29 @@ export const ComQuebra: Story = {
         <Item key={i} label={`Tag ${i + 1}`} wide />
       ))}
     </Stack>
+  ),
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Stack"
+      tokens={[
+        { name: 'spacing-4', category: 'spacing', value: '4px', role: 'gap-1', status: 'confirmed' },
+        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'gap-2 (gutter xs)', status: 'confirmed' },
+        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'gap-3', status: 'confirmed' },
+        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'gap-4 (gutter sm)', status: 'confirmed' },
+        { name: 'spacing-20', category: 'spacing', value: '20px', role: 'gap-5', status: 'confirmed' },
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'gap-6 (gutter md/lg/xl)', status: 'confirmed' },
+        { name: 'spacing-32', category: 'spacing', value: '32px', role: 'gap-8', status: 'confirmed' },
+        { name: 'spacing-40', category: 'spacing', value: '40px', role: 'gap-10', status: 'confirmed' },
+        { name: 'spacing-48', category: 'spacing', value: '48px', role: 'gap-12', status: 'confirmed' },
+      ]}
+    />
   ),
 }
 

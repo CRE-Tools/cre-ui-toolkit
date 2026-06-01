@@ -5,7 +5,7 @@ import {
   TableEmpty, TableSkeleton, DataTable, type ColumnDef,
   Badge, Button,
 } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Blocks/Table',
@@ -167,6 +167,26 @@ export const Composicional: Omit<Story, 'args'> = {
         })}
       </TableBody>
     </Table>
+  ),
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Omit<Story, 'args'> = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Table"
+      tokens={[
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (table cells)', status: 'confirmed' },
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'border-radius (table wrapper)', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'sort indicator / selected row highlight', status: 'confirmed' },
+        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'horizontal padding (cells)', status: 'confirmed' },
+        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'vertical padding (cells)', status: 'confirmed' },
+      ]}
+    />
   ),
 }
 

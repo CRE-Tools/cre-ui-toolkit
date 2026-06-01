@@ -2,7 +2,7 @@ import { useState } from 'react'
 import type React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Modal, ConfirmModal, Button, Input, Alert } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Blocks/Modal',
@@ -180,6 +180,28 @@ export const Tamanhos: Omit<Story, 'args'> = {
         </ModalDemo>
       ))}
     </div>
+  ),
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Omit<Story, 'args'> = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Modal"
+      tokens={[
+        { name: 'radius-16', category: 'radius', value: '16px', role: 'border-radius (modal panel)', status: 'confirmed' },
+        { name: 'shadow-level-3', category: 'shadow', value: 'elevation máxima', role: 'shadow (modal panel)', status: 'pending-design' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'focus ring (close button)', status: 'confirmed' },
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (header/footer)', status: 'confirmed' },
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'horizontal padding (header/footer)', status: 'confirmed' },
+        { name: 'spacing-20', category: 'spacing', value: '20px', role: 'vertical padding (header/footer)', status: 'confirmed' },
+        { name: 'font-heading', category: 'typography', value: 'Poppins', role: 'title font family', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'body font family', status: 'confirmed' },
+      ]}
+    />
   ),
 }
 

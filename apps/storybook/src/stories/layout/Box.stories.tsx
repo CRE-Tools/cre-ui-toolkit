@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Box, Stack, Surface } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta: Meta<typeof Box> = {
   title: 'Layout/Box',
@@ -147,6 +147,20 @@ export const ComposicaoCompleta: Story = {
         </Box>
       </Stack>
     </Box>
+  ),
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Box"
+      tokens={[]}
+      notes="Box is a structural utility — it applies no visual tokens. Token usage is determined entirely by the consumer."
+    />
   ),
 }
 

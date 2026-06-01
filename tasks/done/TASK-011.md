@@ -1,7 +1,7 @@
 ---
 id: TASK-011
 title: Add TokenUsage stories to all existing component stories
-status: pending
+status: done
 model: medium
 model-name: GPT-5.2
 context:

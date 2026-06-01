@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Input, Textarea } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Components/Input',
@@ -136,6 +136,27 @@ export const TextareaDefault: Story = {
         errorMessage="Informe o motivo."
       />
     </div>
+  ),
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Input"
+      tokens={[
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'border-radius', status: 'confirmed' },
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'placeholder and border idle', status: 'confirmed' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'focus ring', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
+        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'horizontal padding', status: 'confirmed' },
+        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'vertical padding', status: 'confirmed' },
+        { name: 'ring', category: 'focus', value: '3px ring', role: 'focus ring', status: 'pending-design' },
+      ]}
+    />
   ),
 }
 

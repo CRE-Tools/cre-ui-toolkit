@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Badge } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Components/Badge',
@@ -113,6 +113,25 @@ export const InContext: Story = {
         </div>
       ))}
     </div>
+  ),
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Badge"
+      tokens={[
+        { name: 'radius-full', category: 'radius', value: '9999px', role: 'border-radius (pill shape)', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'text/background (brand variant)', status: 'confirmed' },
+        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'horizontal padding (sm size)', status: 'confirmed' },
+        { name: 'spacing-10', category: 'spacing', value: '10px', role: 'horizontal padding (md size)', status: 'confirmed' },
+      ]}
+    />
   ),
 }
 

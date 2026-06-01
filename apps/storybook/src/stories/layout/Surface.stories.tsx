@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Surface } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta: Meta<typeof Surface> = {
   title: 'Layout/Surface',
@@ -152,6 +152,27 @@ const descriptions: Record<string, string> = {
   overlay:     'Camada flutuante com sombra forte. Para Modal e Drawer.',
   sunken:      'Área rebaixada com fundo acinzentado. Para áreas de input.',
   interactive: 'Clicável com hover e focus visíveis. Para itens de lista e tiles.',
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Surface"
+      tokens={[
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (all variants)', status: 'confirmed' },
+        { name: 'radius-12', category: 'radius', value: '12px', role: 'border-radius (default, raised, sunken, interactive)', status: 'pending-design' },
+        { name: 'radius-16', category: 'radius', value: '16px', role: 'border-radius (overlay variant)', status: 'confirmed' },
+        { name: 'shadow-level-1', category: 'shadow', value: 'elevation sutil', role: 'shadow (raised, interactive hover)', status: 'pending-design' },
+        { name: 'shadow-level-2', category: 'shadow', value: 'elevation média', role: 'shadow (overlay variant)', status: 'pending-design' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'focus ring (interactive variant)', status: 'confirmed' },
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'padding (when padded=true)', status: 'confirmed' },
+      ]}
+    />
+  ),
 }
 
 // ─── Pending Review ──────────────────────────────────────────────────────────

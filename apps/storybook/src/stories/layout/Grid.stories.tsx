@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Container, Grid, GridItem } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta: Meta<typeof Grid> = {
   title: 'Layout/Grid',
@@ -79,9 +79,9 @@ export const SidebarLayout: Omit<Story, 'args'> = {
             Sidebar (3 cols)
           </div>
         </GridItem>
-        <GridItem span="full" spanMd={9}>
+        <GridItem span="full" spanMd={8}>
           <div className="bg-blue-50 border border-blue-200 rounded p-4 text-sm min-h-[200px] flex items-center justify-center">
-            Conteúdo principal (9 cols)
+            Conteúdo principal (8 cols)
           </div>
         </GridItem>
       </Grid>
@@ -108,6 +108,23 @@ export const ItemFull: Omit<Story, 'args'> = {
         </GridItem>
       </Grid>
     </Container>
+  ),
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Grid"
+      tokens={[
+        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'gutter (xs breakpoint)', status: 'confirmed' },
+        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'gutter (sm breakpoint)', status: 'confirmed' },
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'gutter (md+ breakpoint)', status: 'confirmed' },
+      ]}
+    />
   ),
 }
 

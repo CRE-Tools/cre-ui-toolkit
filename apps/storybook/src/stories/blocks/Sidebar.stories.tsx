@@ -4,7 +4,7 @@ import {
   Sidebar, SidebarHeader, SidebarNav, SidebarGroup,
   SidebarItem, SidebarDivider, SidebarFooter, Badge,
 } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Blocks/Sidebar',
@@ -170,6 +170,28 @@ export const ComBadges: Omit<Story, 'args'> = {
         </SidebarNav>
       </Sidebar>
     </div>
+  ),
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Omit<Story, 'args'> = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Sidebar"
+      tokens={[
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'active item background/text', status: 'confirmed' },
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'item hover border-radius', status: 'confirmed' },
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (header/footer/divider)', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
+        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'sidebar width (expanded)', status: 'pending-design' },
+        { name: 'spacing-64', category: 'spacing', value: '64px', role: 'sidebar width (collapsed)', status: 'pending-design' },
+        { name: 'spacing-64', category: 'spacing', value: '64px', role: 'header height', status: 'pending-design' },
+        { name: 'ring', category: 'focus', value: '3px ring', role: 'focus ring (items)', status: 'pending-design' },
+      ]}
+    />
   ),
 }
 

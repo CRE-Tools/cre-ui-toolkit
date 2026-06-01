@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Container } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta: Meta<typeof Container> = {
   title: 'Layout/Container',
@@ -64,6 +64,25 @@ export const ComConteudo: Story = {
         Poppins para o título, Source Sans 3 para o corpo do texto.
       </p>
     </Container>
+  ),
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Container"
+      tokens={[
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'horizontal padding (xs breakpoint)', status: 'confirmed' },
+        { name: 'spacing-32', category: 'spacing', value: '32px', role: 'horizontal padding (sm breakpoint)', status: 'confirmed' },
+        { name: 'spacing-40', category: 'spacing', value: '40px', role: 'horizontal padding (md+ breakpoint)', status: 'confirmed' },
+        { name: 'max-w-container-xl', category: 'spacing', value: '1440px', role: 'max-width at xl breakpoint (fixed variant)', status: 'pending-design' },
+        { name: 'max-w-container-wide', category: 'spacing', value: '1920px', role: 'max-width at wide breakpoint (fixed variant)', status: 'pending-design' },
+      ]}
+    />
   ),
 }
 

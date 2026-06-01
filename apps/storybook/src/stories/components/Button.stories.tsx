@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Components/Button',
@@ -142,6 +142,27 @@ export const AllVariants: Story = {
 
 export const FullWidth: Story = {
   args: { fullWidth: true, children: 'Entrar' },
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Button"
+      tokens={[
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'background (primary variant)', status: 'confirmed' },
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'border-radius (all sizes)', status: 'confirmed' },
+        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'horizontal padding (sm size)', status: 'confirmed' },
+        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'horizontal padding (md size)', status: 'confirmed' },
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'horizontal padding (lg size)', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
+        { name: 'ring-brand', category: 'focus', value: '3px ring', role: 'focus ring (all variants)', status: 'pending-design' },
+      ]}
+    />
+  ),
 }
 
 // ─── Pending Review ──────────────────────────────────────────────────────────

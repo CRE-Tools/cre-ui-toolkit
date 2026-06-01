@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Alert, Button } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Components/Alert',
@@ -104,6 +104,25 @@ export const SemIcone: Story = {
     children: 'Alerta sem ícone lateral.',
     hideIcon: true,
   },
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Alert"
+      tokens={[
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'border-radius', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
+        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'horizontal padding', status: 'confirmed' },
+        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'vertical padding', status: 'confirmed' },
+        { name: 'semantic colors', category: 'color', value: 'success/warning/danger/info', role: 'variant backgrounds', status: 'pending-design' },
+      ]}
+    />
+  ),
 }
 
 // ─── Pending Review ──────────────────────────────────────────────────────────

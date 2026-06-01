@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ActionButton, ActionGroup, DataTable, type ColumnDef } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Components/ActionButton',
@@ -88,6 +88,26 @@ export const InContext: Story = {
       </div>
       <DataTable columns={columns} data={projects} />
     </div>
+  ),
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="ActionButton"
+      tokens={[
+        { name: 'radius-4', category: 'radius', value: '4px', role: 'border-radius', status: 'confirmed' },
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (default variant)', status: 'confirmed' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'background (brand variant)', status: 'confirmed' },
+        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'horizontal padding', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
+        { name: 'ring', category: 'focus', value: '2px ring', role: 'focus ring', status: 'pending-design' },
+      ]}
+    />
   ),
 }
 

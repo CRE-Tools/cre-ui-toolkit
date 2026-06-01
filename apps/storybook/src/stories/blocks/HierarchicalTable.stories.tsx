@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { HierarchicalTable } from '@cre/ui-kit'
-import { PendingReview } from '@cre/storybook-utils'
+import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {
   title: 'Blocks/HierarchicalTable',
@@ -103,6 +103,26 @@ export const ColunasPlanas: Story = {
       },
     ],
   },
+}
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Omit<Story, 'args'> = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="HierarchicalTable"
+      tokens={[
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (table cells)', status: 'confirmed' },
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'border-radius (table wrapper)', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'grouped header background', status: 'confirmed' },
+        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'horizontal/vertical padding (cells)', status: 'confirmed' },
+        { name: 'ring', category: 'focus', value: '3px ring', role: 'focus ring (export button)', status: 'pending-design' },
+      ]}
+    />
+  ),
 }
 
 // ─── Pending Review ──────────────────────────────────────────────────────────
