@@ -2,22 +2,43 @@
 
 This file captures the rules for how components are documented in this repo's Storybook so that all stories stay cohesive as the design system grows.
 
-Storybook lives in `apps/storybook` but all story files live colocated with their components in `packages/ui-kit/src/`. The storybook app just points at them.
+Storybook lives in `apps/storybook`. Story files live in `apps/storybook/src/stories/`, organized by DS category folder. Component source code lives in `packages/ui-kit/src/` — stories are **not** colocated with source.
 
 ---
 
 ## Story file location
 
-Each component lives in its own folder under `src/primitives/<ComponentName>/`:
+Stories live in `apps/storybook/src/stories/<category>/`:
 
 ```
-src/primitives/Button/
-├── Button.tsx
-├── Button.stories.tsx
-└── index.ts
+apps/storybook/src/stories/
+├── layout/
+│   ├── Box.stories.tsx
+│   ├── Container.stories.tsx
+│   ├── Grid.stories.tsx
+│   ├── Stack.stories.tsx
+│   └── Surface.stories.tsx
+├── components/
+│   ├── Button.stories.tsx
+│   ├── ActionButton.stories.tsx
+│   ├── Badge.stories.tsx
+│   ├── Alert.stories.tsx
+│   └── Input.stories.tsx
+├── blocks/
+│   ├── Modal.stories.tsx
+│   ├── Sidebar.stories.tsx
+│   ├── Table.stories.tsx
+│   └── HierarchicalTable.stories.tsx
+└── foundation/
+    ├── Colors.stories.tsx
+    ├── Typography.stories.tsx
+    ├── Spacing.stories.tsx
+    ├── BorderRadius.stories.tsx
+    ├── Shadows.stories.tsx
+    └── Focus.stories.tsx
 ```
 
-The stories file is always named `<ComponentName>.stories.tsx` and lives in the same folder as the component.
+The stories file is always named `<ComponentName>.stories.tsx`.
 
 ---
 
@@ -38,11 +59,69 @@ When in doubt between `Components` and `Blocks`: if the thing is made of multipl
 
 Never nest deeper than one level (`Components/Button`, not `Components/Forms/Button`).
 
+**`Forms/`, `Feedback/`, and `Surfaces/` are not valid categories.** Form inputs and feedback components are `Components`. Surface is `Layout`. Never group by use context.
+
+---
+
+## Foundation stories
+
+Foundation stories live in `stories/foundation/` and document token categories (Colors, Typography, Spacing, etc.). They are different from component stories in two ways:
+
+1. **No `tags: ['autodocs']`** — there is no component to generate a props table for.
+2. **No `PendingReview` story** — token review state is tracked via the `status` field on each `TokenEntry` in `TokenUsage`.
+
+Foundation meta shape:
+```tsx
+const meta: Meta = {
+  title: 'Foundation/Colors',
+  parameters: { layout: 'padded' },
+}
+export default meta
+```
+
+---
+
+## Token Usage stories
+
+Every component story file must include a `TokenUsageStory` export — placed second-to-last, immediately before `PendingReviewStory`. This gives the design team a token reference inside each component's Storybook documentation.
+
+Use `TokenUsage` from `@cre/storybook-utils`. Pass `component` and the list of `TokenEntry` objects for every token that component consumes.
+
+```tsx
+import { TokenUsage } from '@cre/storybook-utils'
+
+// ─── Token Usage ──────────────────────────────────────────────────────────────
+
+export const TokenUsageStory: Story = {
+  name: 'Token Usage',
+  parameters: { layout: 'padded' },
+  render: () => (
+    <TokenUsage
+      component="Button"
+      tokens={[
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'background — primary variant', status: 'confirmed' },
+        { name: 'rounded-radius-8', category: 'radius', value: '8px', role: 'border-radius', status: 'confirmed' },
+      ]}
+    />
+  ),
+}
+```
+
+Token `status` values:
+- `'confirmed'` — approved by the design team and documented in `docs/context/design-system-decisions.md`
+- `'pending-design'` — added by the dev team, needs explicit design sign-off
+
+Story ordering in component files:
+1. Individual variant stories
+2. Group/combination stories
+3. **Token Usage** story
+4. **Pending Review** story — always last
+
 ---
 
 ## Meta object
 
-Every story file exports a `meta` object as the default export. The minimum required shape:
+Every component story file exports a `meta` object as the default export. The minimum required shape:
 
 ```tsx
 const meta: Meta<typeof MyComponent> = {
@@ -87,7 +166,8 @@ export const GridPUCPR: Story = {
 Stories should be ordered in the file from simple → complex:
 1. Individual variant stories (Primary, Secondary, etc.)
 2. Group/combination stories (AllVariants, Sizes, WithIcons)
-3. **Pending Review** story — always last
+3. **Token Usage** story (see Token Usage stories section above)
+4. **Pending Review** story — always last
 
 ---
 
