@@ -11,3 +11,4 @@ Claude reads this file at the start of every session. If there are pending entri
 <!-- Format: - `path/to/file.md` — what changed and why (from TASK-XXX) -->
 
 - `docs/context/storybook.md` — TokenUsage component added to storybook-utils, update conventions if needed (from TASK-009)
+- `docs/context/storybook.md` — Foundation token stories created, verify structure is accurate (from TASK-010)

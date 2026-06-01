@@ -1,7 +1,7 @@
 ---
 id: TASK-010
 title: Create Foundation token stories in Storybook
-status: pending
+status: done
 model: medium
 model-name: GPT-5.2
 context:
