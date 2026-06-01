@@ -1,7 +1,7 @@
 ---
 id: TASK-008
 title: Fix incorrect story title categories (Feedback, Forms, Surfaces)
-status: pending
+status: done
 model: cheap
 model-name: SWE-1.6
 context:

@@ -3,7 +3,7 @@ import { Surface } from '@cre/ui-kit'
 import { PendingReview } from '@cre/storybook-utils'
 
 const meta: Meta<typeof Surface> = {
-  title: 'Surfaces/Surface',
+  title: 'Layout/Surface',
   component: Surface,
   parameters: {
     layout: 'padded',

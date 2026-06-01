@@ -3,7 +3,7 @@ import { Alert, Button } from '@cre/ui-kit'
 import { PendingReview } from '@cre/storybook-utils'
 
 const meta = {
-  title: 'Feedback/Alert',
+  title: 'Components/Alert',
   component: Alert,
   tags: ['autodocs'],
   args: {

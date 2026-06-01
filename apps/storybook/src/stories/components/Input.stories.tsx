@@ -3,7 +3,7 @@ import { Input, Textarea } from '@cre/ui-kit'
 import { PendingReview } from '@cre/storybook-utils'
 
 const meta = {
-  title: 'Forms/Input',
+  title: 'Components/Input',
   component: Input,
   tags: ['autodocs'],
   args: {
