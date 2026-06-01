@@ -14,14 +14,16 @@ export const AllSpacing: Story = {
   render: () => (
     <TokenUsage
       tokens={[
-        { name: 'spacing-4', category: 'spacing', value: '4px', role: '4', status: 'confirmed' },
-        { name: 'spacing-8', category: 'spacing', value: '8px', role: '8', status: 'confirmed' },
-        { name: 'spacing-16', category: 'spacing', value: '16px', role: '16', status: 'confirmed' },
-        { name: 'spacing-24', category: 'spacing', value: '24px', role: '24', status: 'confirmed' },
-        { name: 'spacing-32', category: 'spacing', value: '32px', role: '32', status: 'confirmed' },
-        { name: 'spacing-40', category: 'spacing', value: '40px', role: '40', status: 'confirmed' },
-        { name: 'spacing-48', category: 'spacing', value: '48px', role: '48', status: 'confirmed' },
-        { name: 'spacing-64', category: 'spacing', value: '64px', role: '64', status: 'confirmed' },
+        { name: 'spacing-4', role: '4' },
+        { name: 'spacing-8', role: '8' },
+        { name: 'spacing-16', role: '16' },
+        { name: 'spacing-24', role: '24' },
+        { name: 'spacing-32', role: '32' },
+        { name: 'spacing-40', role: '40' },
+        { name: 'spacing-48', role: '48' },
+        { name: 'spacing-64', role: '64' },
+        { name: 'spacing-10', role: '10 — fora da escala DS, aguardando decisão' },
+        { name: 'spacing-12', role: '12 — fora da escala DS, aguardando decisão' },
       ]}
     />
   ),

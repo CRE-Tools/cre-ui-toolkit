@@ -81,11 +81,36 @@ export default meta
 
 ---
 
+## Token Registry
+
+All design tokens — DS-confirmed, pending-design, and Tailwind primitives actively used in components — live in a single registry file:
+
+```
+packages/storybook-utils/src/token-registry.ts
+```
+
+This is the **single source of truth for token status**. When design approves a token, update `status` from `'pending-design'` to `'confirmed'` in this one file. Every story that references the token automatically reflects the new status.
+
+```ts
+// packages/storybook-utils/src/token-registry.ts
+export const tokenRegistry = {
+  'brand':       { category: 'color',      value: '#7B1234',       status: 'confirmed'     },
+  'green-50':    { category: 'color',      value: '#F0FDF4',       status: 'pending-design' },
+  'radius-8':    { category: 'radius',     value: '8px',           status: 'confirmed'     },
+  'font-body':   { category: 'typography', value: 'Source Sans 3', status: 'confirmed'     },
+  // ...
+} satisfies Record<string, RegistryToken>
+```
+
+**When using a new design value in a component:** add it to the registry first (as `pending-design`), then reference it in the story. Never put `value`, `category`, or `status` directly in a story entry.
+
+---
+
 ## Token Usage stories
 
 Every component story file must include a `TokenUsageStory` export — placed second-to-last, immediately before `PendingReviewStory`. This gives the design team a token reference inside each component's Storybook documentation.
 
-Use `TokenUsage` from `@cre/storybook-utils`. Pass `component` and the list of `TokenEntry` objects for every token that component consumes.
+Use `TokenUsage` from `@cre/storybook-utils`. Pass `component` and `tokens` as `{ name, role }` pairs — nothing more. The `TokenUsage` component resolves `value`, `category`, and `status` from the registry automatically.
 
 ```tsx
 import { TokenUsage } from '@cre/storybook-utils'
@@ -99,23 +124,58 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Button"
       tokens={[
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'fundo — variante primary', status: 'confirmed' },
-        { name: 'rounded-radius-8', category: 'radius', value: '8px', role: 'raio de borda', status: 'confirmed' },
+        { name: 'brand',    role: 'fundo — variante primary' },
+        { name: 'radius-8', role: 'raio de borda' },
+        { name: 'red-600',  role: 'fundo — variante destructive' },
       ]}
     />
   ),
 }
 ```
 
-Token `status` values:
-- `'confirmed'` — approved by the design team and documented in `docs/context/design-system-decisions.md`
-- `'pending-design'` — added by the dev team, needs explicit design sign-off
+- `name` must be a key in `tokenRegistry`. If it isn't there yet, add it.
+- `role` is the PT-BR label that explains how this component uses the token.
+- Do not include `value`, `category`, or `status` — those come from the registry.
 
-Story ordering in component files:
+### How to document multi-variant color tokens
+
+When a component has multiple variants that each use different colors, **list each variant as its own entry** — never group them into a single vague entry.
+
+Use the background color's registry name. The `role` field can note associated border and text colors:
+
+```tsx
+// WRONG — can't render a preview, gives the designer nothing actionable
+{ name: 'semantic colors', role: 'fundos de variante' },
+
+// CORRECT — one entry per variant, preview renders, role is specific
+{ name: 'green-50',  role: 'fundo — variante success (borda: green-200, texto: green-800)' },
+{ name: 'yellow-50', role: 'fundo — variante warning (borda: yellow-200, texto: yellow-800)' },
+{ name: 'red-50',    role: 'fundo — variante danger (borda: red-200, texto: red-800)' },
+{ name: 'blue-50',   role: 'fundo — variante info (borda: blue-200, texto: blue-800)' },
+```
+
+### Story ordering in component files
+
 1. Individual variant stories
 2. Group/combination stories
 3. **Token Usage** story
 4. **Pending Review** story — always last
+
+---
+
+## Foundation stories
+
+Foundation stories also use `{ name, role }` pairs, sourced from the registry. The `role` in Foundation context describes the token's semantic purpose or Tailwind class name:
+
+```tsx
+<TokenUsage tokens={[
+  { name: 'radius-8',   role: 'rounded-radius-8' },
+  { name: 'radius-16',  role: 'rounded-radius-16' },
+  { name: 'radius-full', role: 'rounded-radius-full — formato pílula' },
+]} />
+```
+
+Foundation stories (no `component` prop) group tokens by category and act as the canonical catalog view. They do not define status or values — those are in the registry.
 
 ---
 

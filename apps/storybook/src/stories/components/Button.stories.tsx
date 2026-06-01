@@ -153,13 +153,16 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Button"
       tokens={[
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'fundo (variante primary)', status: 'confirmed' },
-        { name: 'radius-8', category: 'radius', value: '8px', role: 'raio de borda (todos os tamanhos)', status: 'confirmed' },
-        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'padding horizontal (tamanho sm)', status: 'confirmed' },
-        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'padding horizontal (tamanho md)', status: 'confirmed' },
-        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'padding horizontal (tamanho lg)', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
-        { name: 'ring-brand', category: 'focus', value: '3px ring', role: 'anel de foco (todas as variantes)', status: 'pending-design' },
+        { name: 'brand',      role: 'fundo (primary) / borda+texto (secondary) / texto (tertiary)' },
+        { name: 'red-600',    role: 'fundo — variante destructive' },
+        { name: 'white',      role: 'fundo (on-brand-primary) / borda+texto (on-brand-secondary/tertiary)' },
+        { name: 'radius-8',   role: 'raio de borda — todos os tamanhos' },
+        { name: 'spacing-12', role: 'padding horizontal — tamanho sm' },
+        { name: 'spacing-16', role: 'padding horizontal — tamanho md' },
+        { name: 'spacing-24', role: 'padding horizontal — tamanho lg' },
+        { name: 'font-body',  role: 'família tipográfica' },
+        { name: 'focus-standard', role: 'anel de foco — variantes padrão' },
+        { name: 'focus-on-brand', role: 'anel de foco — variantes on-brand' },
       ]}
     />
   ),

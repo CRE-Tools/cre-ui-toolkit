@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { tokenRegistry } from './token-registry'
 
 /**
  * TokenUsage — reusable Storybook documentation block that lists design tokens
@@ -33,13 +34,13 @@ export interface TokenEntry {
   /** Tailwind token name shown to the designer, e.g. 'brand', 'rounded-radius-8' */
   name: string
   /** Token category determines the visual preview style */
-  category: TokenCategory
+  category?: TokenCategory
   /** Raw CSS value used for the visual preview, e.g. '#7B1234', '8px', '32px', 'ring' */
-  value: string
+  value?: string
   /** How this component uses the token, e.g. 'background — primary variant' */
   role: string
   /** Token approval status */
-  status: TokenStatus
+  status?: TokenStatus
 }
 
 export interface TokenUsageProps {
@@ -160,7 +161,16 @@ export function TokenUsage({ component, tokens, notes }: TokenUsageProps) {
 
       {/* Token list */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        {tokens.map((token, i) => (
+        {tokens.map((token, i) => {
+          const resolved = {
+            category: token.category ?? tokenRegistry[token.name]?.category,
+            value: token.value ?? tokenRegistry[token.name]?.value,
+            status: token.status ?? tokenRegistry[token.name]?.status,
+          }
+
+          const isNotFound = !resolved.category || !resolved.value
+
+          return (
           <div
             key={i}
             style={{
@@ -168,23 +178,43 @@ export function TokenUsage({ component, tokens, notes }: TokenUsageProps) {
               alignItems: 'flex-start',
               gap: 12,
               padding: '12px 14px',
-              background: '#F9FAFB',
-              border: '1px solid #E5E7EB',
+              background: isNotFound ? '#FEF2F2' : '#F9FAFB',
+              border: isNotFound ? '2px solid #DC2626' : '1px solid #E5E7EB',
               borderRadius: 6,
             }}
           >
             {/* Preview */}
-            <div style={{ marginTop: 2 }}>
-              <TokenPreview category={token.category} value={token.value} />
-            </div>
+            {!isNotFound && (
+              <div style={{ marginTop: 2 }}>
+                <TokenPreview category={resolved.category!} value={resolved.value!} />
+              </div>
+            )}
 
             {/* Token info */}
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                <code style={{ fontSize: 13, fontWeight: 600, color: '#374151' }}>
+                <code style={{ fontSize: 13, fontWeight: 600, color: isNotFound ? '#DC2626' : '#374151' }}>
                   {token.name}
                 </code>
-                {token.status === 'pending-design' && (
+                {isNotFound && (
+                  <span
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 4,
+                      padding: '2px 6px',
+                      background: '#FEE2E2',
+                      border: '1px solid #DC2626',
+                      borderRadius: 4,
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: '#991B1B',
+                    }}
+                  >
+                    ⚠ token não encontrado no registry
+                  </span>
+                )}
+                {!isNotFound && resolved.status === 'pending-design' && (
                   <span
                     style={{
                       display: 'inline-flex',
@@ -208,7 +238,8 @@ export function TokenUsage({ component, tokens, notes }: TokenUsageProps) {
               </p>
             </div>
           </div>
-        ))}
+          )
+        })}
       </div>
 
       {/* Notes */}

@@ -148,13 +148,14 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Input"
       tokens={[
-        { name: 'radius-8', category: 'radius', value: '8px', role: 'raio de borda', status: 'confirmed' },
-        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'placeholder e borda em repouso', status: 'confirmed' },
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'anel de foco', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
-        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'padding horizontal', status: 'confirmed' },
-        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'padding vertical', status: 'confirmed' },
-        { name: 'ring', category: 'focus', value: '3px ring', role: 'anel de foco', status: 'pending-design' },
+        { name: 'radius-8',      role: 'raio de borda' },
+        { name: 'neutral-400',   role: 'borda em repouso e placeholder' },
+        { name: 'brand',         role: 'borda e ring de foco' },
+        { name: 'red-500',       role: 'borda e ring de foco — estado error' },
+        { name: 'green-500',     role: 'borda e ring de foco — estado success' },
+        { name: 'font-body',     role: 'família tipográfica' },
+        { name: 'spacing-12',    role: 'padding horizontal' },
+        { name: 'spacing-8',     role: 'padding vertical' },
       ]}
     />
   ),

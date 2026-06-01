@@ -100,12 +100,14 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="ActionButton"
       tokens={[
-        { name: 'radius-4', category: 'radius', value: '4px', role: 'raio de borda', status: 'confirmed' },
-        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'cor da borda (variante default)', status: 'confirmed' },
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'fundo (variante brand)', status: 'confirmed' },
-        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'padding horizontal', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
-        { name: 'ring', category: 'focus', value: '2px ring', role: 'anel de foco', status: 'pending-design' },
+        { name: 'radius-4',    role: 'raio de borda' },
+        { name: 'neutral-400', role: 'borda — variante default (60% de opacidade)' },
+        { name: 'brand',       role: 'fundo e borda — variante brand' },
+        { name: 'red-600',     role: 'texto — variante destructive' },
+        { name: 'red-200',     role: 'borda — variante destructive' },
+        { name: 'spacing-8',   role: 'padding horizontal' },
+        { name: 'font-body',   role: 'família tipográfica' },
+        { name: 'focus-compact', role: 'anel de foco' },
       ]}
     />
   ),
