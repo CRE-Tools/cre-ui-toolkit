@@ -1,7 +1,7 @@
 ---
 id: TASK-009
 title: Build TokenUsage component in storybook-utils
-status: pending
+status: done
 model: medium
 model-name: GPT-5.2
 context:
