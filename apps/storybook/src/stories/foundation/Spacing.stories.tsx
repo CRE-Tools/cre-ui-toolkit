@@ -10,7 +10,7 @@ export default meta
 type Story = StoryObj
 
 export const AllSpacing: Story = {
-  name: 'All Spacing',
+  name: 'Todos os Espaçamentos',
   render: () => (
     <TokenUsage
       tokens={[

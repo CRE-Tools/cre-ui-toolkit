@@ -10,13 +10,13 @@ export default meta
 type Story = StoryObj
 
 export const AllFocusPatterns: Story = {
-  name: 'All Focus Patterns',
+  name: 'Todos os Padrões de Foco',
   render: () => (
     <TokenUsage
       tokens={[
-        { name: 'focus-standard', category: 'focus', value: 'ring', role: 'Standard interactive elements', status: 'pending-design' },
-        { name: 'focus-on-brand', category: 'focus', value: 'ring white/60', role: 'Elements on brand-colored backgrounds', status: 'pending-design' },
-        { name: 'focus-compact', category: 'focus', value: 'ring-2', role: 'Compact elements', status: 'pending-design' },
+        { name: 'focus-standard', category: 'focus', value: 'ring', role: 'Elementos interativos padrão', status: 'pending-design' },
+        { name: 'focus-on-brand', category: 'focus', value: 'ring white/60', role: 'Elementos sobre fundos na cor da marca', status: 'pending-design' },
+        { name: 'focus-compact', category: 'focus', value: 'ring-2', role: 'Elementos compactos', status: 'pending-design' },
       ]}
     />
   ),

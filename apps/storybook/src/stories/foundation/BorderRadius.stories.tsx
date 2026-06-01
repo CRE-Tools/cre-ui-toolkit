@@ -10,7 +10,7 @@ export default meta
 type Story = StoryObj
 
 export const AllRadii: Story = {
-  name: 'All Radii',
+  name: 'Todos os Border Radii',
   render: () => (
     <TokenUsage
       tokens={[

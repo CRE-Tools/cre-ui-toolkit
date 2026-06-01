@@ -1,7 +1,7 @@
 ---
 id: TASK-014
 title: Translate Foundation stories to PT-BR
-status: pending
+status: done
 model: cheap
 model-name: SWE-1.6
 context:
