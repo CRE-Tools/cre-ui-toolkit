@@ -115,11 +115,14 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Alert"
       tokens={[
-        { name: 'radius-8', category: 'radius', value: '8px', role: 'raio de borda', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
-        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'padding horizontal', status: 'confirmed' },
-        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'padding vertical', status: 'confirmed' },
-        { name: 'semantic colors', category: 'color', value: 'success/warning/danger/info', role: 'fundos de variante', status: 'pending-design' },
+        { name: 'radius-8',    role: 'raio de borda' },
+        { name: 'font-body',   role: 'família tipográfica' },
+        { name: 'spacing-16',  role: 'padding horizontal' },
+        { name: 'spacing-12',  role: 'padding vertical' },
+        { name: 'green-50',    role: 'fundo — variante success (borda: green-200, texto: green-800)' },
+        { name: 'yellow-50',   role: 'fundo — variante warning (borda: yellow-200, texto: yellow-800)' },
+        { name: 'red-50',      role: 'fundo — variante danger (borda: red-200, texto: red-800)' },
+        { name: 'blue-50',     role: 'fundo — variante info (borda: blue-200, texto: blue-800)' },
       ]}
     />
   ),

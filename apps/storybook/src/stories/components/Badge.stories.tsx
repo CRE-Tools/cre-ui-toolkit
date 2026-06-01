@@ -125,11 +125,17 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Badge"
       tokens={[
-        { name: 'radius-full', category: 'radius', value: '9999px', role: 'raio de borda (formato pill)', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'texto/fundo (variante brand)', status: 'confirmed' },
-        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'padding horizontal (tamanho sm)', status: 'confirmed' },
-        { name: 'spacing-10', category: 'spacing', value: '10px', role: 'padding horizontal (tamanho md)', status: 'confirmed' },
+        { name: 'radius-full', role: 'raio de borda — formato pílula' },
+        { name: 'font-body',   role: 'família tipográfica' },
+        { name: 'spacing-8',   role: 'padding horizontal — tamanho sm' },
+        { name: 'spacing-10',  role: 'padding horizontal — tamanho md' },
+        { name: 'gray-100',    role: 'fundo — variante default (borda: gray-200, texto: gray-600)' },
+        { name: 'green-50',    role: 'fundo — variante success (borda: green-200, texto: green-700)' },
+        { name: 'yellow-50',   role: 'fundo — variante warning (borda: yellow-200, texto: yellow-700)' },
+        { name: 'red-50',      role: 'fundo — variante danger (borda: red-200, texto: red-700)' },
+        { name: 'blue-50',     role: 'fundo — variante info (borda: blue-200, texto: blue-700)' },
+        { name: 'gray-100',    role: 'fundo — variante draft (borda: gray-300 tracejado, texto: gray-500)' },
+        { name: 'brand',       role: 'fundo/borda/texto — variante brand (bg: brand/10, borda: brand/20)' },
       ]}
     />
   ),

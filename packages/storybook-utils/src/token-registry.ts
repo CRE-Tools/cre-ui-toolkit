@@ -55,6 +55,7 @@ export const tokenRegistry: Record<string, RegistryToken> = {
 
   'spacing-4': { category: 'spacing', value: '4px', status: 'confirmed' },
   'spacing-8': { category: 'spacing', value: '8px', status: 'confirmed' },
+  'spacing-10': { category: 'spacing', value: '10px', status: 'pending-design' },
   'spacing-16': { category: 'spacing', value: '16px', status: 'confirmed' },
   'spacing-24': { category: 'spacing', value: '24px', status: 'confirmed' },
   'spacing-32': { category: 'spacing', value: '32px', status: 'confirmed' },

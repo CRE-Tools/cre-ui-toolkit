@@ -1,7 +1,7 @@
 ---
 id: TASK-020
 title: Migrate component stories to token registry + fix token content
-status: pending
+status: done
 model: cheap
 model-name: SWE-1.6
 context:
