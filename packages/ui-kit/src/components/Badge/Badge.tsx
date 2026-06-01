@@ -14,8 +14,8 @@ import { cn } from '../../utils/cn'
  *   brand     → destaque com cor primária PUCPR
  *
  * Tokens aplicados:
- *   border-radius-pill = 9999px  (formato pílula)
- *   font-body semibold           (tipografia)
+ *   radius-full = 9999px  (formato pílula)
+ *   font-body semibold    (tipografia)
  */
 
 export type BadgeVariant = 'default' | 'success' | 'warning' | 'danger' | 'info' | 'draft' | 'brand'
@@ -57,7 +57,7 @@ export function Badge({
   return (
     <span
       className={cn(
-        'inline-flex items-center font-body font-semibold rounded-pill whitespace-nowrap',
+        'inline-flex items-center font-body font-semibold rounded-radius-full whitespace-nowrap',
         variantClasses[variant],
         sizeClasses[size],
         className,

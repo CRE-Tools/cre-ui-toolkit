@@ -21,8 +21,8 @@ import { cn } from '../../utils/cn'
  *
  * Tokens:
  *   brand.DEFAULT #7B1234 — item ativo
- *   border-radius-xsmall = 8px — item hover
- *   font-body semibold          — labels
+ *   radius-8 = 8px — item hover
+ *   font-body semibold — labels
  */
 
 // ─── Sidebar container ───────────────────────────────────────────────────────
@@ -132,7 +132,7 @@ export function SidebarItem({
   ...props
 }: SidebarItemProps) {
   const sharedClass = cn(
-    'group w-full flex items-center gap-3 px-3 py-2 rounded-xsmall',
+    'group w-full flex items-center gap-3 px-3 py-2 rounded-radius-8',
     'font-body text-sm font-medium transition-colors duration-100',
     'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-brand/30',
     active
@@ -155,7 +155,7 @@ export function SidebarItem({
       <span className="flex-1 truncate">{children}</span>
 
       {badge !== undefined && badge > 0 && (
-        <span className="shrink-0 min-w-[18px] h-[18px] px-1 rounded-pill bg-brand text-white text-[10px] font-semibold flex items-center justify-center">
+        <span className="shrink-0 min-w-[18px] h-[18px] px-1 rounded-radius-full bg-brand text-white text-[10px] font-semibold flex items-center justify-center">
           {badge > 99 ? '99+' : badge}
         </span>
       )}

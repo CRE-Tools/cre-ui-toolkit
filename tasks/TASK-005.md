@@ -1,7 +1,7 @@
 ---
 id: TASK-005
 title: Rename border-radius tokens to numeric system + fix broken Surface focus ring
-status: pending
+status: completed
 model: medium
 model-name: GPT-5.2
 context:
@@ -46,15 +46,15 @@ Fix: also add a `ringWidth` extension to `tailwind.config.ts` with a `DEFAULT` o
 
 ## Acceptance Criteria
 
-- [ ] `tailwind.config.ts` `borderRadius` section updated to the new token names (see Relevant Data)
-- [ ] `tailwind.config.ts` `ringWidth` section added with `DEFAULT: '3px'`
-- [ ] All 5 component files updated — old radius class names replaced with new ones (see per-file table below)
-- [ ] `Surface.tsx` `interactive` variant: `ring-large` replaced with `ring` (uses new 3px default)
-- [ ] `Surface.tsx` comment updated to remove reference to `border-radius-small/medium/xlarge` old names
-- [ ] `docs/context/design-system-decisions.md` radius table updated to include `radius-12`
-- [ ] `pnpm build` in `packages/ui-kit/` succeeds
-- [ ] Storybook builds — visually spot-check Button, Surface, Badge, and Modal to confirm border-radius renders correctly
-- [ ] Interactive Surface has a visible focus ring (accessibility fix)
+- [x] `tailwind.config.ts` `borderRadius` section updated to the new token names (see Relevant Data)
+- [x] `tailwind.config.ts` `ringWidth` section added with `DEFAULT: '3px'`
+- [x] All 5 component files updated — old radius class names replaced with new ones (see per-file table below)
+- [x] `Surface.tsx` `interactive` variant: `ring-large` replaced with `ring` (uses new 3px default)
+- [x] `Surface.tsx` comment updated to remove reference to `border-radius-small/medium/xlarge` old names
+- [x] `docs/context/design-system-decisions.md` radius table updated to include `radius-12`
+- [x] `pnpm build` in `packages/ui-kit/` succeeds
+- [x] Storybook builds — visually spot-check Button, Surface, Badge, and Modal to confirm border-radius renders correctly
+- [x] Interactive Surface has a visible focus ring (accessibility fix)
 
 ## Relevant Data
 

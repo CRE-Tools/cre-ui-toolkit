@@ -60,7 +60,7 @@ export const ActionButton = forwardRef<HTMLButtonElement, ActionButtonProps>(
         ref={ref}
         type="button"
         className={cn(
-          'inline-flex items-center gap-1 px-2 py-1 rounded-xxsmall',
+          'inline-flex items-center gap-1 px-2 py-1 rounded-radius-4',
           'font-body text-xs font-semibold whitespace-nowrap',
           'transition-colors duration-100',
           'focus-visible:outline-none focus-visible:ring-[2px]',

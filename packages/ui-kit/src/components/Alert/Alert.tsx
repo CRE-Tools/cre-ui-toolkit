@@ -11,8 +11,8 @@ import { cn } from '../../utils/cn'
  *   info    → informação neutra
  *
  * Tokens aplicados:
- *   border-radius-xsmall = 8px
- *   border-width-small   = 1px
+ *   radius-8 = 8px
+ *   border-width-small = 1px
  */
 
 export type AlertVariant = 'success' | 'warning' | 'danger' | 'info'
@@ -99,7 +99,7 @@ export function Alert({
     <div
       role="alert"
       className={cn(
-        'flex gap-3 rounded-xsmall px-4 py-3',
+        'flex gap-3 rounded-radius-8 px-4 py-3',
         variantClasses[variant],
         className,
       )}

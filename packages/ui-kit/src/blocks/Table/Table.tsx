@@ -35,7 +35,7 @@ import { cn } from '../../utils/cn'
 
 export function Table({ className, children, ...props }: HTMLAttributes<HTMLTableElement>) {
   return (
-    <div className="w-full overflow-x-auto rounded-xsmall border border-[#B5A8AD]/30">
+    <div className="w-full overflow-x-auto rounded-radius-8 border border-[#B5A8AD]/30">
       <table
         className={cn('w-full border-collapse font-body text-sm', className)}
         {...props}

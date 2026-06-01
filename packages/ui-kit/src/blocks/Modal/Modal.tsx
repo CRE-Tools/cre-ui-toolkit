@@ -20,9 +20,9 @@ import { Button } from '../../components/Button/Button'
  *   - Acessível: role="dialog", aria-modal, aria-labelledby
  *
  * Tokens aplicados:
- *   shadow-level-3    — elevação máxima
- *   border-radius-medium = 16px
- *   brand.DEFAULT     — borda de foco e variante danger
+ *   shadow-level-3 — elevação máxima
+ *   radius-16 = 16px
+ *   brand.DEFAULT — borda de foco e variante danger
  */
 
 export type ModalSize = 'sm' | 'md' | 'lg' | 'full'
@@ -118,7 +118,7 @@ export function Modal({
         ref={dialogRef}
         tabIndex={-1}
         className={cn(
-          'relative w-full bg-white rounded-medium shadow-level-3',
+          'relative w-full bg-white rounded-radius-16 shadow-level-3',
           'flex flex-col max-h-[90vh]',
           'focus:outline-none',
           sizeClasses[size],
@@ -154,7 +154,7 @@ export function Modal({
               type="button"
               onClick={onClose}
               aria-label="Fechar modal"
-              className="shrink-0 p-1 rounded-xsmall text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-brand/30"
+              className="shrink-0 p-1 rounded-radius-8 text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-brand/30"
             >
               <CloseIcon />
             </button>

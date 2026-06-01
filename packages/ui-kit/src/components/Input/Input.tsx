@@ -14,7 +14,7 @@ import { cn } from '../../utils/cn'
  * Estados de validação seguem o DS PUCPR (error, success, disabled).
  *
  * Tokens aplicados:
- *   border-radius-xsmall = 8px  (campo)
+ *   radius-8 = 8px  (campo)
  *   border-width-small   = 1px  (borda padrão)
  *   border-width-medium  = 2px  (hover)
  *   border-width-large   = 3px  (foco)
@@ -58,7 +58,7 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
 
 const baseField = [
   'w-full bg-white font-body text-sm text-gray-900',
-  'border border-[#B5A8AD] rounded-xsmall',
+  'border border-[#B5A8AD] rounded-radius-8',
   'transition-colors duration-150',
   'placeholder:text-[#B5A8AD]',
   'hover:border-gray-400',

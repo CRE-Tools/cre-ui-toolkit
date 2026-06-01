@@ -222,7 +222,7 @@ export function HierarchicalTable({
               type="button"
               onClick={() => exportCSV(columns, data, exportFileName)}
               className={cn(
-                'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xsmall',
+                'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-radius-8',
                 'font-body text-xs font-semibold',
                 'bg-white border border-[#B5A8AD] text-gray-700',
                 'hover:bg-gray-50 hover:border-gray-400 transition-colors',
@@ -237,7 +237,7 @@ export function HierarchicalTable({
       )}
 
       {/* Wrapper com scroll */}
-      <div className="w-full overflow-auto rounded-xsmall border border-[#B5A8AD]/30 max-h-[70vh]">
+      <div className="w-full overflow-auto rounded-radius-8 border border-[#B5A8AD]/30 max-h-[70vh]">
         <table
           className="border-collapse text-xs font-body"
           style={{ minWidth: 'max-content' }}

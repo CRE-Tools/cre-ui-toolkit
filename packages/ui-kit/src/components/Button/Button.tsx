@@ -18,7 +18,7 @@ import { cn } from '../../utils/cn'
  *   destructive        → fundo vermelho. Ações destrutivas (deletar, remover).
  *
  * Tokens aplicados (fonte: Figma DS PUCPR Core Web — Foundation > Tokens):
- *   border-radius-xsmall = 8px  (border-radius do botão)
+ *   radius-8 = 8px  (border-radius do botão)
  *   border-width-small   = 1px  (borda padrão)
  *   border-width-large   = 3px  (anel de foco)
  *   brand.DEFAULT = #7B1234     (cor primária)
@@ -80,9 +80,9 @@ const variantClasses = {
 // ─── Tamanhos ──────────────────────────────────────────────────────────────
 
 const sizeClasses = {
-  sm: 'h-8  px-3   text-sm  gap-1.5 rounded-xsmall',
-  md: 'h-10 px-4   text-sm  gap-2   rounded-xsmall',
-  lg: 'h-12 px-6   text-base gap-2.5 rounded-xsmall',
+  sm: 'h-8  px-3   text-sm  gap-1.5 rounded-radius-8',
+  md: 'h-10 px-4   text-sm  gap-2   rounded-radius-8',
+  lg: 'h-12 px-6   text-base gap-2.5 rounded-radius-8',
 } as const
 
 // ─── Spinner ───────────────────────────────────────────────────────────────

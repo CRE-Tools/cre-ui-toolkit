@@ -14,9 +14,8 @@ import { cn } from '../../utils/cn'
  *   border-width-small  = 1px  (separar elementos de background)
  *   border-width-medium = 2px  (hover e pressed)
  *   border-width-large  = 3px  (foco)
- *   border-radius-small  = 12px
- *   border-radius-medium = 16px
- *   border-radius-xlarge = 24px
+ *   radius-12 = 12px
+ *   radius-16 = 16px
  *
  * ⚠️  Tokens pendentes de confirmação: cor de borda (neutral palette), sombras.
  */
@@ -34,45 +33,45 @@ export type SurfaceVariant =
 // ⚠️ Valores CSS provisórios — confirmar X/Y/Blur/Spread/Cor no painel Efeitos do Figma
 
 const variantClasses: Record<SurfaceVariant, string> = {
-  // Sem sombra | border-radius-small (12px) | border-width-small (1px)
+  // Sem sombra | radius-12 (12px) | border-width-small (1px)
   default: [
     'bg-white',
     'border-small border-[#B5A8AD]/50',
-    'rounded-small',
+    'rounded-radius-12',
   ].join(' '),
 
-  // shadow-level-1 | border-radius-small (12px) | border-width-small (1px)
+  // shadow-level-1 | radius-12 (12px) | border-width-small (1px)
   raised: [
     'bg-white',
     'border-small border-[#B5A8AD]/30',
-    'rounded-small',
+    'rounded-radius-12',
     'shadow-level-1',
   ].join(' '),
 
-  // shadow-level-2 | border-radius-medium (16px) | border-width-small (1px)
+  // shadow-level-2 | radius-16 (16px) | border-width-small (1px)
   overlay: [
     'bg-white',
     'border-small border-[#B5A8AD]/20',
-    'rounded-medium',
+    'rounded-radius-16',
     'shadow-level-2',
   ].join(' '),
 
-  // Sem sombra | fundo rebaixado | border-radius-small (12px)
+  // Sem sombra | fundo rebaixado | radius-12 (12px)
   sunken: [
     'bg-gray-50',
     'border-small border-[#B5A8AD]/60',
-    'rounded-small',
+    'rounded-radius-12',
   ].join(' '),
 
-  // hover: shadow-level-1 + border-width-medium | focus: border-width-large
+  // hover: shadow-level-1 + border-width-medium | focus: ring (3px default)
   interactive: [
     'bg-white',
     'border-small border-[#B5A8AD]/50',
-    'rounded-small',
+    'rounded-radius-12',
     'cursor-pointer',
     'transition-all duration-150',
     'hover:border-medium hover:border-[#B5A8AD] hover:shadow-level-1',
-    'focus-visible:outline-none focus-visible:ring-large focus-visible:ring-[#7B1234]/50',
+    'focus-visible:outline-none focus-visible:ring focus-visible:ring-[#7B1234]/50',
     'active:scale-[0.99]',
   ].join(' '),
 }
