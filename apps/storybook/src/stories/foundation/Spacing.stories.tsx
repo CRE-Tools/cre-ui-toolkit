@@ -22,6 +22,8 @@ export const AllSpacing: Story = {
         { name: 'spacing-40', role: '40' },
         { name: 'spacing-48', role: '48' },
         { name: 'spacing-64', role: '64' },
+        { name: 'spacing-10', role: '10 — fora da escala DS, aguardando decisão' },
+        { name: 'spacing-12', role: '12 — fora da escala DS, aguardando decisão' },
       ]}
     />
   ),
