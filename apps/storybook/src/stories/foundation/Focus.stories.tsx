@@ -14,9 +14,9 @@ export const AllFocusPatterns: Story = {
   render: () => (
     <TokenUsage
       tokens={[
-        { name: 'focus-standard', category: 'focus', value: 'ring', role: 'Elementos interativos padrão', status: 'pending-design' },
-        { name: 'focus-on-brand', category: 'focus', value: 'ring white/60', role: 'Elementos sobre fundos na cor da marca', status: 'pending-design' },
-        { name: 'focus-compact', category: 'focus', value: 'ring-2', role: 'Elementos compactos', status: 'pending-design' },
+        { name: 'focus-standard', role: 'Elementos interativos padrão' },
+        { name: 'focus-on-brand', role: 'Elementos sobre fundos na cor da marca' },
+        { name: 'focus-compact', role: 'Elementos compactos' },
       ]}
     />
   ),

@@ -1,7 +1,7 @@
 ---
 id: TASK-019
 title: Migrate Foundation stories to use token registry
-status: pending
+status: done
 model: cheap
 model-name: SWE-1.6
 context:

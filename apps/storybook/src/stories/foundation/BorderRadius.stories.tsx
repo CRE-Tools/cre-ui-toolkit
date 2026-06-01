@@ -14,13 +14,13 @@ export const AllRadii: Story = {
   render: () => (
     <TokenUsage
       tokens={[
-        { name: 'radius-0', category: 'radius', value: '0px', role: 'rounded-radius-0', status: 'confirmed' },
-        { name: 'radius-4', category: 'radius', value: '4px', role: 'rounded-radius-4', status: 'confirmed' },
-        { name: 'radius-8', category: 'radius', value: '8px', role: 'rounded-radius-8', status: 'confirmed' },
-        { name: 'radius-12', category: 'radius', value: '12px', role: 'rounded-radius-12', status: 'pending-design' },
-        { name: 'radius-16', category: 'radius', value: '16px', role: 'rounded-radius-16', status: 'confirmed' },
-        { name: 'radius-32', category: 'radius', value: '32px', role: 'rounded-radius-32', status: 'confirmed' },
-        { name: 'radius-full', category: 'radius', value: '9999px', role: 'rounded-radius-full', status: 'confirmed' },
+        { name: 'radius-0', role: 'rounded-radius-0' },
+        { name: 'radius-4', role: 'rounded-radius-4' },
+        { name: 'radius-8', role: 'rounded-radius-8' },
+        { name: 'radius-12', role: 'rounded-radius-12' },
+        { name: 'radius-16', role: 'rounded-radius-16' },
+        { name: 'radius-32', role: 'rounded-radius-32' },
+        { name: 'radius-full', role: 'rounded-radius-full' },
       ]}
     />
   ),
