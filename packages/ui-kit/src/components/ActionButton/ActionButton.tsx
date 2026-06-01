@@ -22,7 +22,7 @@ export type ActionButtonVariant = 'default' | 'destructive' | 'brand'
 const variantClasses: Record<ActionButtonVariant, string> = {
   default: [
     'bg-white text-gray-600',
-    'border border-[#B5A8AD]/60',
+    'border border-neutral-400/60',
     'hover:bg-gray-50 hover:text-gray-900 hover:border-gray-400',
     'focus-visible:ring-gray-400/30',
   ].join(' '),

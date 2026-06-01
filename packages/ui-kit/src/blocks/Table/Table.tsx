@@ -6,6 +6,8 @@ import {
 } from 'react'
 import { cn } from '../../utils/cn'
 
+const BRAND_COLOR = '#7B1234'
+
 /**
  * Table — listagem de dados do painel administrativo.
  *
@@ -35,7 +37,7 @@ import { cn } from '../../utils/cn'
 
 export function Table({ className, children, ...props }: HTMLAttributes<HTMLTableElement>) {
   return (
-    <div className="w-full overflow-x-auto rounded-radius-8 border border-[#B5A8AD]/30">
+    <div className="w-full overflow-x-auto rounded-radius-8 border border-neutral-400/30">
       <table
         className={cn('w-full border-collapse font-body text-sm', className)}
         {...props}
@@ -49,14 +51,14 @@ export function Table({ className, children, ...props }: HTMLAttributes<HTMLTabl
 export function TableHead({ className, ...props }: HTMLAttributes<HTMLTableSectionElement>) {
   return (
     <thead
-      className={cn('bg-gray-50 border-b border-[#B5A8AD]/30', className)}
+      className={cn('bg-gray-50 border-b border-neutral-400/30', className)}
       {...props}
     />
   )
 }
 
 export function TableBody({ className, ...props }: HTMLAttributes<HTMLTableSectionElement>) {
-  return <tbody className={cn('divide-y divide-[#B5A8AD]/20', className)} {...props} />
+  return <tbody className={cn('divide-y divide-neutral-400/20', className)} {...props} />
 }
 
 export interface TableRowProps extends HTMLAttributes<HTMLTableRowElement> {
@@ -175,7 +177,7 @@ export function TableSkeleton({ cols, rows = 5 }: TableSkeletonProps) {
   return (
     <>
       {Array.from({ length: rows }).map((_, i) => (
-        <tr key={i} className="border-b border-[#B5A8AD]/20 last:border-0">
+        <tr key={i} className="border-b border-neutral-400/20 last:border-0">
           {Array.from({ length: cols }).map((_, j) => (
             <td key={j} className="px-4 py-3">
               <div className="h-4 bg-gray-100 rounded animate-pulse" style={{ width: j === 0 ? '60%' : '80%' }} />
@@ -286,12 +288,12 @@ function SortIcon({ dir }: { dir: 'asc' | 'desc' | null }) {
       <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"
         className={cn('transition-opacity', dir === 'asc' && 'opacity-100 text-brand')}
       >
-        <path d="M4 0L7.5 5H.5L4 0z" fill={dir === 'asc' ? '#7B1234' : 'currentColor'}/>
+        <path d="M4 0L7.5 5H.5L4 0z" fill={dir === 'asc' ? BRAND_COLOR : 'currentColor'}/>
       </svg>
       <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true"
         className={cn('transition-opacity', dir === 'desc' && 'opacity-100 text-brand')}
       >
-        <path d="M4 5L.5 0h7L4 5z" fill={dir === 'desc' ? '#7B1234' : 'currentColor'}/>
+        <path d="M4 5L.5 0h7L4 5z" fill={dir === 'desc' ? BRAND_COLOR : 'currentColor'}/>
       </svg>
     </span>
   )

@@ -1,7 +1,7 @@
 ---
 id: TASK-006
 title: Replace hardcoded #B5A8AD hex with neutral-400 token throughout
-status: pending
+status: done
 model: cheap
 model-name: SWE-1.6
 context:

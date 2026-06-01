@@ -58,9 +58,9 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
 
 const baseField = [
   'w-full bg-white font-body text-sm text-gray-900',
-  'border border-[#B5A8AD] rounded-radius-8',
+  'border border-neutral-400 rounded-radius-8',
   'transition-colors duration-150',
-  'placeholder:text-[#B5A8AD]',
+  'placeholder:text-neutral-400',
   'hover:border-gray-400',
   'focus:outline-none focus:border-brand focus:ring-[3px] focus:ring-brand/20',
   'disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed disabled:border-gray-200',

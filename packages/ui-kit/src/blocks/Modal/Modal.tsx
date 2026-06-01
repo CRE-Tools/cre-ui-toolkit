@@ -129,7 +129,7 @@ export function Modal({
         {(title || description) && (
           <div
             className={cn(
-              'flex items-start justify-between gap-4 px-6 py-5 border-b border-[#B5A8AD]/30',
+              'flex items-start justify-between gap-4 px-6 py-5 border-b border-neutral-400/30',
               variant === 'danger' && 'border-red-100',
             )}
           >
@@ -170,7 +170,7 @@ export function Modal({
 
         {/* Footer */}
         {footer && (
-          <div className="px-6 py-4 border-t border-[#B5A8AD]/30 flex justify-end gap-3">
+          <div className="px-6 py-4 border-t border-neutral-400/30 flex justify-end gap-3">
             {footer}
           </div>
         )}

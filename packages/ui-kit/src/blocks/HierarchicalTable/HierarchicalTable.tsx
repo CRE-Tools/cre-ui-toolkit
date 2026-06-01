@@ -224,7 +224,7 @@ export function HierarchicalTable({
               className={cn(
                 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-radius-8',
                 'font-body text-xs font-semibold',
-                'bg-white border border-[#B5A8AD] text-gray-700',
+                'bg-white border border-neutral-400 text-gray-700',
                 'hover:bg-gray-50 hover:border-gray-400 transition-colors',
                 'focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-brand/30',
               )}
@@ -237,7 +237,7 @@ export function HierarchicalTable({
       )}
 
       {/* Wrapper com scroll */}
-      <div className="w-full overflow-auto rounded-radius-8 border border-[#B5A8AD]/30 max-h-[70vh]">
+      <div className="w-full overflow-auto rounded-radius-8 border border-neutral-400/30 max-h-[70vh]">
         <table
           className="border-collapse text-xs font-body"
           style={{ minWidth: 'max-content' }}
@@ -255,7 +255,7 @@ export function HierarchicalTable({
                       rowSpan={cell.rowspan}
                       className={cn(
                         'px-3 py-2 text-center font-semibold whitespace-nowrap select-none',
-                        'border border-[#B5A8AD]/40',
+                        'border border-neutral-400/40',
                         cell.isLeaf
                           ? 'bg-gray-50 text-gray-600'
                           : 'bg-brand text-white',
@@ -276,7 +276,7 @@ export function HierarchicalTable({
               <tr>
                 <td
                   colSpan={leaves.length}
-                  className="px-4 py-10 text-center text-gray-400 border border-[#B5A8AD]/20"
+                  className="px-4 py-10 text-center text-gray-400 border border-neutral-400/20"
                 >
                   Nenhum dado disponível.
                 </td>
@@ -301,11 +301,11 @@ export function HierarchicalTable({
                         className={cn(
                           'px-3 py-2 whitespace-nowrap text-gray-700',
                           // border-collapse elimina o bug de linha branca
-                          'border border-[#B5A8AD]/20',
+                          'border border-neutral-400/20',
                           isFirst && [
                             'sticky left-0 z-10 font-semibold',
                             rowIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50',
-                            'border-r-2 border-r-[#B5A8AD]/40',
+                            'border-r-2 border-r-neutral-400/40',
                           ],
                         )}
                       >

@@ -37,7 +37,7 @@ export function Sidebar({ collapsed = false, children, className, ...props }: Si
   return (
     <aside
       className={cn(
-        'flex flex-col h-full bg-white border-r border-[#B5A8AD]/30',
+        'flex flex-col h-full bg-white border-r border-neutral-400/30',
         'transition-all duration-200',
         collapsed ? 'w-16' : 'w-64',
         className,
@@ -59,7 +59,7 @@ export function SidebarHeader({ children, className, ...props }: SidebarHeaderPr
   return (
     <div
       className={cn(
-        'flex items-center px-4 h-16 border-b border-[#B5A8AD]/30 shrink-0',
+        'flex items-center px-4 h-16 border-b border-neutral-400/30 shrink-0',
         className,
       )}
       {...props}
@@ -190,7 +190,7 @@ export function SidebarItem({
 // ─── Divider ─────────────────────────────────────────────────────────────────
 
 export function SidebarDivider({ className }: { className?: string }) {
-  return <hr className={cn('my-2 border-[#B5A8AD]/30', className)} />
+  return <hr className={cn('my-2 border-neutral-400/30', className)} />
 }
 
 // ─── Footer ──────────────────────────────────────────────────────────────────
@@ -203,7 +203,7 @@ export function SidebarFooter({ children, className, ...props }: SidebarFooterPr
   return (
     <div
       className={cn(
-        'shrink-0 px-3 py-4 border-t border-[#B5A8AD]/30',
+        'shrink-0 px-3 py-4 border-t border-neutral-400/30',
         className,
       )}
       {...props}

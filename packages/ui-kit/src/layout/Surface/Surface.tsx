@@ -36,14 +36,14 @@ const variantClasses: Record<SurfaceVariant, string> = {
   // Sem sombra | radius-12 (12px) | border-width-small (1px)
   default: [
     'bg-white',
-    'border-small border-[#B5A8AD]/50',
+    'border-small border-neutral-400/50',
     'rounded-radius-12',
   ].join(' '),
 
   // shadow-level-1 | radius-12 (12px) | border-width-small (1px)
   raised: [
     'bg-white',
-    'border-small border-[#B5A8AD]/30',
+    'border-small border-neutral-400/30',
     'rounded-radius-12',
     'shadow-level-1',
   ].join(' '),
@@ -51,7 +51,7 @@ const variantClasses: Record<SurfaceVariant, string> = {
   // shadow-level-2 | radius-16 (16px) | border-width-small (1px)
   overlay: [
     'bg-white',
-    'border-small border-[#B5A8AD]/20',
+    'border-small border-neutral-400/20',
     'rounded-radius-16',
     'shadow-level-2',
   ].join(' '),
@@ -59,19 +59,19 @@ const variantClasses: Record<SurfaceVariant, string> = {
   // Sem sombra | fundo rebaixado | radius-12 (12px)
   sunken: [
     'bg-gray-50',
-    'border-small border-[#B5A8AD]/60',
+    'border-small border-neutral-400/60',
     'rounded-radius-12',
   ].join(' '),
 
   // hover: shadow-level-1 + border-width-medium | focus: ring (3px default)
   interactive: [
     'bg-white',
-    'border-small border-[#B5A8AD]/50',
+    'border-small border-neutral-400/50',
     'rounded-radius-12',
     'cursor-pointer',
     'transition-all duration-150',
-    'hover:border-medium hover:border-[#B5A8AD] hover:shadow-level-1',
-    'focus-visible:outline-none focus-visible:ring focus-visible:ring-[#7B1234]/50',
+    'hover:border-medium hover:border-neutral-400 hover:shadow-level-1',
+    'focus-visible:outline-none focus-visible:ring focus-visible:ring-brand/50',
     'active:scale-[0.99]',
   ].join(' '),
 }
