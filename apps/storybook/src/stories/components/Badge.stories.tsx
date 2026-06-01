@@ -125,11 +125,11 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Badge"
       tokens={[
-        { name: 'radius-full', category: 'radius', value: '9999px', role: 'border-radius (pill shape)', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'text/background (brand variant)', status: 'confirmed' },
-        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'horizontal padding (sm size)', status: 'confirmed' },
-        { name: 'spacing-10', category: 'spacing', value: '10px', role: 'horizontal padding (md size)', status: 'confirmed' },
+        { name: 'radius-full', category: 'radius', value: '9999px', role: 'raio de borda (formato pill)', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'texto/fundo (variante brand)', status: 'confirmed' },
+        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'padding horizontal (tamanho sm)', status: 'confirmed' },
+        { name: 'spacing-10', category: 'spacing', value: '10px', role: 'padding horizontal (tamanho md)', status: 'confirmed' },
       ]}
     />
   ),
@@ -145,10 +145,10 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
     <PendingReview
       component="Badge"
       items={[
-          'Confirm all variant colors against DS PUCPR official palette',
-          'Validate border-radius-pill usage (9999px) — check if DS uses a smaller radius',
-          'Review icon sizing and alignment within badge',
-          'Check font-size and weight (currently xs/semibold)',
+          'Confirmar todas as cores de variante em relação à paleta oficial DS PUCPR',
+          'Validar uso do border-radius-pill (9999px) — verificar se o DS usa um raio menor',
+          'Revisar tamanho e alinhamento do ícone dentro do badge',
+          'Verificar font-size e peso tipográfico (atualmente xs/semibold)',
       ]}
     />
   ),

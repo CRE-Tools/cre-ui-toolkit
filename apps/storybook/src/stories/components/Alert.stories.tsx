@@ -115,11 +115,11 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Alert"
       tokens={[
-        { name: 'radius-8', category: 'radius', value: '8px', role: 'border-radius', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
-        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'horizontal padding', status: 'confirmed' },
-        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'vertical padding', status: 'confirmed' },
-        { name: 'semantic colors', category: 'color', value: 'success/warning/danger/info', role: 'variant backgrounds', status: 'pending-design' },
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'raio de borda', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
+        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'padding horizontal', status: 'confirmed' },
+        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'padding vertical', status: 'confirmed' },
+        { name: 'semantic colors', category: 'color', value: 'success/warning/danger/info', role: 'fundos de variante', status: 'pending-design' },
       ]}
     />
   ),
@@ -134,12 +134,12 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
   render: () => (
     <PendingReview
       component="Alert"
-        notes="Colors are approximated from PUCPR Storybook visual. Confirm exact hex values with design."
+        notes="As cores foram aproximadas a partir do visual do Storybook PUCPR. Confirmar valores hex exatos com o design."
       items={[
-          'Confirm semantic colors (success/warning/danger/info) match DS PUCPR palette',
-          'Validate icon set — may need to switch to Font Awesome once token is available',
-          'Review with-action layout for different screen sizes',
-          'Check color contrast ratios (WCAG AA)',
+          'Confirmar se as cores semânticas (success/warning/danger/info) correspondem à paleta DS PUCPR',
+          'Validar conjunto de ícones — pode ser necessário migrar para Font Awesome quando o token estiver disponível',
+          'Revisar o layout com ação em diferentes tamanhos de tela',
+          'Verificar taxas de contraste de cor (WCAG AA)',
       ]}
     />
   ),

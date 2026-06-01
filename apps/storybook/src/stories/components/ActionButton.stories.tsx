@@ -100,12 +100,12 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="ActionButton"
       tokens={[
-        { name: 'radius-4', category: 'radius', value: '4px', role: 'border-radius', status: 'confirmed' },
-        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (default variant)', status: 'confirmed' },
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'background (brand variant)', status: 'confirmed' },
-        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'horizontal padding', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
-        { name: 'ring', category: 'focus', value: '2px ring', role: 'focus ring', status: 'pending-design' },
+        { name: 'radius-4', category: 'radius', value: '4px', role: 'raio de borda', status: 'confirmed' },
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'cor da borda (variante default)', status: 'confirmed' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'fundo (variante brand)', status: 'confirmed' },
+        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'padding horizontal', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
+        { name: 'ring', category: 'focus', value: '2px ring', role: 'anel de foco', status: 'pending-design' },
       ]}
     />
   ),
@@ -120,13 +120,13 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
   render: () => (
     <PendingReview
       component="ActionButton"
-        notes="ActionButton was derived from the PUCPR analytics UI screenshot, not from official DS tokens."
+        notes="ActionButton foi derivado do screenshot da UI de analytics da PUCPR, não de tokens oficiais do DS."
       items={[
-          'Confirm button sizing matches DS PUCPR spec (height, padding, font-size)',
-          'Validate destructive variant color against brand palette',
-          'Check disabled state opacity and cursor',
-          'Review ActionGroup spacing with design team',
-          'Confirm border-radius token (xxsmall = 4px) is correct for this context',
+          'Confirmar se o tamanho do botão corresponde à especificação DS PUCPR (altura, padding, font-size)',
+          'Validar cor da variante destructive em relação à paleta da marca',
+          'Verificar opacidade e cursor no estado disabled',
+          'Revisar espaçamento do ActionGroup com a equipe de design',
+          'Confirmar se o token de border-radius (xxsmall = 4px) é correto para este contexto',
       ]}
     />
   ),

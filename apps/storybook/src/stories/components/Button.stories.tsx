@@ -153,13 +153,13 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Button"
       tokens={[
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'background (primary variant)', status: 'confirmed' },
-        { name: 'radius-8', category: 'radius', value: '8px', role: 'border-radius (all sizes)', status: 'confirmed' },
-        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'horizontal padding (sm size)', status: 'confirmed' },
-        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'horizontal padding (md size)', status: 'confirmed' },
-        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'horizontal padding (lg size)', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
-        { name: 'ring-brand', category: 'focus', value: '3px ring', role: 'focus ring (all variants)', status: 'pending-design' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'fundo (variante primary)', status: 'confirmed' },
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'raio de borda (todos os tamanhos)', status: 'confirmed' },
+        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'padding horizontal (tamanho sm)', status: 'confirmed' },
+        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'padding horizontal (tamanho md)', status: 'confirmed' },
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'padding horizontal (tamanho lg)', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
+        { name: 'ring-brand', category: 'focus', value: '3px ring', role: 'anel de foco (todas as variantes)', status: 'pending-design' },
       ]}
     />
   ),
@@ -174,14 +174,14 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
   render: () => (
     <PendingReview
       component="Button"
-        notes="Destructive variant was added for admin panel needs — not in PUCPR DS. Needs explicit approval."
+        notes="A variante destructive foi adicionada para necessidades do painel admin — não está no DS PUCPR. Requer aprovação explícita."
       items={[
-          'Confirm all 6 variants (primary/secondary/tertiary/on-brand x3) match DS PUCPR Storybook',
-          'Validate hover, focus, active, and disabled states with design team',
-          'Review loading spinner animation and sizing',
-          'Confirm border-radius token for each size (sm/md/lg)',
-          'Check on-brand variants on dark background — need real brand background to test',
-          'Validate font-size and weight per size',
+          'Confirmar se todas as 6 variantes (primary/secondary/tertiary/on-brand x3) correspondem ao Storybook DS PUCPR',
+          'Validar estados hover, focus, active e disabled com a equipe de design',
+          'Revisar animação e tamanho do spinner de loading',
+          'Confirmar token de border-radius para cada tamanho (sm/md/lg)',
+          'Verificar variantes on-brand sobre fundo escuro — necessário fundo real da marca para testar',
+          'Validar font-size e peso tipográfico por tamanho',
       ]}
     />
   ),

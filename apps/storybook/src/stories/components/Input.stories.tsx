@@ -148,13 +148,13 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Input"
       tokens={[
-        { name: 'radius-8', category: 'radius', value: '8px', role: 'border-radius', status: 'confirmed' },
-        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'placeholder and border idle', status: 'confirmed' },
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'focus ring', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
-        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'horizontal padding', status: 'confirmed' },
-        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'vertical padding', status: 'confirmed' },
-        { name: 'ring', category: 'focus', value: '3px ring', role: 'focus ring', status: 'pending-design' },
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'raio de borda', status: 'confirmed' },
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'placeholder e borda em repouso', status: 'confirmed' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'anel de foco', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
+        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'padding horizontal', status: 'confirmed' },
+        { name: 'spacing-8', category: 'spacing', value: '8px', role: 'padding vertical', status: 'confirmed' },
+        { name: 'ring', category: 'focus', value: '3px ring', role: 'anel de foco', status: 'pending-design' },
       ]}
     />
   ),
@@ -170,12 +170,12 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
     <PendingReview
       component="Input"
       items={[
-          'Confirm focus ring color and width (currently brand/3px) match DS spec',
-          'Validate error/success border colors against DS semantic palette',
-          'Review label font-weight (semibold) and size (sm)',
-          'Check textarea resize behavior and min-height',
-          'Confirm character counter styling and positioning',
-          'Validate icon sizing and spacing inside field',
+          'Confirmar cor e largura do anel de foco (atualmente brand/3px) em relação à especificação DS',
+          'Validar cores de borda de erro/sucesso em relação à paleta semântica DS',
+          'Revisar font-weight do label (semibold) e tamanho (sm)',
+          'Verificar comportamento de redimensionamento e min-height do textarea',
+          'Confirmar estilo e posicionamento do contador de caracteres',
+          'Validar tamanho e espaçamento do ícone dentro do campo',
       ]}
     />
   ),

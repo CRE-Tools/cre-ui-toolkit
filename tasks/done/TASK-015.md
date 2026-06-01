@@ -1,7 +1,7 @@
 ---
 id: TASK-015
 title: Translate Component stories to PT-BR
-status: pending
+status: done
 model: cheap
 model-name: SWE-1.6
 context:
