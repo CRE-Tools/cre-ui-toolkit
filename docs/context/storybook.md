@@ -99,8 +99,8 @@ export const TokenUsageStory: Story = {
     <TokenUsage
       component="Button"
       tokens={[
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'background — primary variant', status: 'confirmed' },
-        { name: 'rounded-radius-8', category: 'radius', value: '8px', role: 'border-radius', status: 'confirmed' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'fundo — variante primary', status: 'confirmed' },
+        { name: 'rounded-radius-8', category: 'radius', value: '8px', role: 'raio de borda', status: 'confirmed' },
       ]}
     />
   ),
@@ -186,10 +186,10 @@ export const PendingReviewStory: Story = {
     <PendingReview
       component="ComponentName"
       items={[
-        'Open question 1',
-        'Open question 2',
+        'Pergunta aberta 1',
+        'Pergunta aberta 2',
       ]}
-      notes="Optional free-form note about a non-obvious decision."
+      notes="Nota livre sobre uma decisão não óbvia."
     />
   ),
 }
@@ -226,4 +226,14 @@ export const PendingReviewStory: Story = { ... }
 
 ## Language
 
-Story display names and `PendingReview` items may be in Portuguese or English. Dev code (variable names, TypeScript, comments) is in English. Story-facing text (labels, descriptions that appear in the UI) may be in Portuguese when targeting Portuguese-speaking users.
+**Code is always in English:** TypeScript identifiers, export names, component names, token names, Storybook `title` strings, and code comments.
+
+**All Storybook documentation text must be in PT-BR (Brazilian Portuguese).** This is mandatory. It applies to:
+
+- Story `name` fields — use PT-BR for any human-readable description
+- `PendingReview` `items` and `notes`
+- `TokenUsage` token `role` fields and `notes`
+- `argTypes` `description` fields
+- Any other user-visible text in the Storybook UI
+
+Exception: variant story names that mirror the DS code name exactly (e.g., a story named `'Primary'` or `'Default'`) may stay in English, because they are the design system's canonical name, not a description. Any story name that is a description or section label must be PT-BR.
