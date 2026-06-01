@@ -1,7 +1,7 @@
 ---
 id: TASK-018
 title: Create token registry + update TokenUsage to resolve from it
-status: pending
+status: done
 model: medium
 model-name: GPT-5.2
 context:
@@ -29,14 +29,14 @@ After this task, existing full-form story entries (`{ name, category, value, rol
 
 ## Acceptance Criteria
 
-- [ ] `packages/storybook-utils/src/token-registry.ts` exists and is exported from `packages/storybook-utils/src/index.ts`
-- [ ] Registry contains all tokens listed in "Relevant Data" below, with correct `category`, `value`, and `status`
-- [ ] `TokenEntry` in `TokenUsage.tsx` has `value`, `category`, and `status` all marked optional
-- [ ] When `value` / `category` / `status` are absent from a story entry, `TokenUsage` resolves them from the registry using `name` as the lookup key
-- [ ] When a `name` is not found in the registry, `TokenUsage` renders a visible warning for that entry (e.g., red border, "token não encontrado no registry") rather than silently breaking
-- [ ] Existing full-form entries (`{ name, category, value, role, status }`) still render correctly — backward compat preserved
-- [ ] TypeScript compiles without errors
-- [ ] `tokenRegistry` and `RegistryToken` are exported from `@cre/storybook-utils`
+- [x] `packages/storybook-utils/src/token-registry.ts` exists and is exported from `packages/storybook-utils/src/index.ts`
+- [x] Registry contains all tokens listed in "Relevant Data" below, with correct `category`, `value`, and `status`
+- [x] `TokenEntry` in `TokenUsage.tsx` has `value`, `category`, and `status` all marked optional
+- [x] When `value` / `category` / `status` are absent from a story entry, `TokenUsage` resolves them from the registry using `name` as the lookup key
+- [x] When a `name` is not found in the registry, `TokenUsage` renders a visible warning for that entry (e.g., red border, "token não encontrado no registry") rather than silently breaking
+- [x] Existing full-form entries (`{ name, category, value, role, status }`) still render correctly — backward compat preserved
+- [x] TypeScript compiles without errors
+- [x] `tokenRegistry` and `RegistryToken` are exported from `@cre/storybook-utils`
 
 ## Relevant Data
 
