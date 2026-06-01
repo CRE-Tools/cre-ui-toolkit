@@ -182,14 +182,14 @@ export const TokenUsageStory: Omit<Story, 'args'> = {
     <TokenUsage
       component="Sidebar"
       tokens={[
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'active item background/text', status: 'confirmed' },
-        { name: 'radius-8', category: 'radius', value: '8px', role: 'item hover border-radius', status: 'confirmed' },
-        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (header/footer/divider)', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
-        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'sidebar width (expanded)', status: 'pending-design' },
-        { name: 'spacing-64', category: 'spacing', value: '64px', role: 'sidebar width (collapsed)', status: 'pending-design' },
-        { name: 'spacing-64', category: 'spacing', value: '64px', role: 'header height', status: 'pending-design' },
-        { name: 'ring', category: 'focus', value: '3px ring', role: 'focus ring (items)', status: 'pending-design' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'fundo/texto do item ativo', status: 'confirmed' },
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'raio de borda do hover do item', status: 'confirmed' },
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'cor da borda (header/footer/divider)', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
+        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'largura da sidebar (expandida)', status: 'pending-design' },
+        { name: 'spacing-64', category: 'spacing', value: '64px', role: 'largura da sidebar (recolhida)', status: 'pending-design' },
+        { name: 'spacing-64', category: 'spacing', value: '64px', role: 'altura do header', status: 'pending-design' },
+        { name: 'ring', category: 'focus', value: '3px ring', role: 'anel de foco (itens)', status: 'pending-design' },
       ]}
     />
   ),
@@ -204,14 +204,14 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
   render: () => (
     <PendingReview
       component="Sidebar"
-        notes="Sidebar is a new pattern — PUCPR DS does not have a sidebar component. Full design sign-off required."
+        notes="Sidebar é um padrão novo — o DS PUCPR não possui um componente sidebar. Aprovação completa do design é necessária."
       items={[
-          'Confirm active item background (brand/10) and text color (brand) with design',
-          'Review collapsed state — icon-only view needs visual validation',
-          'Validate badge (notification count) size and positioning',
-          'Confirm sidebar width (w-64 expanded / w-16 collapsed)',
-          'Review group label styling (uppercase, tracking-widest, text-[10px])',
-          'Check border and divider colors against DS neutral palette',
+          'Confirmar fundo do item ativo (brand/10) e cor do texto (brand) com o design',
+          'Revisar estado recolhido — a visualização apenas com ícones precisa de validação visual',
+          'Validar tamanho e posicionamento do badge de contagem de notificações',
+          'Confirmar largura da sidebar (w-64 expandida / w-16 recolhida)',
+          'Revisar estilo do label de grupo (maiúsculas, tracking-widest, text-[10px])',
+          'Verificar cores de borda e divisor em relação à paleta neutra DS',
       ]}
     />
   ),

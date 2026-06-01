@@ -114,12 +114,12 @@ export const TokenUsageStory: Omit<Story, 'args'> = {
     <TokenUsage
       component="HierarchicalTable"
       tokens={[
-        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (table cells)', status: 'confirmed' },
-        { name: 'radius-8', category: 'radius', value: '8px', role: 'border-radius (table wrapper)', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'grouped header background', status: 'confirmed' },
-        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'horizontal/vertical padding (cells)', status: 'confirmed' },
-        { name: 'ring', category: 'focus', value: '3px ring', role: 'focus ring (export button)', status: 'pending-design' },
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'cor da borda (células da tabela)', status: 'confirmed' },
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'raio de borda (contêiner da tabela)', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'fundo do cabeçalho agrupado', status: 'confirmed' },
+        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'padding horizontal/vertical (células)', status: 'confirmed' },
+        { name: 'ring', category: 'focus', value: '3px ring', role: 'anel de foco (botão de exportar)', status: 'pending-design' },
       ]}
     />
   ),
@@ -134,14 +134,14 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
   render: () => (
     <PendingReview
       component="HierarchicalTable"
-        notes="Component built specifically for the analytics dashboard. No direct PUCPR DS reference — full design review needed."
+        notes="Componente construído especificamente para o dashboard de analytics. Sem referência direta ao DS PUCPR — revisão completa do design é necessária."
       items={[
-          'Review header color for grouped cells (currently brand/maroon) — confirm with design',
-          'Validate sticky column shadow/border separator style',
-          'Confirm alternating row colors match DS neutral palette',
-          'Review CSV export button placement and styling',
-          'Check table behavior on mobile (horizontal scroll UX)',
-          'Confirm font-size (xs) is readable at high data density',
+          'Revisar cor do cabeçalho das células agrupadas (atualmente brand/bordô) — confirmar com o design',
+          'Validar estilo de sombra/borda separadora da coluna fixa',
+          'Confirmar se as cores alternadas de linhas correspondem à paleta neutra DS',
+          'Revisar posicionamento e estilo do botão de exportar CSV',
+          'Verificar comportamento da tabela em mobile (UX de scroll horizontal)',
+          'Confirmar se o font-size (xs) é legível em alta densidade de dados',
       ]}
     />
   ),

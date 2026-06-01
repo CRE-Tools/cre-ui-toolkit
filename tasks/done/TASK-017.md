@@ -1,7 +1,7 @@
 ---
 id: TASK-017
 title: Translate Blocks stories to PT-BR
-status: pending
+status: done
 model: cheap
 model-name: SWE-1.6
 context:

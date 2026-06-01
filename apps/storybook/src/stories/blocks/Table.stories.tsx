@@ -179,12 +179,12 @@ export const TokenUsageStory: Omit<Story, 'args'> = {
     <TokenUsage
       component="Table"
       tokens={[
-        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (table cells)', status: 'confirmed' },
-        { name: 'radius-8', category: 'radius', value: '8px', role: 'border-radius (table wrapper)', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'font family', status: 'confirmed' },
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'sort indicator / selected row highlight', status: 'confirmed' },
-        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'horizontal padding (cells)', status: 'confirmed' },
-        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'vertical padding (cells)', status: 'confirmed' },
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'cor da borda (células da tabela)', status: 'confirmed' },
+        { name: 'radius-8', category: 'radius', value: '8px', role: 'raio de borda (contêiner da tabela)', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica', status: 'confirmed' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'indicador de ordenação / destaque da linha selecionada', status: 'confirmed' },
+        { name: 'spacing-16', category: 'spacing', value: '16px', role: 'padding horizontal (células)', status: 'confirmed' },
+        { name: 'spacing-12', category: 'spacing', value: '12px', role: 'padding vertical (células)', status: 'confirmed' },
       ]}
     />
   ),
@@ -200,12 +200,12 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
     <PendingReview
       component="Table"
       items={[
-          'Confirm header background (gray-50) and text color (gray-500) with design',
-          'Validate sort indicator icon and active color (brand)',
-          'Review selected row highlight (brand/5)',
-          'Confirm border color and weight for table cells',
-          'Check empty state illustration style',
-          'Validate skeleton animation against DS loading patterns',
+          'Confirmar fundo do cabeçalho (gray-50) e cor do texto (gray-500) com o design',
+          'Validar ícone de indicador de ordenação e cor ativa (brand)',
+          'Revisar destaque da linha selecionada (brand/5)',
+          'Confirmar cor e espessura da borda das células da tabela',
+          'Verificar estilo da ilustração de estado vazio',
+          'Validar a animação do skeleton em relação aos padrões de loading do DS',
       ]}
     />
   ),

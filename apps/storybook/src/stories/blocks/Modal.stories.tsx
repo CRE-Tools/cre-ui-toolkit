@@ -192,14 +192,14 @@ export const TokenUsageStory: Omit<Story, 'args'> = {
     <TokenUsage
       component="Modal"
       tokens={[
-        { name: 'radius-16', category: 'radius', value: '16px', role: 'border-radius (modal panel)', status: 'confirmed' },
-        { name: 'shadow-level-3', category: 'shadow', value: 'elevation máxima', role: 'shadow (modal panel)', status: 'pending-design' },
-        { name: 'brand', category: 'color', value: '#7B1234', role: 'focus ring (close button)', status: 'confirmed' },
-        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'border color (header/footer)', status: 'confirmed' },
-        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'horizontal padding (header/footer)', status: 'confirmed' },
-        { name: 'spacing-20', category: 'spacing', value: '20px', role: 'vertical padding (header/footer)', status: 'confirmed' },
-        { name: 'font-heading', category: 'typography', value: 'Poppins', role: 'title font family', status: 'confirmed' },
-        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'body font family', status: 'confirmed' },
+        { name: 'radius-16', category: 'radius', value: '16px', role: 'raio de borda (painel do modal)', status: 'confirmed' },
+        { name: 'shadow-level-3', category: 'shadow', value: 'elevation máxima', role: 'sombra (painel do modal)', status: 'pending-design' },
+        { name: 'brand', category: 'color', value: '#7B1234', role: 'anel de foco (botão fechar)', status: 'confirmed' },
+        { name: 'neutral-400', category: 'color', value: '#B5A8AD', role: 'cor da borda (header/footer)', status: 'confirmed' },
+        { name: 'spacing-24', category: 'spacing', value: '24px', role: 'padding horizontal (header/footer)', status: 'confirmed' },
+        { name: 'spacing-20', category: 'spacing', value: '20px', role: 'padding vertical (header/footer)', status: 'confirmed' },
+        { name: 'font-heading', category: 'typography', value: 'Poppins', role: 'família tipográfica do título', status: 'confirmed' },
+        { name: 'font-body', category: 'typography', value: 'Source Sans 3', role: 'família tipográfica do corpo', status: 'confirmed' },
       ]}
     />
   ),
@@ -215,12 +215,12 @@ export const PendingReviewStory: Omit<Story, 'args'> = {
     <PendingReview
       component="Modal"
       items={[
-          'Confirm border-radius-medium (16px) for modal panel',
-          'Validate backdrop blur and opacity with design team',
-          'Review close button placement and sizing',
-          'Confirm shadow-level-3 is appropriate for overlay elevation',
-          'Check danger variant header color against destructive palette',
-          'Validate footer button layout (right-aligned, gap-3)',
+          'Confirmar border-radius-medium (16px) para o painel do modal',
+          'Validar blur e opacidade do backdrop com a equipe de design',
+          'Revisar posicionamento e tamanho do botão fechar',
+          'Confirmar se shadow-level-3 é adequado para a elevação do overlay',
+          'Verificar cor do header da variante danger em relação à paleta destructive',
+          'Validar layout dos botões do footer (alinhados à direita, gap-3)',
       ]}
     />
   ),
