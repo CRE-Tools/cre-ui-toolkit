@@ -1,8 +1,8 @@
-# Context: @cre/ui-kit — Current Package State
+# Context: @cre/cre-web-ui — Current Package State
 
 This file describes what is currently built, exported, and in what state. Update it whenever a component is added, promoted out of Pending Review, or has its API changed.
 
-**Last updated:** 2026-05-29
+**Last updated:** 2026-06-10
 
 ---
 
@@ -22,10 +22,10 @@ Storybook dev utilities (`PendingReview`) live in `packages/storybook-utils/` (p
 
 ## Public exports
 
-Everything exported from `packages/ui-kit/src/index.ts` is public API. The entry point re-exports all three layers and the `cn` utility.
+Everything exported from `packages/cre-web-ui/src/index.ts` is public API. The entry point re-exports all three layers and the `cn` utility.
 
 ```
-@cre/ui-kit
+@cre/cre-web-ui
 ├── Layout
 │   ├── Box
 │   ├── Container

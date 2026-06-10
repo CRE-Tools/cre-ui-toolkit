@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@cre/ui-kit": "workspace:*",
+    "@cre/cre-web-ui": "workspace:*",
     "next": "^15.3.2",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Modal, ConfirmModal, Button, Input, Alert } from '@cre/ui-kit'
+import { Modal, ConfirmModal, Button, Input, Alert } from '@cre/cre-web-ui'
 import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {

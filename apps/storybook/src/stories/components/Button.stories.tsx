@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from '@cre/ui-kit'
+import { Button } from '@cre/cre-web-ui'
 import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {

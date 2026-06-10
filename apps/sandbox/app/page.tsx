@@ -5,7 +5,7 @@ import {
   GridItem,
   Stack,
   Surface,
-} from '@cre/ui-kit'
+} from '@cre/cre-web-ui'
 
 export default function Home() {
   return (

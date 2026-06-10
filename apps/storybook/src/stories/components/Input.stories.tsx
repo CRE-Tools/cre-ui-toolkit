@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Input, Textarea } from '@cre/ui-kit'
+import { Input, Textarea } from '@cre/cre-web-ui'
 import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {

@@ -1,4 +1,4 @@
-// Ponto de entrada público do @cre/ui-kit
+// Ponto de entrada público do @cre/cre-web-ui
 // Adicione aqui apenas o que deve ser exportado para consumidores externos
 
 export * from './layout'

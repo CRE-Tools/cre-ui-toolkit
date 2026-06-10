@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { HierarchicalTable } from '@cre/ui-kit'
+import { HierarchicalTable } from '@cre/cre-web-ui'
 import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {

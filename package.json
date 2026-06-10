@@ -2,7 +2,7 @@
   "name": "cre-ui-toolkit",
   "private": true,
   "scripts": {
-    "build": "pnpm --filter @cre/ui-kit build",
+    "build": "pnpm --filter @cre/cre-web-ui build",
     "storybook": "pnpm --filter @cre/storybook dev",
     "sandbox": "pnpm --filter @cre/sandbox dev",
     "lint": "pnpm -r lint"

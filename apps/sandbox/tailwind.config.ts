@@ -5,9 +5,9 @@ const config: Config = {
   content: [
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-    '../../packages/ui-kit/src/**/*.{ts,tsx}',
+    '../../packages/cre-web-ui/src/**/*.{ts,tsx}',
   ],
-  presets: [require('../../packages/ui-kit/tailwind.config.ts')],
+  presets: [require('../../packages/cre-web-ui/tailwind.config.ts')],
 }
 
 export default config

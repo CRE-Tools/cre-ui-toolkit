@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import {
   Sidebar, SidebarHeader, SidebarNav, SidebarGroup,
   SidebarItem, SidebarDivider, SidebarFooter, Badge,
-} from '@cre/ui-kit'
+} from '@cre/cre-web-ui'
 import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {

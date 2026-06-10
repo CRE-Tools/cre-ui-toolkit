@@ -8,7 +8,7 @@
     "build": "storybook build"
   },
   "dependencies": {
-    "@cre/ui-kit": "workspace:*",
+    "@cre/cre-web-ui": "workspace:*",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },

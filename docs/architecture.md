@@ -2,7 +2,7 @@
 
 ## Overview
 
-`cre-ui-toolkit` is a centralized UI toolkit monorepo for the CRE design system, based on **DS PUCPR Core Web**. The design and development teams collaborate here to define, document, and ship a shared React component library published as `@cre/ui-kit`.
+`cre-ui-toolkit` is a centralized UI toolkit monorepo for the CRE design system, based on **DS PUCPR Core Web**. The design and development teams collaborate here to define, document, and ship a shared React component library published as `@cre/cre-web-ui`.
 
 Current phase: foundational. Teams are actively locking design tokens, grid rules, and the first set of components. Storybook is the main review surface where design and dev meet to align before anything ships.
 
@@ -32,7 +32,7 @@ cre-ui-toolkit/
 │   │           └── blocks/
 │   └── sandbox/                # @cre/sandbox — Next.js consumer simulation app
 ├── packages/
-│   ├── ui-kit/                 # @cre/ui-kit — the published library
+│   ├── cre-web-ui/             # @cre/cre-web-ui — the published library
 │   │   └── src/
 │   │       ├── layout/         # Box, Container, Grid+GridItem, Stack, Surface
 │   │       ├── components/     # Button, ActionButton+ActionGroup, Badge, Alert, Input+Textarea
@@ -57,7 +57,7 @@ cre-ui-toolkit/
 `apps/storybook/src/stories/` owns all story files, organized by DS category (`layout/`, `components/`, `blocks/`). The storybook `main.ts` points at `src/stories/**/*.stories.*`. This keeps the library package free of storybook types and eliminates editor lint errors from missing `@storybook/react-vite` types in the package's TypeScript context.
 
 **Package source is pure library code.**
-`packages/ui-kit/src/` contains only component implementations, styles, and utilities. No storybook-specific code, no test utilities. Storybook helpers (`PendingReview`) live in `packages/storybook-utils/`.
+`packages/cre-web-ui/src/` contains only component implementations, styles, and utilities. No storybook-specific code, no test utilities. Storybook helpers (`PendingReview`) live in `packages/storybook-utils/`.
 
 **Source organized by DS hierarchy.**
 `src/layout/`, `src/components/`, `src/blocks/` match the design system glossary: Layout → structural primitives, Components → interactive units, Blocks → complex multi-component assemblies. See `docs/context/design-system-decisions.md` for the full glossary.
@@ -69,7 +69,7 @@ cre-ui-toolkit/
 `tsup` produces `dist/index.js` (ESM) and `dist/index.cjs` (CJS). The `files: ["dist"]` field in `package.json` ensures only the build output ships to npm.
 
 **Tailwind tokens are scoped to the package.**
-`packages/ui-kit/tailwind.config.ts` is the single source of truth for all design tokens. Consumer apps must either adopt the same config or import the resulting CSS.
+`packages/cre-web-ui/tailwind.config.ts` is the single source of truth for all design tokens. Consumer apps must either adopt the same config or import the resulting CSS.
 
 ## Modules & Domains
 
@@ -101,7 +101,7 @@ Complex multi-component assemblies that contain one or more complete interaction
 
 ## Design Token System
 
-All tokens are defined in `packages/ui-kit/tailwind.config.ts`. See `docs/context/design-system-decisions.md` for naming conventions.
+All tokens are defined in `packages/cre-web-ui/tailwind.config.ts`. See `docs/context/design-system-decisions.md` for naming conventions.
 
 | Category | Current state |
 |---|---|

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ActionButton, ActionGroup, DataTable, type ColumnDef } from '@cre/ui-kit'
+import { ActionButton, ActionGroup, DataTable, type ColumnDef } from '@cre/cre-web-ui'
 import { PendingReview, TokenUsage } from '@cre/storybook-utils'
 
 const meta = {
