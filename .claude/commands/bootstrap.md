@@ -1,1 +1,1 @@
-Read `pipeline/skills/bootstrap.md` for the full protocol, then execute it now. Ask whether this is a new repo setup or a migration of an existing repo.
+Read `pipeline/skills/bootstrap.md` for the full protocol, then execute it now. Ask whether this is a new repo setup, a migration of an existing repo, or an upgrade of a repo already on this pipeline.

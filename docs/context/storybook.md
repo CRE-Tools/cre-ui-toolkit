@@ -2,7 +2,7 @@
 
 This file captures the rules for how components are documented in this repo's Storybook so that all stories stay cohesive as the design system grows.
 
-Storybook lives in `apps/storybook`. Story files live in `apps/storybook/src/stories/`, organized by DS category folder. Component source code lives in `packages/ui-kit/src/` — stories are **not** colocated with source.
+Storybook lives in `apps/storybook`. Story files live in `apps/storybook/src/stories/`, organized by DS category folder. Component source code lives in `packages/cre-web-ui/src/` — stories are **not** colocated with source.
 
 ---
 
@@ -163,7 +163,7 @@ Use the background color's registry name. The `role` field can note associated b
 
 ---
 
-## Foundation stories
+## Token Usage in Foundation stories
 
 Foundation stories also use `{ name, role }` pairs, sourced from the registry. The `role` in Foundation context describes the token's semantic purpose or Tailwind class name:
 
@@ -236,7 +236,7 @@ Stories should be ordered in the file from simple → complex:
 Every component in active development must include a **Pending Review** story as the final export. This is the communication surface between dev and design — it lists open questions that need design approval before the component is considered stable.
 
 ```tsx
-import { PendingReview } from '../../storybook/PendingReview'
+import { PendingReview } from '@cre/storybook-utils'
 
 export const PendingReviewStory: Story = {
   name: 'Pending Review',

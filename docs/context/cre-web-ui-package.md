@@ -2,7 +2,7 @@
 
 This file describes what is currently built, exported, and in what state. Update it whenever a component is added, promoted out of Pending Review, or has its API changed.
 
-**Last updated:** 2026-06-10
+**Last updated:** 2026-10-30
 
 ---
 
@@ -12,7 +12,7 @@ This file describes what is currently built, exported, and in what state. Update
 src/
 ├── layout/         ← Box, Container, Grid+GridItem, Stack, Surface
 ├── components/     ← Button, ActionButton+ActionGroup, Badge, Alert, Input+Textarea
-├── blocks/         ← Modal+ConfirmModal, Sidebar, Table, HierarchicalTable
+├── blocks/         ← Modal+ConfirmModal, Sidebar, Table+DataTable, HierarchicalTable
 ├── styles/         ← globals.css
 ├── utils/          ← cn.ts
 └── index.ts
@@ -40,8 +40,8 @@ Everything exported from `packages/cre-web-ui/src/index.ts` is public API. The e
 │   └── Input + Textarea
 └── Blocks
     ├── Modal + ConfirmModal
-    ├── Sidebar
-    ├── Table
+    ├── Sidebar + subcomponents
+    ├── Table + subcomponents, DataTable
     └── HierarchicalTable
 ```
 
@@ -92,6 +92,8 @@ Props: `direction` (`'vertical'` default / `'horizontal'`), `gap` (0–12, defau
 #### `Surface`
 Visual container with background, border, and shadow — no structural layout. Pair with `Box` or `Stack` for structure.
 
+Props: `variant` — `default` | `raised` | `overlay` | `sunken` | `interactive`; `padded` (default `true`). Variant names are flagged for renaming (KI-008).
+
 ---
 
 ### UI components
@@ -105,7 +107,7 @@ Sizes: `sm` (32px) | `md` (40px, default) | `lg` (48px)
 
 Props: `variant`, `size`, `loading` (shows spinner, disables), `leftIcon`, `rightIcon`, `fullWidth`, `disabled`.
 
-**Note:** `destructive` variant was added by the dev team for admin panel needs — it is not in DS PUCPR. Requires explicit design team approval.
+**Note:** `destructive` is a non-DS dev addition (KI-007).
 
 #### `ActionButton` + `ActionGroup`
 Compact button for use inside table cells and action bars. Not a replacement for `Button`.
@@ -133,26 +135,40 @@ Props: `variant`, `title` (bold heading), `children` (body text), `hideIcon`, `a
 
 Renders with `role="alert"` for accessibility.
 
-#### `Input`
-Text input field. (Details to be filled in after design review.)
+#### `Input` + `Textarea`
+Text fields with a label, helper text, and validation states.
+
+Shared props: `label`, `helperText`, `errorMessage`, `successMessage`, `status` (`InputStatus`: `default` | `error` | `success`), `fullWidth`.
+
+`Input` adds `leftIcon` and `rightIcon`. `Textarea` adds `showCount`.
 
 ---
 
-### Admin panel components (experimental)
+### Blocks (experimental)
 
 These were built to fill Storybook and explore the admin panel use case. They are more exploratory than the core primitives and carry more uncertainty.
 
-#### `Modal`
-Dialog overlay component.
+#### `Modal` + `ConfirmModal`
+Dialog overlay. Renders in a portal, moves focus to the dialog on open, locks body scroll, and closes on Escape or backdrop click.
+
+`Modal` props: `open`, `onClose`, `title`, `description`, `footer`, `size` (`sm` | `md` | `lg` | `full`, default `md`), `variant` (`default` | `danger`), `preventClose`.
+
+`ConfirmModal` props: `open`, `onClose`, `onConfirm`, `title`, `description`, `confirmLabel`, `cancelLabel`, `variant`, `loading`.
 
 #### `Sidebar`
-Navigation sidebar panel.
+Navigation panel composed from `SidebarHeader`, `SidebarNav`, `SidebarGroup`, `SidebarItem`, `SidebarDivider`, and `SidebarFooter`.
 
-#### `Table`
-Flat data table.
+`Sidebar` props: `collapsed` (icons only). `SidebarItem` props: `icon`, `active`, `badge` (number), `href`, `onClick`.
+
+#### `Table` + `DataTable`
+Flat data table, with no built-in pagination. `Table`, `TableHead`, `TableBody`, `TableRow`, `TableTh`, `TableTd`, `TableEmpty`, and `TableSkeleton` are composable pieces.
+
+`DataTable` is the column-driven version. Props: `columns` (`ColumnDef<T>[]`), `data`, `loading`, `emptyMessage`, `onRowClick`, `sortKey`, `sortDir`, `onSort`. Sorting is controlled by the caller.
 
 #### `HierarchicalTable`
-Tree-structured table with expandable rows. Built for the admin panel.
+Table with multi-level column headers, grouped by `/` in the column keys (for example `experiencia/Controles/Cliques/A`). It has a sticky header and first column, alternating rows, and CSV export. It does not have expandable rows.
+
+Props: `columns`, `data`, `title`, `stickyFirstColumn` (default `true`), `exportable` (default `true`), `exportFileName` (default `'export'`).
 
 ---
 
@@ -169,7 +185,7 @@ Tree-structured table with expandable rows. Built for the admin panel.
 | ActionButton / ActionGroup | Components | Pending Review |
 | Badge | Components | Pending Review |
 | Alert | Components | Pending Review |
-| Input / Textarea | Components | Pending Review — `Textarea` exists in source but not yet exported |
+| Input / Textarea | Components | Pending Review |
 | Modal / ConfirmModal | Blocks | Pending Review |
 | Sidebar | Blocks | Pending Review |
 | Table | Blocks | Pending Review |
@@ -179,8 +195,7 @@ Tree-structured table with expandable rows. Built for the admin panel.
 
 ## What does NOT exist yet
 
-- `Textarea` — referenced in git history but not currently exported
-- Any form primitives beyond `Input` (Select, Checkbox, Radio, etc.)
+- Any form primitives beyond `Input` and `Textarea` (Select, Checkbox, Radio, etc.)
 - Typography components (Heading, Text, Label)
 - Icon system / icon library
 - Theme provider / token injection mechanism for consumers

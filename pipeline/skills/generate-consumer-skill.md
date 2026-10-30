@@ -17,6 +17,7 @@ This skill generates a lean, consumer-focused skill file from the current repo's
 ### 1. Read current context
 - `docs/architecture.md`
 - All `docs/context/*.md` files
+- `docs/known-issues.md` (for issues a consumer would run into)
 - Any existing file in `skills/exports/` (to understand what was previously generated and what changed)
 
 ### 2. Identify the public surface
