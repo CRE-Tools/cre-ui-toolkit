@@ -3,9 +3,9 @@ id: TASK-XXX
 title: Short descriptive title
 status: pending
 model: cheap
-model-name: SWE-1.6
-context:
-  - docs/architecture.md
+model-name: GPT-6 Luna
+effort: high
+context: []
 doc-impact: []
 export-impact: []
 ---
@@ -19,8 +19,14 @@ export-impact: []
 - [ ] 
 - [ ] 
 
+## Verification
+
+<!-- The exact command to run and the result that counts as passing. -->
+
 ## Relevant Data
 
-<!-- Paste relevant snippets, current signatures, expected shapes, constraints, or anything the executor needs to have inline rather than hunting for. If a context file covers it, reference that instead. -->
+<!-- Contracts, not code: existing code excerpts, current signatures, type definitions, expected input/output shapes, constraints. Never implementation bodies or pasteable new code — specify the contract and let the executor implement it. If a context file covers it, reference that instead. -->
+
+<!-- Cheap-tier tasks must meet the rules in "Writing tasks for the cheap tier" in pipeline/skills/architect.md. -->
 
 <!-- Cross-repo note: if this task requires a change that belongs in a dependency repo rather than here, do not implement it — invoke /create-migration instead and stop. -->

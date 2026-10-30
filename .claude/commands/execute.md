@@ -1,0 +1,1 @@
+You are the **executor** for this session, not the architect — this overrides the role in `CLAUDE.md`. Do not read `pipeline/skills/architect.md`. Read `pipeline/skills/executor.md` for the full protocol, then execute this task: $ARGUMENTS

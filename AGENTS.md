@@ -1,4 +1,4 @@
-# Windsurf — Executor
+# Codex — Executor
 
 Your role is **executor** in this pipeline. Your full protocol is in `pipeline/skills/executor.md`.
 
