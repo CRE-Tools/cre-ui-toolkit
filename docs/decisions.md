@@ -48,3 +48,40 @@ Status: accepted · 2026-10-30
 Decision: Cheap-tier tasks start at `high` effort and must have a known result, narrow scope, minimal context, inline facts, named gaps, and a runnable verification. Each task runs in a new session.
 Why: OpenAI's Codex docs say to start Luna at High and use it when you know what a good result looks like. Luna hallucinated in practice on context-heavy tasks at `medium`. Luna's low price makes the extra reasoning affordable, and a failed pass costs more.
 Consequences: The context cap is a working rule from experience, not a documented Luna limit. Revisit it if results change.
+
+## ADR-009 · storybook · Stories live in the Storybook app, not in the package
+Status: accepted · migrated from architecture.md on 2026-10-30
+Decision: `apps/storybook/src/stories/` owns all story files, organized by DS category. The Storybook `main.ts` points at `src/stories/**/*.stories.*`.
+Why: Keeps the library package free of Storybook types and eliminates editor lint errors from missing `@storybook/react-vite` types in the package's TypeScript context.
+
+## ADR-010 · package · Package source is pure library code
+Status: accepted · migrated from architecture.md on 2026-10-30
+Decision: `packages/cre-web-ui/src/` contains only component implementations, styles, and utilities, with no Storybook-specific code or test utilities.
+Why: Not recorded.
+Consequences: Storybook helpers such as `PendingReview` live in `packages/storybook-utils/`.
+
+## ADR-011 · package · Source is organized by DS hierarchy
+Status: accepted · migrated from architecture.md on 2026-10-30
+Decision: Source folders are `src/layout/`, `src/components/`, and `src/blocks/`.
+Why: The folders match the design system glossary in `docs/context/design-system-decisions.md`.
+
+## ADR-012 · sandbox · Sandbox simulates a real consumer
+Status: accepted · migrated from architecture.md on 2026-10-30
+Decision: `apps/sandbox` (Next.js 15) imports the library through a workspace symlink, with the same constraints a real consumer app has.
+Why: Validates integration before publishing.
+
+## ADR-013 · package · Dual CJS/ESM output
+Status: accepted · migrated from architecture.md on 2026-10-30
+Decision: `tsup` produces `dist/index.js` (ESM) and `dist/index.cjs` (CJS), and `files: ["dist"]` limits what ships to npm to the build output.
+Why: Not recorded.
+
+## ADR-014 · tokens · Tailwind tokens are scoped to the package
+Status: accepted · migrated from architecture.md on 2026-10-30
+Decision: `packages/cre-web-ui/tailwind.config.ts` is the single source of truth for all design tokens.
+Why: Not recorded.
+Consequences: Consumer apps must either adopt the same config or import the resulting CSS. See KI-001 for what the published package currently lacks.
+
+## ADR-015 · package · Library is named @cre/cre-web-ui
+Status: accepted · 2026-06-10
+Decision: The package was renamed from `@cre/ui-kit` to `@cre/cre-web-ui`, and its directory from `packages/ui-kit/` to `packages/cre-web-ui/` (TASK-023).
+Why: Not recorded.

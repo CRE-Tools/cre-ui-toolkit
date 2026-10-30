@@ -79,7 +79,7 @@ Numeric system — value in the name. Tailwind class prefix: `rounded-`.
 | `radius-8` | 8px | `rounded-radius-8` | DS confirmed |
 | `radius-12` | 12px | `rounded-radius-12` | Dev addition — design sign-off pending |
 | `radius-16` | 16px | `rounded-radius-16` | DS confirmed |
-| `radius-32` | 32px | `rounded-radius-32` | DS confirmed |
+| `radius-32` | 32px | `rounded-radius-32` | DS confirmed — missing from the Tailwind config (KI-002) |
 | `radius-full` | 9999px | `rounded-radius-full` | DS confirmed (pill shape) |
 
 `radius-12` was added by the dev team because Surface uses 12px for card/panel variants. It is a multiple of 4 and fits the numeric convention. Needs design team confirmation in the glossary.
@@ -115,6 +115,22 @@ These are the V1 color token names. The web-specific needs still need to be vali
 
 ---
 
+## Current Token State
+
+All tokens are defined in `packages/cre-web-ui/tailwind.config.ts`. Per-token review status lives in `packages/storybook-utils/src/token-registry.ts`.
+
+| Category | Current state |
+|---|---|
+| Breakpoints | Confirmed — xs/sm/md/lg/xl/wide override Tailwind defaults |
+| Border radius | Numeric system `radius-*` (KI-002) |
+| Shadows | Names confirmed (`level-1/2/3`), CSS values provisional (KI-003) |
+| Border width | `small/medium/large/xlarge` — naming not yet in DS glossary (KI-006) |
+| Colors | `brand.DEFAULT` and `neutral.400` confirmed; full color token migration pending design+dev session (KI-004, KI-005) |
+| Typography | `font-heading` (Poppins) and `font-body` (Source Sans 3) confirmed |
+| Ring width | `DEFAULT: 3px` for focus rings |
+
+---
+
 ## Storybook Category Structure
 
 | Category | What goes here |
@@ -128,11 +144,9 @@ These are the V1 color token names. The web-specific needs still need to be vali
 
 ---
 
----
-
 ## Enforced Code Patterns
 
-These rules apply to every component in `packages/ui-kit/src/`. They are derived from the token decisions above and must be followed in all new code and task implementations.
+These rules apply to every component in `packages/cre-web-ui/src/`. They are derived from the token decisions above and must be followed in all new code and task implementations.
 
 ### Token usage — always use the token, never the raw value
 
@@ -174,8 +188,8 @@ Do not use arbitrary Tailwind values (`w-[37px]`, `text-[13px]`) for anything th
 ## What Is Explicitly Deferred
 
 - `Overlay` component — not needed now, revisit later
-- Complete color token migration — pending design+dev alignment session (`brand`/`neutral-400` are confirmed; the full `surface/text/action/border/feedback` tier system is not yet implemented)
+- Complete color token migration — see KI-004
 - Spacing token rename — Tailwind's default numeric scale is compatible with the DS direction; explicit `spacing-*` token names not yet added to config
-- Border-width token naming — `small/medium/large/xlarge` in the config but not yet in DS glossary; keep current names until design team addresses them
-- Surface variant renaming — current `raised/sunken/overlay/interactive` names are appearance-based (violates the semantic naming rule); rename deferred until design team proposes semantic equivalents
+- Border-width token naming — see KI-006
+- Surface variant renaming — see KI-008
 - VR-specific tokens — out of scope for web package
